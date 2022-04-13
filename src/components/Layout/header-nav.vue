@@ -1,23 +1,51 @@
 <template>
-  <div class="row full-width main-logo">
-    <div class="text-center full-width">LA DUNE</div>
-    <div class="text-center full-width">
-      <ul class="nav-ul full-width">
-        <li><router-link :to="'/home'">Home</router-link></li>
-        <li>
-          <router-link :to="'/home'">Services</router-link>
-        </li>
-        <li>
-          <router-link :to="'/home'">About Me</router-link>
-        </li>
-        <li>
-          <router-link :to="'/home'">Contact</router-link>
-        </li>
-        <li>
-          <router-link :to="'/home'">Blog</router-link>
-        </li>
-      </ul>
+  <div class="container-header full-width">
+    <div class="row full-width main-logo">
+      <div class="text-center full-width">LA DUNE</div>
+      <div class="text-center full-width">
+        <ul class="nav-ul full-width">
+          <li><router-link :to="'/home'">Home</router-link></li>
+          <li>
+            <router-link :to="''">Services</router-link>
+          </li>
+          <li>
+            <router-link :to="''">About Me</router-link>
+          </li>
+          <li>
+            <router-link :to="''">Contact</router-link>
+          </li>
+          <li>
+            <router-link :to="''">Blog</router-link>
+          </li>
+        </ul>
+      </div>
     </div>
+
+    <!-- <div class="full-width Inline Flex row justify-evenly main-header">
+      <div class="heder-context col">
+        <div class="flex column">
+          <h1 class="heder-context__h1">Hello, so good to see you!</h1>
+
+          <b class="heder-context__b"
+            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+            obcaecati nobis porro placeat voluptatibus necessitatibus debitis
+            eligendi, architecto rerum quos magni, a excepturi iusto error
+            perspiciatis accusamus rem facere quisquam.</b
+          >
+          <div class="but">
+            <q-btn
+              color="black"
+              label="contact me"
+              size="1.1rem"
+              class="edd-but"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col image-header">
+        <img src="../../../public/wa.jpeg" class="image-head" />
+      </div>
+    </div> -->
   </div>
 </template>
 <script>
@@ -27,7 +55,11 @@ export default defineComponent({
   name: "HeaderNav",
 });
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
+.container-header {
+  // height: 100vh;
+  position: relative;
+}
 .main-logo {
   font-size: 3rem;
   font-weight: 800;
@@ -41,11 +73,15 @@ export default defineComponent({
   li {
     padding: 1rem;
     a {
-      color: black;
+      color: $fontColor;
+      font-family: NavFont;
       position: relative;
       margin-left: 3rem;
-      font-weight: 600;
+      font-weight: bold;
+      font-size: 1.1rem;
+      letter-spacing: 3px;
       text-decoration: none;
+
       &::after {
         content: "";
         position: absolute;
@@ -53,7 +89,7 @@ export default defineComponent({
         height: 3px;
         top: 120%;
         left: -10%;
-        background-color: #000;
+        background-color: $fontColor;
       }
 
       &:hover {
@@ -63,6 +99,24 @@ export default defineComponent({
         }
       }
     }
+  }
+}
+.heder-context {
+  padding-left: 10%;
+  padding-right: 10%;
+  height: 100%;
+  overflow: hidden;
+
+  &__h1 {
+    font-family: NavFont;
+    font-weight: 300;
+    font-size: 5rem;
+    color: $fontColor;
+  }
+  &__b {
+    font-family: NavFont;
+    font-weight: 200;
+    font-size: 1.1rem;
   }
 }
 </style>

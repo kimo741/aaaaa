@@ -1,11 +1,11 @@
 <template>
   <q-layout view="hHh lpR fFf">
-    <q-header reveal  class="bg-transparent text-black">
-      <q-toolbar>
+    <q-header reveal class="bg-transparent text-black">
+      <!-- <div>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
-
+      </div> -->
+      <q-toolbar>
         <header-nav />
-
       </q-toolbar>
     </q-header>
 
@@ -96,7 +96,7 @@ export default defineComponent({
     };
   },
   created() {
-    console.log(this.$q.screen.name)
-  }
+    console.log(this.$q.screen.name);
+  },
 });
 </script>
