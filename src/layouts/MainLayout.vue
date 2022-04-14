@@ -1,26 +1,30 @@
 <template>
-  <q-layout view="hHh lpR fFf">
-    <q-header reveal class="bg-transparent text-black">
-      <!-- <div>
-        <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
-      </div> -->
-      <q-toolbar>
-        <header-nav />
+  <q-layout view="hHh lpR fFf" class="">
+    <q-header  class="bg-white text-black">
+
+      <q-toolbar class="container justify-center scroll overflow-hidden">
+        <q-btn v-if="$q.screen.lt.md" dense flat round icon="menu" @click="toggleLeftDrawer" />
+        <transition-group
+          appear
+          enter-active-class="animated fadeIn"
+          leave-active-class="animated fadeOut"
+        >
+          <!-- <transition name="slide" mode="out-in"> -->
+        <StartNav v-show="navStatus" />
+        <ScrolleNav v-show="!navStatus" class="asdasd" />
+        </transition-group>
+
       </q-toolbar>
     </q-header>
     <q-drawer v-model="leftDrawerOpen" side="left" overlay bordered>
       <q-list>
         <q-item-label header> Essential Links </q-item-label>
 
-        <!-- <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        /> -->
+
       </q-list>
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container v-scroll="test">
       <transition
         appear
         enter-active-class="animated fadeIn"
@@ -39,72 +43,28 @@ import { defineComponent, ref } from "vue";
 import EssentialLink from "components/EssentialLink.vue";
 import HeaderNav from "components/Layout/header-nav.vue";
 import Fotter from "src/components/Layout/Fotter.vue";
-
-// const linksList = [
-//   {
-//     title: "Docs",
-//     caption: "quasar.dev",
-//     icon: "school",
-//     link: "https://quasar.dev",
-//   },
-//   {
-//     title: "Github",
-//     caption: "github.com/quasarframework",
-//     icon: "code",
-//     link: "https://github.com/quasarframework",
-//   },
-//   {
-//     title: "Discord Chat Channel",
-//     caption: "chat.quasar.dev",
-//     icon: "chat",
-//     link: "https://chat.quasar.dev",
-//   },
-//   {
-//     title: "Forum",
-//     caption: "forum.quasar.dev",
-//     icon: "record_voice_over",
-//     link: "https://forum.quasar.dev",
-//   },
-//   {
-//     title: "Twitter",
-//     caption: "@quasarframework",
-//     icon: "rss_feed",
-//     link: "https://twitter.quasar.dev",
-//   },
-//   {
-//     title: "Facebook",
-//     caption: "@QuasarFramework",
-//     icon: "public",
-//     link: "https://facebook.quasar.dev",
-//   },
-//   {
-//     title: "Quasar Awesome",
-//     caption: "Community Quasar projects",
-//     icon: "favorite",
-//     link: "https://awesome.quasar.dev",
-//   },
-// ];
-
+import DesctopNav from "components/Layout/desctop-nav";
+import LogoImg from "components/Layout/LogoImg";
+import StartNav from "components/Layout/Start-nav";
+import ScrolleNav from "components/Layout/Scrolle-nav";
 export default defineComponent({
   name: "MainLayout",
-
   components: {
-    HeaderNav,
+    ScrolleNav,
+    StartNav,
     Fotter,
   },
-
-  // setup() {
-  //   const leftDrawerOpen = ref(false);
-
-  //   return {
-  //     leftDrawerOpen,
-  //     toggleLeftDrawer() {
-  //       leftDrawerOpen.value = !leftDrawerOpen.value;
-  //     },
-  //   };
-  // },
+  data () {
+    return {
+      navStatus: true
+    }
+  },
+  methods: {
+    test (val) {
+      return this.navStatus = val < 150 ? true : false
+    }
+  },
   created() {
-    console.log(this.$q.screen.name);
   },
 });
 </script>

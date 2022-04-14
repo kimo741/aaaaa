@@ -3,7 +3,7 @@
     <div class="row full-width main-logo">
       <div class="text-center full-width">
         <!-- LA DUNE -->
-        <q-img src="logo.png" />
+        <logo-img :width="150" />
       </div>
       <div class="text-center full-width">
         <ul class="nav-ul full-width">
@@ -17,49 +17,29 @@
         </ul>
       </div>
     </div>
-
-    <!-- <div class="full-width Inline Flex row justify-evenly main-header">
-      <div class="heder-context col">
-        <div class="flex column">
-          <h1 class="heder-context__h1">Hello, so good to see you!</h1>
-
-          <b class="heder-context__b"
-            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-            obcaecati nobis porro placeat voluptatibus necessitatibus debitis
-            eligendi, architecto rerum quos magni, a excepturi iusto error
-            perspiciatis accusamus rem facere quisquam.</b
-          >
-          <div class="but">
-            <q-btn
-              color="black"
-              label="contact me"
-              size="1.1rem"
-              class="edd-but"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="col image-header">
-        <img src="../../../public/wa.jpeg" class="image-head" />
-      </div>
-    </div> -->
   </div>
+
 </template>
 <script>
 import { defineComponent, ref } from "vue";
+import LogoImg from "components/Layout/LogoImg";
 
 export default defineComponent({
   name: "HeaderNav",
+  components: {LogoImg},
 });
 </script>
 <style lang="scss" scoped>
 .container-header {
-  // height: 100vh;
+  background-color: #fff;
   position: relative;
 }
 .main-logo {
   font-size: 3rem;
   font-weight: 800;
+  .logo {
+    width: 150px
+  }
 }
 .nav-ul {
   display: flex;

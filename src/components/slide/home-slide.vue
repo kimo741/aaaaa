@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class="col image-header">
-          <q-img src="wa.jpeg" class="image-head" />
+          <q-img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=764,h=624,fit=scale-down/dovilelxpfw/img-mnllKKGWbPub6RLL.jpg" class="image-head" />
         </div>
       </div>
     </div>
