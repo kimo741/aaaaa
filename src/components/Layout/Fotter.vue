@@ -105,4 +105,18 @@ export default defineComponent({ name: "FotterPage", components: {} });
   height: 90%;
   margin: auto;
 }
+@media screen and (max-width: 800px) and (min-width: 300px) {
+  .section-foter {
+    width: 100%;
+    bottom: 100%;
+    display: block;
+    z-index: 65515;
+    left: 0;
+  }
+  .nav-ul {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+}
 </style>

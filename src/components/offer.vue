@@ -37,6 +37,17 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .section-serveces {
+  height: calc(100vh - 165px) !important;
+  width: 100%;
+  &__container {
+    margin: auto;
+    &__col-1 {
+      height: 100%;
+      width: 100%;
+      width: auto;
+      min-width: 0;
+      max-width: 100%;
+
   &__container {
     margin: auto;
     &__col-1 {
@@ -85,4 +96,41 @@ export default defineComponent({
   padding: 1rem 2rem;
   color: #fff5f5 !important;
 }
+<<<<<<< HEAD
+
+@media screen and (max-width: 800px) and (min-width: 300px) {
+  .col {
+    width: 100% !important;
+    h2 {
+      font-size: 3rem !important;
+      letter-spacing: 0.1px;
+      width: 100%;
+    }
+  }
+  .col-paragraph {
+    width: 100% !important;
+  }
+  .container {
+    max-width: none;
+    width: 100%;
+  }
+  .row {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    h2 {
+      text-transform: capitalize;
+      text-align: center;
+      font-size: 3rem;
+    }
+  }
+  .col {
+    margin: auto;
+  }
+  .col-paragraph {
+    width: 100%;
+  }
+}
+=======
+>>>>>>> origin/main
 </style>

@@ -47,8 +47,6 @@ export default defineComponent({
   align-content: center;
   list-style: none;
   font-size: 1rem;
-  text-align: center;
-  padding: 0 !important;
   li {
     padding: 1rem;
     a {

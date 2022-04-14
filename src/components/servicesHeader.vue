@@ -50,6 +50,9 @@ export default defineComponent({
   color: #fff5f5 !important;
 }
 .heder-context {
+  text-align: start;
+  margin: auto;
+  margin-top: 10%;
   &__h1 {
     font-family: NavFont;
     font-weight: 300;
@@ -71,5 +74,22 @@ export default defineComponent({
 .container-headers {
   width: 100% !important;
   background-color: #fff5f5 !important;
+}
+
+@media screen and (max-width: 800px) and (min-width: 300px) {
+  .main-header {
+    flex-direction: column-reverse;
+    width: auto;
+
+    .heder-context {
+      text-align: center;
+      width: 80%;
+      padding: 50px;
+    }
+  }
+  .image-head {
+    width: 100%;
+    height: 100%;
+  }
 }
 </style>

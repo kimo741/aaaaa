@@ -16,6 +16,7 @@
 
       </q-toolbar>
     </q-header>
+
     <q-drawer v-model="leftDrawerOpen" side="left" overlay bordered>
       <q-list>
         <q-item-label header> Essential Links </q-item-label>
@@ -63,9 +64,7 @@ export default defineComponent({
     test (val) {
       return this.navStatus = val < 150 ? true : false
     }
-  },
-  created() {
-  },
+  }
 });
 </script>
 <style>

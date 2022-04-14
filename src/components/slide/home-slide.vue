@@ -13,12 +13,13 @@
               perspiciatis accusamus rem facere quisquam.</b
             >
             <div class="but">
-              <q-btn
+              <!-- <q-btn
                 color="black"
                 label="contact me"
                 size="1.1rem"
                 class="edd-but"
-              />
+              /> -->
+              <VEbutton />
             </div>
           </div>
         </div>
@@ -29,6 +30,15 @@
     </div>
   </div>
 </template>
+<script>
+import { defineComponent } from "vue";
+import VEbutton from "../shared/VEbutton.vue";
+
+export default defineComponent({
+  name: "ErrorNotFound",
+  components: { VEbutton },
+});
+</script>
 <style lang="scss">
 .container-header {
   // height: 100vh;
@@ -104,7 +114,7 @@
 }
 .main-header {
   background-color: #fff5f5;
-  height: 100%;
+  height: calc(100vh - 165px);
 }
 .but {
   padding-top: 15%;

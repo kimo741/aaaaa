@@ -41,12 +41,13 @@ export default defineComponent({
       font-size: 4rem;
       letter-spacing: 3px;
       font-weight: 500;
-      padding: 1rem;
+      padding: 0;
     }
     p {
       font-size: 1.4rem;
       line-height: 2rem;
       font-weight: 200;
+      padding-bottom: 1rem;
     }
   }
 }

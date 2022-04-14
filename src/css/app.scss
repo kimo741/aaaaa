@@ -31,3 +31,8 @@
 .drain-leave {
   transform: translateY(0);
 }
+h1,
+h2,
+h3 {
+  text-transform: capitalize;
+}

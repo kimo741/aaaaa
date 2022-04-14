@@ -3,6 +3,7 @@
   <div class="container ">
 <div class="row social-row-1">
   <div class="col">
+    <h3 class="main-h">Graphic design</h3>
     <h3>Graphic design</h3>
     <p>It's true that a picture tells more than a thousand words – and on social media platforms like Instagram and Facebook, top graphics can make or break your content. In my work, I focus on creating visual assets that work cross-functionally across different platforms and communicate your brand in the best way possible.</p>
     </div>
@@ -34,15 +35,22 @@ The initial contract is always for 3 months – this way, we can monitor togethe
     <h3>Pricing</h3>
     <p>On request – the total price depends on your business and needs.</p>
     </div>
+<<<<<<< HEAD
+  <div class="col but">
+=======
   <div class="col">
           <div class="but">
+>>>>>>> origin/main
             <q-btn
               color="black"
               label="VIEW MORE"
               size="1.3rem"
               class="edd-but"
             />
+<<<<<<< HEAD
+=======
           </div>
+>>>>>>> origin/main
     </div>
 
 </div>
@@ -88,4 +96,73 @@ export default defineComponent({
   padding: 1rem 2rem;
   color: #fff5f5 !important;
 }
+<<<<<<< HEAD
+
+
+@media screen and (max-width: 800px) and (min-width: 300px) {
+.social{
+
+
+&__row-main{
+    display: flex;
+  flex-direction: column;
+    text-align: center;
+  margin: auto;
+
+  }
+}
+.container{
+  max-width: none;
+  width: 100%;
+}
+.row{
+  flex-direction: column;
+  text-align: center;
+  padding: 0;
+  width: 100%;
+}
+.col{
+  width: 100%;
+  padding: 0 3rem;
+    box-shadow: 2px 2px 1px #fff;
+
+}
+
+.main-h{
+  position: relative;
+   &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        bottom: -50% ;
+        left: 0%;
+        background:linear-gradient(to right ,  #fff5f5 ,#000);
+      }
+   &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        top: -50% ;
+        left: 0%;
+        background:linear-gradient(to right , #000 , #fff5f5);
+      }
+
+}
+.but{
+  margin: auto;
+  position: relative;
+  background: #fff;
+  margin-top: 5rem;
+  .edd-but{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50% );
+  }
+}
+}
+=======
+>>>>>>> origin/main
 </style>

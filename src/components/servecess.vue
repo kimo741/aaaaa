@@ -21,7 +21,7 @@
                 outline
                 round
                 icon="eva-diagonal-arrow-right-up-outline"
-                size="4.1em"
+                size="1.1em"
                 class="edd-but text-capitalize"
               />
             </div>
@@ -79,5 +79,35 @@ export default defineComponent({
 }
 .div-but {
   padding: 4rem 0;
+}
+.edd-but {
+  position: relative;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem !important;
+  border: 1px solid rgba(0, 0, 0, 0.582);
+  &::before {
+    content: "Our Services";
+    position: absolute;
+    padding-top: 20%;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    color: #fff;
+    font-size: 2.5rem;
+    background-color: rgb(0, 0, 0);
+    font-weight: bolder;
+    font-family: NavFont;
+    z-index: 10;
+  }
+  &:hover {
+    &::before {
+      transition: all 0.4s ease-in-out !important;
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 </style>
