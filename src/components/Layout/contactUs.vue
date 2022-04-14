@@ -92,7 +92,10 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .contact-us {
+<<<<<<< HEAD
   height: calc(100vh - 165px);
+=======
+>>>>>>> origin/main
   margin-top: 2rem;
   h2 {
     color: $fontColor;

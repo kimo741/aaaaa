@@ -8,6 +8,7 @@
         <header-nav />
       </q-toolbar>
     </q-header>
+
     <q-drawer v-model="leftDrawerOpen" side="left" overlay bordered>
       <q-list>
         <q-item-label header> Essential Links </q-item-label>
@@ -30,6 +31,14 @@
       <router-view />
       <Fotter />
       <!-- </transition> -->
+      <transition
+        appear
+        enter-active-class="animated fadeIn"
+        leave-active-class="animated fadeOut"
+      >
+        <!-- <transition name="slide" mode="out-in"> -->
+        <router-view />
+      </transition>
     </q-page-container>
   </q-layout>
 </template>
@@ -38,7 +47,6 @@
 import { defineComponent, ref } from "vue";
 import EssentialLink from "components/EssentialLink.vue";
 import HeaderNav from "components/Layout/header-nav.vue";
-import Fotter from "src/components/Layout/Fotter.vue";
 
 // const linksList = [
 //   {
@@ -90,7 +98,6 @@ export default defineComponent({
 
   components: {
     HeaderNav,
-    Fotter,
   },
 
   // setup() {

@@ -48,6 +48,9 @@ export default defineComponent({
       min-width: 0;
       max-width: 100%;
 
+  &__container {
+    margin: auto;
+    &__col-1 {
       .servess-img {
         background-position: center;
         background-size: cover;
@@ -93,6 +96,7 @@ export default defineComponent({
   padding: 1rem 2rem;
   color: #fff5f5 !important;
 }
+<<<<<<< HEAD
 
 @media screen and (max-width: 800px) and (min-width: 300px) {
   .col {
@@ -127,4 +131,6 @@ export default defineComponent({
     width: 100%;
   }
 }
+=======
+>>>>>>> origin/main
 </style>
