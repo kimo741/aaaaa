@@ -39,8 +39,10 @@ export default defineComponent({
 .section-serveces {
   height: calc(100vh - 165px) !important;
   width: 100%;
+
   &__container {
     margin: auto;
+
     &__col-1 {
       height: 100%;
       width: 100%;
@@ -48,38 +50,45 @@ export default defineComponent({
       min-width: 0;
       max-width: 100%;
 
-  &__container {
-    margin: auto;
-    &__col-1 {
-      .servess-img {
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 100%;
-        width: 100%;
-      }
-    }
-    &__col-2 {
-      height: 100%;
-      padding: 4rem 5rem;
-      h2 {
-        font-family: NavFont;
-        font-size: 5rem;
-        color: $fontColor;
-        text-align: start;
-        font-weight: 500;
-      }
-      .col-paragraph {
-        width: 80%;
-        b {
-          font-weight: 400;
-          color: $fontColor;
-          line-height: 10px;
-          overflow-wrap: break-word;
-          white-space: break-spaces;
-          font-family: NavFont;
-          line-height: 1.7rem;
-          font-size: 1.4rem;
+      &__container {
+        margin: auto;
+
+        &__col-1 {
+          .servess-img {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 100%;
+          }
+        }
+
+        &__col-2 {
+          height: 100%;
+          padding: 4rem 5rem;
+
+          h2 {
+            font-family: NavFont;
+            font-size: 5rem;
+            color: $fontColor;
+            text-align: start;
+            font-weight: 500;
+          }
+
+          .col-paragraph {
+            width: 80%;
+
+            b {
+              font-weight: 400;
+              color: $fontColor;
+              line-height: 10px;
+              overflow-wrap: break-word;
+              white-space: break-spaces;
+              font-family: NavFont;
+              line-height: 1.7rem;
+              font-size: 1.4rem;
+            }
+          }
         }
       }
     }
@@ -96,7 +105,6 @@ export default defineComponent({
   padding: 1rem 2rem;
   color: #fff5f5 !important;
 }
-<<<<<<< HEAD
 
 @media screen and (max-width: 800px) and (min-width: 300px) {
   .col {
@@ -131,6 +139,4 @@ export default defineComponent({
     width: 100%;
   }
 }
-=======
->>>>>>> origin/main
 </style>
