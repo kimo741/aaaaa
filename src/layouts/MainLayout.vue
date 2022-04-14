@@ -16,11 +16,9 @@
 
       </q-toolbar>
     </q-header>
-
     <q-drawer v-model="leftDrawerOpen" side="left" overlay bordered>
       <q-list>
         <q-item-label header> Essential Links </q-item-label>
-
 
       </q-list>
     </q-drawer>
@@ -50,6 +48,7 @@ import StartNav from "components/Layout/Start-nav";
 import ScrolleNav from "components/Layout/Scrolle-nav";
 export default defineComponent({
   name: "MainLayout",
+
   components: {
     ScrolleNav,
     StartNav,
