@@ -1,21 +1,18 @@
 <template>
   <div class="container-header full-width">
     <div class="row full-width main-logo">
-      <div class="text-center full-width">LA DUNE</div>
+      <div class="text-center full-width">
+        <!-- LA DUNE -->
+        <q-img src="logo.png" />
+      </div>
       <div class="text-center full-width">
         <ul class="nav-ul full-width">
-          <li><router-link :to="'/home'">Home</router-link></li>
+          <li><router-link :to="'/'">Home</router-link></li>
           <li>
-            <router-link :to="''">Services</router-link>
+            <router-link :to="'/Services'">Services</router-link>
           </li>
           <li>
-            <router-link :to="''">About Me</router-link>
-          </li>
-          <li>
-            <router-link :to="''">Contact</router-link>
-          </li>
-          <li>
-            <router-link :to="''">Blog</router-link>
+            <router-link :to="'ContactUs'">Contact</router-link>
           </li>
         </ul>
       </div>
@@ -70,6 +67,8 @@ export default defineComponent({
   align-content: center;
   list-style: none;
   font-size: 1rem;
+  text-align: center;
+  padding: 0 !important;
   li {
     padding: 1rem;
     a {
