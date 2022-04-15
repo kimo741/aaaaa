@@ -1,438 +1,255 @@
+<template>
+  <section class="sc">
+    <div class="container">
+      <div class="section-cards">
+        <div class="row">
+          <div class="flip-card col-5">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <h1>باقة شهر</h1>
+                <button class="show-details">Show Deitails</button>
 
- <template>
-  <section class="section-tours" id="section-tours">
-                <div class="u-center-text u-margin-bottom-big">
-                    <h2 class="heading-secondary">
-                        Most popular tours
-                    </h2>
+                <img
+                  src="serv.avif"
+                  alt="Avatar"
+                  style="
+                    width: 100%;
+                    height: auto;
+                    max-width: 100%;
+                    border-radius: 20px;
+                  "
+                />
+              </div>
+              <div class="flip-card-back">
+                <div class="body">
+                  <p>12 بوست تصميم + محتوى •</p>
+                  <p>تعديل حجم 6 بوستات للستوري •</p>
+                  <p>6بوستات ستوري تفاعلية •</p>
+                  <p>تصوير 6 صور بشكل احترافي •</p>
+                  <p>فيديو للفكرة الدعائية لمدة 10 ث •</p>
+                  <p>
+                    حملة اعلانية خلال الشهر للفيديو بـ منصة • ( سناب شات ، تيك
+                    توك)
+                  </p>
+                  <p>تقرير شهري بالحملة الإعلانية •</p>
+                  <div class="div-but">
+                    <q-btn
+                      color="black"
+                      label="Get yours"
+                      size="1.1rem"
+                      class="edd-but"
+                      rounded
+                    />
+                  </div>
                 </div>
-
-                <div class="row">
-                    <div class="col-1-of-3">
-                       <div class="card">
-                           <div class="card__side card__side--front">
-                                <div class="card__picture card__picture--1">
-                                    &nbsp;
-                                </div>
-                                <h4 class="card__heading">
-                                    <span class="card__heading-span card__heading-span--1">The Sea Explorer</span>
-                                </h4>
-                                <div class="card__details">
-                                    <ul>
-                                        <li>3 day tours</li>
-                                        <li>Up to 30 people</li>
-                                        <li>2 tour guides</li>
-                                        <li>Sleep in cozy hotels</li>
-                                        <li>Difficulty: easy</li>
-                                    </ul>
-                                </div>
-                           </div>
-                           <div class="card__side card__side--back card__side--back-1">
-                                <div class="card__cta">
-                                    <div class="card__price-box">
-                                        <p class="card__price-only">Only</p>
-                                        <p class="card__price-value">$297</p>
-                                    </div>
-                                    <a href="#popup" class="btn btn--white">Book now!</a>
-                                </div>
-                            </div>
-                       </div>
-                    </div>
-
-
-                    <div class="col-1-of-3">
-                        <div class="card">
-                            <div class="card__side card__side--front">
-                                <div class="card__picture card__picture--2">
-                                    &nbsp;
-                                </div>
-                                <h4 class="card__heading">
-                                    <span class="card__heading-span card__heading-span--2">The Forest Hiker</span>
-                                </h4>
-                                <div class="card__details">
-                                    <ul>
-                                        <li>7 day tours</li>
-                                        <li>Up to 40 people</li>
-                                        <li>6 tour guides</li>
-                                        <li>Sleep in provided tents</li>
-                                        <li>Difficulty: medium</li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                            <div class="card__side card__side--back card__side--back-2">
-                                <div class="card__cta">
-                                    <div class="card__price-box">
-                                        <p class="card__price-only">Only</p>
-                                        <p class="card__price-value">$497</p>
-                                    </div>
-                                    <a href="#popup" class="btn btn--white">Book now!</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-1-of-3">
-                        <div class="card">
-                            <div class="card__side card__side--front">
-                                <div class="card__picture card__picture--3">
-                                    &nbsp;
-                                </div>
-                                <h4 class="card__heading">
-                                    <span class="card__heading-span card__heading-span--3">The Snow Adventurer</span>
-                                </h4>
-                                <div class="card__details">
-                                    <ul>
-                                        <li>5 day tours</li>
-                                        <li>Up to 15 people</li>
-                                        <li>3 tour guides</li>
-                                        <li>Sleep in provided tents</li>
-                                        <li>Difficulty: hard</li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                            <div class="card__side card__side--back card__side--back-3">
-                                <div class="card__cta">
-                                    <div class="card__price-box">
-                                        <p class="card__price-only">Only</p>
-                                        <p class="card__price-value">$897</p>
-                                    </div>
-                                    <a href="#popup" class="btn btn--white">Book now!</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card col-5">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <h1>باقة 3 أشهر</h1>
+                <button class="show-details">Show Deitails</button>
+                <img
+                  src="serv.avif"
+                  alt="Avatar"
+                  style="
+                    width: 100%;
+                    height: auto;
+                    max-width: 100%;
+                    border-radius: 20px;
+                  "
+                />
+              </div>
+              <div class="flip-card-back">
+                <div class="body">
+                  <p>36 بوست تصميم + محتوى •</p>
+                  <p>تعديل حجم 18 بوستات للستوري •</p>
+                  <p>18بوستات ستوري تفاعلية</p>
+                  <p>تصوير 18 صور بشكل احترافي</p>
+                  <p>3 فيديو للفكرة الدعائية لمدة 10 ث •</p>
+                  <p>
+                    حملة اعلانية خلال الشهر للفيديو بـ منصة ( سناب شات ، تيك
+                    توك) فكرة ابداعية لمنتج/ خدمة •
+                  </p>
+                  <p>تقرير شهري بالحملة الإعلانية •</p>
                 </div>
-
-                <div class="u-center-text u-margin-top-huge">
-                    <a href="#" class="btn btn--green">Discover all tours</a>
+                <div class="div-but">
+                  <q-btn
+                    color="black"
+                    label="Get yours"
+                    size="1.1rem"
+                    class="edd-but"
+                    rounded
+                  />
                 </div>
-            </section>
-            </template>
-            <script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+<script>
 import { defineComponent } from "vue";
 export default defineComponent({
-  name: "package",
+  name: "PackaCerd",
   components: {},
 });
 </script>
 
-
- <style lang="scss" scoped>
- $color-primary: #55c57a;
- $color-primary-light: #7ed56f;
- $color-primary-dark: #28b485;
-
- $color-secondary-light: #ffb900;
- $color-secondary-dark: #ff7730;
-
- $color-tertiary-light: #2998ff;
- $color-tertiary-dark: #5643fa;
-
- $color-grey-light-1: #f7f7f7;
- $color-grey-light-2: #eee;
-
- $color-grey-dark: #777;
- $color-grey-dark-2: #999;
- $color-grey-dark-3: #333;
-
- $color-white: #fff;
- $color-black: #000;
-
-
- // FONT
- $default-font-size: 1.6rem;
-
-
- // GRID
- $grid-width: 114rem;
- $gutter-vertical: 8rem;
- $gutter-vertical-small: 6rem;
- $gutter-horizontal: 6rem;
- .row {
-   max-width: $grid-width;
-   margin: 0 auto;
-
-   &:not(:last-child) {
-     margin-bottom: $gutter-vertical;
-
-   }
-
-
-
-   [class^="col-"] {
-     float: left;
-
-     &:not(:last-child) {
-       margin-right: $gutter-horizontal;
-
-
-     }
-
-
-   }
-
-   .col-1-of-2 {
-     width: calc((100% - #{$gutter-horizontal}) / 2);
-
-   }
-
-   .col-1-of-3 {
-     width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
-   }
-
-   .col-2-of-3 {
-     width: calc(2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal});
-   }
-
-   .col-1-of-4 {
-     width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
-   }
-
-   .col-2-of-4 {
-     width: calc(2 * ((100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal});
-   }
-
-   .col-3-of-4 {
-     width: calc(3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + 2 * #{$gutter-horizontal});
-   }
-
- }
- .section-tours {
-   background-color: $color-grey-light-1;
-   padding: 25rem 0 15rem 0;
-   margin-top: -10rem;
-
-
- }
-
- .section-stories {
-   position: relative;
-   padding: 15rem 0;
-
-
- }
-
- .section-book {
-   padding: 15rem 0;
-   background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
-
-
- }
- .card {
-
-   // FUNCTIONALITY
-   perspective: 150rem;
-   -moz-perspective: 150rem;
-   position: relative;
-   height: 52rem;
-
-   &__side {
-     height: 52rem;
-     transition: all .8s ease;
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     -webkit-backface-visibility: hidden;
-     backface-visibility: hidden;
-     border-radius: 3px;
-     overflow: hidden;
-     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
-
-     &--front {
-       background-color: $color-white;
-     }
-
-     &--back {
-       transform: rotateY(180deg);
-
-       &-1 {
-         background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
-       }
-
-       &-2 {
-         background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
-       }
-
-       &-3 {
-         background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
-       }
-     }
-   }
-
-
-   &:hover &__side--front {
-     transform: rotateY(-180deg);
-   }
-
-   &:hover &__side--back {
-     transform: rotateY(0);
-   }
-
-
-   // FRONT SIDE STYLING
-   &__picture {
-     background-size: cover;
-     height: 23rem;
-     background-blend-mode: screen;
-     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-     border-top-left-radius: 3px;
-     border-top-right-radius: 3px;
-
-     &--1 {
-       background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
-       url("https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=764,h=624,fit=scale-down/dovilelxpfw/img-mnllKKGWbPub6RLL.jpg");
-     }
-
-     &--2 {
-       background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark),
-       url("https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=764,h=624,fit=scale-down/dovilelxpfw/img-mnllKKGWbPub6RLL.jpg");
-     }
-
-     &--3 {
-       background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark),
-       url("https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=764,h=624,fit=scale-down/dovilelxpfw/img-mnllKKGWbPub6RLL.jpg");
-     }
-   }
-
-   &__heading {
-     font-size: 2.8rem;
-     font-weight: 300;
-     text-transform: uppercase;
-     text-align: right;
-     color: $color-white;
-     position: absolute;
-     top: 12rem;
-     right: 2rem;
-     width: 75%;
-
-   }
-
-   &__heading-span {
-     padding: 1rem 1.5rem;
-     -webkit-box-decoration-break: clone;
-     box-decoration-break: clone;
-
-     &--1 {
-       background-image: linear-gradient(to right bottom,
-         rgba($color-secondary-light, .85),
-         rgba($color-secondary-dark, .85));
-     }
-
-     &--2 {
-       background-image: linear-gradient(to right bottom,
-         rgba($color-primary-light, .85),
-         rgba($color-primary-dark, .85));
-     }
-
-     &--3 {
-       background-image: linear-gradient(to right bottom,
-         rgba($color-tertiary-light, .85),
-         rgba($color-tertiary-dark, .85));
-     }
-   }
-
-   &__details {
-     padding: 3rem;
-
-     ul {
-       list-style: none;
-       width: 80%;
-       margin: 0 auto;
-
-       li {
-         text-align: center;
-         font-size: 1.5rem;
-         padding: 1rem;
-
-         &:not(:last-child) {
-           border-bottom: 1px solid $color-grey-light-2;
-         }
-       }
-     }
-   }
-
-   // FRONT SIDE STYLING
-   &__cta {
-     position: absolute;
-     top: 50%;
-     left: 50%;
-     transform: translate(-50%, -50%);
-     width: 90%;
-     text-align: center;
-   }
-
-   &__price-box {
-     text-align: center;
-     color: $color-white;
-     margin-bottom: 8rem;
-   }
-
-   &__price-only {
-     font-size: 1.4rem;
-     text-transform: uppercase;
-   }
-
-   &__price-value {
-     font-size: 6rem;
-     font-weight: 100;
-   }
-
-
-
-
-
-   //@include respond(tab-port) {
-   @media only screen and (max-width: 56.25em),
-   only screen and (hover: none) {
-
-     height: auto;
-     border-radius: 3px;
-     background-color: $color-white;
-     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
-
-     &__side {
-       height: auto;
-       position: relative;
-       box-shadow: none;
-
-       &--back {
-         transform: rotateY(0);
-         clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
-       }
-     }
-
-     &:hover &__side--front {
-       transform: rotateY(0);
-     }
-
-
-     &__details {
-       padding: 1rem 3rem;
-     }
-
-     // FRONT SIDE STYLING
-     &__cta {
-       position: relative;
-       top: 0%;
-       left: 0;
-       transform: translate(0);
-       width: 100%;
-       padding: 7rem 4rem 4rem 4rem;
-     }
-
-     &__price-box {
-       margin-bottom: 3rem;
-     }
-
-     &__price-value {
-       font-size: 4rem;
-     }
-   }
-
- }
- </style>
+<style lang="scss" scoped>
+.flip-card {
+  background-color: transparent;
+  width: 25rem;
+  height: 40rem;
+  perspective: 1000px;
+  font-style: italic;
+  h1 {
+    font-family: NavFont;
+    color: rgb(34, 34, 34);
+    font-size: 4rem;
+  }
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  margin: auto;
+  width: 90%;
+  height: 90%;
+  padding: 3rem;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  text-align: center;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #fff5f5;
+  color: black;
+  border-radius: 20px;
+  .show-details {
+    display: none;
+  }
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: #cb8a49;
+  color: #000;
+  transform: rotateY(180deg);
+  border-radius: 20px;
+  .body {
+    font-size: 1.3rem;
+    font-weight: 400;
+    text-align: right;
+    margin: auto;
+    margin: 10% 6% 0 !important;
+    p {
+      position: relative;
+      line-height: 2rem;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        top: 120%;
+        right: 0%;
+        background-color: #ddd;
+      }
+    }
+  }
+}
+.sc {
+  width: 100%;
+  margin: auto;
+}
+
+.row {
+  justify-content: space-around !important;
+}
+.div-but {
+  text-align: center;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  .edd-but {
+    background-color: #fff5f5 !important;
+    color: rgb(31, 31, 31) !important;
+    width: 50% !important;
+    height: 60px !important;
+    border-radius: 15px;
+    font-weight: bolder;
+    &:hover {
+      transition: all 0.4s ease-in-out;
+      border: 1px solid #000;
+      background-color: #cb8a49 !important;
+      color: #000;
+    }
+  }
+}
+@media screen and (max-width: 800px) and (min-width: 300px) {
+  .flip-card-front {
+    h1 {
+      position: relative;
+      font-size: 2rem;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        bottom: -10%;
+        left: 0;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.722), #fff);
+      }
+    }
+    .show-details {
+      display: block;
+      margin: 0 auto 1rem;
+      width: 60%;
+      height: 10%;
+      border-radius: 15px;
+      font-weight: bold;
+      // background: linear-gradient(to right, #cb8a49, #fff5f5);
+      background-color: #cb8a49;
+      border: none;
+      color: #fff;
+      font-family: NavFont;
+      font-size: 1.6rem;
+      border: 1px solid rgba(0, 0, 0, 0.66);
+      animation: leaves 0.8s ease-in-out infinite;
+      text-shadow: 1px 1px 1px #000;
+    }
+  }
+}
+
+@keyframes leaves {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+  }
+}
+</style>

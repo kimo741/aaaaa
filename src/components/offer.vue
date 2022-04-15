@@ -1,5 +1,4 @@
 <template>
-
   <section class="section-serveces">
     <div class="container section-serveces__container">
       <div class="row">
@@ -7,7 +6,7 @@
           <h2>First consultation for free</h2>
           <div class="col-paragraph">
             <b
-            >People don't buy goods and services. They buy solutions and
+              >People don't buy goods and services. They buy solutions and
               stories that you tell.
             </b>
           </div>
@@ -21,14 +20,14 @@
           </div>
         </div>
         <div class="col section-serveces__container__col-1">
-          <img class="servess-img" src="serv.avif" alt=""/>
+          <img class="servess-img" src="serv.avif" alt="" />
         </div>
       </div>
     </div>
   </section>
 </template>
 <script>
-import {defineComponent} from "vue";
+import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "HomePresentation",
@@ -37,10 +36,10 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .section-serveces {
-  height: calc(100vh - 165px) !important;
+  height: 100% !important;
   width: 100%;
-
-  &__container {
+  margin: 4rem;
+  a &__container {
     margin: auto;
 
     &__col-1 {

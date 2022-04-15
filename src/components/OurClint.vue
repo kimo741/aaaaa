@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="slider">
     <q-carousel
       v-model="slide"
       transition-prev="scale"
@@ -12,7 +12,7 @@
       padding
       arrows
       height="450px"
-      class="text-white shadow-1 rounded-borders bg-ourclint"
+      class="text-white shadow-1 rounded-borders bg-ourclint slider"
       :autoplay="2500"
     >
       <q-carousel-slide
@@ -162,5 +162,41 @@ export default defineComponent({
 }
 .bg-ourclint {
   background-color: #fff;
+}
+@media screen and (max-width: 800px) and (min-width: 300px) {
+  .slider-container {
+    width: 100% !important;
+    height: auto !important;
+    padding: 20px;
+    height: max-content !important;
+    overflow: none !important;
+    flex-direction: row !important;
+    text-align: right !important;
+    .sliderimg {
+      padding: 0;
+      width: 40%;
+      height: 75%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .slider-content {
+      line-height: 2rem;
+      width: 50%;
+      height: 100% !important;
+      h3 {
+        font-size: 2.5rem;
+        padding: 0;
+      }
+      p {
+        padding: 0 !important;
+      }
+    }
+
+    h2 {
+      text-align: center;
+    }
+  }
 }
 </style>

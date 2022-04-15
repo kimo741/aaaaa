@@ -1,7 +1,7 @@
 <template>
   <div class="container-header full-width main-header">
     <div class="container">
-      <div class="full-width Inline Flex row justify-evenly">
+      <div class="full-width Inline row justify-evenly">
         <div class="heder-context col">
           <div class="flex column">
             <h1 class="heder-context__h1">Hello, so good to see you!</h1>
@@ -19,12 +19,20 @@
                 size="1.1rem"
                 class="edd-but"
               /> -->
-              <VEbutton />
+              <q-btn
+                color="black"
+                label="Get yours"
+                size="1.1rem"
+                class="edd-but"
+              />
             </div>
           </div>
         </div>
         <div class="col image-header">
-          <q-img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=764,h=624,fit=scale-down/dovilelxpfw/img-mnllKKGWbPub6RLL.jpg" class="image-head" />
+          <q-img
+            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=764,h=624,fit=scale-down/dovilelxpfw/img-mnllKKGWbPub6RLL.jpg"
+            class="image-head"
+          />
         </div>
       </div>
     </div>
@@ -32,11 +40,10 @@
 </template>
 <script>
 import { defineComponent } from "vue";
-import VEbutton from "../shared/VEbutton.vue";
 
 export default defineComponent({
   name: "ErrorNotFound",
-  components: { VEbutton },
+  components: {},
 });
 </script>
 <style lang="scss">
@@ -131,5 +138,35 @@ export default defineComponent({
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+@media screen and (max-width: 800px) and (min-width: 300px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+  }
+  .main-header {
+    height: 100%;
+    width: 100%;
+    h1 {
+      font-size: 2rem;
+    }
+    text-align: center;
+    .row {
+      flex-direction: column;
+    }
+  }
+  .but {
+    margin-bottom: 3rem;
+  }
+  .image-header {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0;
+    margin: auto;
+    .image-head {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 </style>

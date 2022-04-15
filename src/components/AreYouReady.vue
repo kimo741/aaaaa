@@ -106,4 +106,33 @@ h3 {
 .aur {
   background-color: #fff5f5;
 }
+@media screen and (max-width: 800px) and (min-width: 300px) {
+  .ready-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .row {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    .col {
+      position: relative;
+      margin: 2rem 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        bottom: -5%;
+        right: 0%;
+        background: linear-gradient(to left, #fff5f5, #ddd);
+      }
+    }
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+}
 </style>

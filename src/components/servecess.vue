@@ -7,13 +7,18 @@
             <img class="servess-img" src="serv.avif" alt="" />
           </div>
           <div class="col section-serveces__container__col-2">
-            <h2>Services</h2>
+            <h2>خدماتنا</h2>
             <div class="col-paragraph">
-              <b
-                >From campaign planning and consultation to content creation and
-                extended social media campaigning, I'm here to help your brand
-                sound like you online.</b
-              >
+              <b>
+                <b>كل ما يلم بالتسويق وتبعاتھ </b>
+                <b> <strong>الدراسات الاس()اتيجية و التخطيط </strong> <br /></b>
+                <b>التسويق - التواصل - العلامة التجارية </b>
+                <b>تصميم الهويات البصرية والعلامات التجارية </b>
+                <b
+                  >كتابة المحتوي والتصميم الجرافيكي - من الفكرة وحúù الإخراج
+                </b>
+                <b>التصوير الفوتوغراêي، تصوير الفيديو والمونتاج </b>
+              </b>
             </div>
             <div class="div-but">
               <q-btn
@@ -40,6 +45,7 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .section-serveces {
+  background-color: #fff5f5;
   &__container {
     margin: auto;
     &__col-1 {
@@ -55,11 +61,21 @@ export default defineComponent({
       height: 100%;
       padding: 4rem 5rem;
       h2 {
+        position: relative;
         font-family: NavFont;
         font-size: 5rem;
         color: $fontColor;
         text-align: start;
         font-weight: 500;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 90%;
+          height: 3px;
+          top: 120%;
+          right: 0%;
+          background: linear-gradient(to left, #fff5f5, #ddd);
+        }
       }
       .col-paragraph {
         width: 80%;
@@ -107,6 +123,19 @@ export default defineComponent({
       transition: all 0.4s ease-in-out !important;
       width: 100%;
       height: 100%;
+    }
+  }
+}
+@media screen and (max-width: 800px) and (min-width: 300px) {
+  .main-header {
+    display: flex;
+    flex-direction: row !important;
+  }
+  .row {
+    flex-direction: column-reverse;
+    text-align: right !important;
+    h2 {
+      text-align: center;
     }
   }
 }

@@ -36,3 +36,9 @@ h2,
 h3 {
   text-transform: capitalize;
 }
+@media screen and (max-width: 800px) and (min-width: 300px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+  }
+}

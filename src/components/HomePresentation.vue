@@ -3,15 +3,25 @@
     <section class="section-pres">
       <div class="pres container">
         <div class="pres__content text-center">
-          <h2>My name is Dovile</h2>
+          <h2>من نحن</h2>
           <p>
-            I'm your new social media bestie. My mission is to help small and
-            medium-sized businesses grow their audience and brand recognition
-            through social media. To do that, I believe it's paramount to create
-            a committed and genuine community that has a positive influence on
-            people’s lives beyond the online sphere. My goal is to help you
-            understand the power of social media and create connections that go
-            beyond the internet.
+            لدون - كعملائھ مشروع ناUVW يسSى للارتقاء بالمشاريع الناشئة مثلھ من
+            الناحية التسويقية.
+          </p>
+          <p>
+            <strong>لدون</strong> <br />
+            كعملائة مشروع ناشئ يسعى للارتقاءبالمشاريع الناشئة مثله من الناحية
+            التسويقيه
+          </p>
+          <p>
+            <strong>رؤيتنا</strong> <br />
+            هي ان نكون الذراع الأيمن والخيار الأقرب للمشاريع الصغيره
+          </p>
+          <p>
+            <strong>مهمتنا</strong> <br />
+            نشرثقافة التسويق الكريم والمعطاء لإيماننا بأنھ أحد أهم سبل نجاح
+            المشاريع وتطويرها ونموها من الفكرة إuى العمل وإuى شركات تشغيلية ذات
+            رأس مال مستقل وقوة بشرية داعمة للمجتمع الخاص والمصلحة العامة.
           </p>
         </div>
       </div>
@@ -27,8 +37,8 @@ export default defineComponent({
 </script>
 <style lang="scss">
 .section-pres {
-  background-color: #fff5f5;
-  padding: 2rem 0;
+  background-color: #fff;
+  margin: 6rem 0;
 }
 .pres {
   &__content {
@@ -38,16 +48,56 @@ export default defineComponent({
     font-family: NavFont;
     color: $fontColor;
     h2 {
+      position: relative;
       font-size: 4rem;
       letter-spacing: 3px;
       font-weight: 500;
       padding: 0;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        top: 120%;
+        right: 0%;
+        background: linear-gradient(to right, #fff5f5, #999);
+      }
     }
     p {
       font-size: 1.4rem;
       line-height: 2rem;
       font-weight: 200;
       padding-bottom: 1rem;
+      line-height: 3rem;
+
+      strong {
+        position: relative;
+        font-size: 2rem;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 3px;
+          top: 120%;
+          right: 0%;
+          background: linear-gradient(to right, #fff5f5, #999);
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 800px) and (min-width: 300px) {
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .pres__content {
+    text-align: right !important;
+    h2 {
+      position: relative;
+    }
+    p {
+      line-height: 3rem;
     }
   }
 }
