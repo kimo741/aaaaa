@@ -1,6 +1,8 @@
 <template>
   <section class="sc">
     <div class="container">
+      <div class="package-header"><h2>باقات</h2></div>
+
       <div class="section-cards">
         <div class="row">
           <div class="flip-card col-5">
@@ -210,7 +212,7 @@ export default defineComponent({
 }
 .sc {
   width: 100%;
-  margin: auto;
+  margin: 5rem auto;
 }
 
 .row {
@@ -234,6 +236,22 @@ export default defineComponent({
       background-color: $sucColor !important;
       color: #000;
     }
+  }
+}
+.package-header {
+  text-align: center;
+  margin: auto;
+  position: relative;
+  width: 10%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -10%;
+    left: 0%;
+    background: linear-gradient(to right, $maincolor, #000);
   }
 }
 @media screen and (max-width: 800px) and (min-width: 300px) {

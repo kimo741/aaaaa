@@ -20,11 +20,17 @@
       </div>
       <!--social icons -->
       <div class="flex justify-between">
-        <a href=""><i class="fa-brands fa-snapchat-square fa-2xl"></i></a>
-        <a href=""> <i class="fa-brands fa-instagram-square fa-2xl"></i></a>
-        <a href=""> <i class="fa-brands fa-tiktok fa-2xl"></i></a>
-        <a href=""> <i class="fa-brands fa-facebook-square fa-2xl"></i></a>
-        <a href=""> <i class="fa-brands fa-linkedin fa-2xl"></i></a>
+        <a class="col" href=""
+          ><i class="fa-brands fa-snapchat-square fa-2xl"></i
+        ></a>
+        <a class="col" href="">
+          <i class="fa-brands fa-instagram-square fa-2xl"></i
+        ></a>
+        <a class="col" href=""> <i class="fa-brands fa-tiktok fa-2xl"></i></a>
+        <a class="col" href="">
+          <i class="fa-brands fa-facebook-square fa-2xl"></i
+        ></a>
+        <a class="col" href=""> <i class="fa-brands fa-linkedin fa-2xl"></i></a>
       </div>
 
       <!-- log in -->

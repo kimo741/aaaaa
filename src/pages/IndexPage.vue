@@ -4,6 +4,7 @@
     <!-- <brand-name /> -->
     <HomePresentation />
     <Servecess />
+    <package-card />
     <AreYouReady />
     <OurClint />
   </q-page>
@@ -17,6 +18,7 @@ import HomePresentation from "src/components/HomePresentation.vue";
 import Servecess from "../components/servecess.vue";
 import AreYouReady from "../components/AreYouReady.vue";
 import OurClint from "../components/OurClint.vue";
+import PackageCard from "src/components/PackageCard.vue";
 
 export default defineComponent({
   name: "IndexPage",
@@ -27,6 +29,7 @@ export default defineComponent({
     Servecess,
     AreYouReady,
     OurClint,
+    PackageCard,
   },
 });
 </script>

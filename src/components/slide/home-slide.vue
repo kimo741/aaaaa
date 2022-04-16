@@ -4,7 +4,14 @@
       <div class="full-width Inline row justify-evenly">
         <div class="heder-context col">
           <div class="flex column">
-            <h1 class="heder-context__h1">Hello, so good to see you!</h1>
+            <!-- <h1 class="heder-context__h1">Hello, so good to see you!</h1> -->
+            <h1 class="heder-context__h1">
+
+              <lang-swetcher />
+
+<!--              {{ $t('nativeName') }}-->
+
+            </h1>
 
             <b class="heder-context__b"
               >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
@@ -40,10 +47,15 @@
 </template>
 <script>
 import { defineComponent } from "vue";
+import LangSwetcher from "components/lang-swetcher";
 
 export default defineComponent({
   name: "ErrorNotFound",
-  components: {},
+  components: {LangSwetcher},
+  created() {
+    console.log(this.$i18n = 'ar')
+    console.log(this.$i18n)
+  }
 });
 </script>
 <style lang="scss">

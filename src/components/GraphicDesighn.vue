@@ -67,6 +67,8 @@ export default defineComponent({
 
 .social-row-1 {
   width: 50%;
+  text-align: center !important;
+  margin: auto;
 }
 
 .col,
@@ -87,11 +89,10 @@ export default defineComponent({
   font-weight: 300;
 }
 
-.but {
-  padding-top: 15%;
-}
 
 .edd-but {
+  text-align: center;
+  margin: auto;
   opacity: 0.8;
   font-size: 1rem !important;
   font-weight: 300 !important;

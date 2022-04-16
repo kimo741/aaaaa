@@ -1,6 +1,6 @@
 <template>
 <section class="container social">
-<div class="row social__row-main">
+<div class="row social__row--main">
   <div class="col social__row--main-col">
     <h3 class="main-h">Social Media Management</h3>
     <p>Whether you need help with planning the right kinds of campaigns for your social media accounts or need to establish a general social media strategy in the first place, I'll work closely with you to identify how we can scale your social media activities to a whole new level. </p>
@@ -53,19 +53,18 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-.social{
+.social__row--main{
   color: $fontColor;
   font-family: NavFont;
-  &__row-main{
+
     width: 70%;
     &-col{
+      margin:auto;
       h3{
 
       }
 
     }
-
-  }
 
 }
 .col,
