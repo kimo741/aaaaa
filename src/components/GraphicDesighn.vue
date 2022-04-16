@@ -87,6 +87,7 @@ export default defineComponent({
   font-size: 1.3rem;
   letter-spacing: 0.3px;
   font-weight: 300;
+
 }
 
 
@@ -101,6 +102,23 @@ export default defineComponent({
 }
 
 @media screen and (max-width: 800px) and (min-width: 300px) {
+    .but {
+    margin: auto !important;
+    background: $maincolor;
+    transform:none !important;
+    padding: 5rem 0 !important;
+        .edd-but {
+      color: #000 !important;
+      text-shadow: 1px 1px  1px rgba(0, 0, 0, 0.63);
+      border: 1px solid #ddd;
+      font-weight: bolder;
+      font-size: 1.3rem !important;
+      transform: translateX(-50%);
+    }
+
+
+
+    }
   .social {
 
 
@@ -151,20 +169,30 @@ export default defineComponent({
       left: 0%;
       background: linear-gradient(to right, #000, $maincolor);
     }
-
   }
+}
   .but {
     margin: auto;
-    position: relative;
     background: $maincolor;
-    margin-top: 1rem;
+       transform: translateX(20%);
 
     .edd-but {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      width: 12rem !important;
+      height: 5rem;
+      margin: auto;
+      background-color: transparent !important;
+      color: #000 !important;
+      text-shadow: 1px 1px  1px rgba(0, 0, 0, 0.63);
+      border: 1px solid #ddd;
+      font-weight: bolder;
+      font-size: 1.3rem !important;
+      &:hover{
+        transition: all 0.4s ease-in-out;
+        background: #000 !important;
+        color: $maincolor !important;
+
+      }
     }
   }
-}
 </style>
