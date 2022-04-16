@@ -3,5 +3,5 @@ import ar from './ar'
 
 export default {
   'en-US': enUS,
-  'ar': ar,
+  'ar': ar
 }

@@ -1,7 +1,8 @@
 <template>
+  <!-- ...... -->
   <q-select
-    v-model="lang"
-    :options="langOptions"
+    v-model="locale"
+    :options="localeOptions"
     label="Quasar Language"
     dense
     borderless
@@ -10,42 +11,24 @@
     options-dense
     style="min-width: 150px"
   />
-
-  {{ $q.lang.getLocale() }}
+  <!-- ...... -->
+  {{ locale }}
+  {{ $t('failed') }}
 </template>
 
 <script>
-import { useQuasar } from 'quasar'
-import languages from 'quasar/lang/index.json'
 import { ref, watch } from 'vue'
-
-const appLanguages = languages.filter(lang =>
-  [ 'ar', 'en-US' ].includes(lang.isoName)
-)
-
-const langOptions = appLanguages.map(lang => ({
-  label: lang.nativeName, value: lang.isoName
-}))
+import { useI18n } from 'vue-i18n'
 
 export default {
   setup () {
-    const $q = useQuasar()
-    const lang = ref($q.lang.isoName)
-
-    watch(lang, val => {
-      // dynamic import, so loading on demand only
-      $i18n.locale = lang
-      import(
-        /* webpackInclude: /(de|en-US)\.js$/ */
-      'quasar/lang/' + val
-        ).then(lang => {
-          console.log(lang)
-      })
-    })
-
+    const { locale } = useI18n({ useScope: 'global' })
     return {
-      lang,
-      langOptions
+      locale,
+      localeOptions: [
+        { value: 'en-US', label: 'English' },
+        { value: 'ar', label: 'العربيه' }
+      ]
     }
   }
 }
