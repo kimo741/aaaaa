@@ -120,7 +120,7 @@ export default defineComponent({
   width: 50%;
 }
 .main-header {
-  background-color: #fff5f5;
+  background-color: $maincolor;
   height: calc(100vh - 165px);
 }
 .but {

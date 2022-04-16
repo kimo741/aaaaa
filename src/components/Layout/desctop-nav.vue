@@ -1,12 +1,12 @@
 <template>
-    <router-link
-      v-for="(link, i) in links"
-      :key="i"
-      :to="link.url"
-      class="link"
-      :style="'font-size:' + fontSize + 'rem;' + 'font-famile:' + fontFamile"
+  <router-link
+    v-for="(link, i) in links"
+    :key="i"
+    :to="link.url"
+    class="link"
+    :style="'font-size:' + fontSize + 'rem;' + 'font-famile:' + fontFamile"
     >{{ link.name }}</router-link
-    >
+  >
 </template>
 
 <script>
@@ -14,35 +14,39 @@ export default {
   props: {
     fontSize: {
       type: Number,
-      default: () => {'1.1'}
+      default: () => {
+        "1.1";
+      },
     },
     fontFamile: {
       type: String,
-      default: () => {'NavFont'}
-    }
+      default: () => {
+        "NavFont";
+      },
+    },
   },
   data() {
     return {
       links: [
         {
           name: "Home",
-          url: "/"
+          url: "/",
         },
         {
           name: "Services",
-          url: "/Services"
+          url: "/Services",
         },
         {
           name: "About",
-          url: "/About"
+          url: "/About",
         },
         {
           name: "ContactUs",
-          url: "/ContactUs"
+          url: "/ContactUs",
         },
-      ]
+      ],
     };
-  }
+  },
 };
 </script>
 

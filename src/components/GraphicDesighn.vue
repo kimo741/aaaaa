@@ -4,7 +4,6 @@
       <div class="row social-row-1">
         <div class="col">
           <h3 class="main-h">Graphic design</h3>
-          <h3>Graphic design</h3>
           <p>It's true that a picture tells more than a thousand words – and on social media platforms like Instagram
             and Facebook, top graphics can make or break your content. In my work, I focus on creating visual assets
             that work cross-functionally across different platforms and communicate your brand in the best way
@@ -63,7 +62,7 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .section-graph {
-  background-color: #fff5f5;
+  background-color: $maincolor;
 }
 
 .social-row-1 {
@@ -97,7 +96,7 @@ export default defineComponent({
   font-size: 1rem !important;
   font-weight: 300 !important;
   padding: 1rem 2rem;
-  color: #fff5f5 !important;
+  color: $maincolor !important;
 }
 
 @media screen and (max-width: 800px) and (min-width: 300px) {
@@ -125,7 +124,7 @@ export default defineComponent({
   .col {
     width: 100%;
     padding: 0 3rem;
-    box-shadow: 2px 2px 1px #fff;
+    box-shadow: 2px 2px 1px $sucColor;
 
   }
 
@@ -139,7 +138,7 @@ export default defineComponent({
       height: 3px;
       bottom: -50%;
       left: 0%;
-      background: linear-gradient(to right, #fff5f5, #000);
+      background: linear-gradient(to right, $maincolor, #000);
     }
 
     &::before {
@@ -149,15 +148,15 @@ export default defineComponent({
       height: 3px;
       top: -50%;
       left: 0%;
-      background: linear-gradient(to right, #000, #fff5f5);
+      background: linear-gradient(to right, #000, $maincolor);
     }
 
   }
   .but {
     margin: auto;
     position: relative;
-    background: #fff;
-    margin-top: 5rem;
+    background: $maincolor;
+    margin-top: 1rem;
 
     .edd-but {
       position: absolute;

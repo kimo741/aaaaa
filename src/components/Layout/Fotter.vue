@@ -2,7 +2,7 @@
   <section class="section-foter">
     <div class="container">
       <div class="flex">
-        <div class="row full-width hei">
+        <div class="row hei">
           <div class="col-4">
             <div class="fotter-logo">
               <img src="logo.jpeg" alt="" class="logo-im" />
@@ -11,7 +11,7 @@
           <div class="col-4 powered-div">
             <div class="center powered"><p>Powered by &copy;</p></div>
           </div>
-          <div class="col-4">
+          <div class="col-4 nav-toggle-screen">
             <ul class="nav-ul">
               <li><router-link :to="'/'">Home</router-link></li>
               <li>
@@ -33,16 +33,16 @@ export default defineComponent({ name: "FotterPage", components: {} });
 </script>
 <style lang="scss" scoped>
 .section-foter {
-  height: 7rem !important;
+  box-sizing: border-box;
   margin: auto;
   text-align: center;
-  background-color: #fff;
+  background-color: $sucColor;
   color: $fontColor;
   padding: 0;
-  box-shadow: -2px -2px 4px #fff5f5;
+  box-shadow: -2px -2px 4px $maincolor;
 }
+
 .section-foter {
-  margin-top: 2rem;
   .fotter-logo {
     height: 6rem;
     width: 6rem;
@@ -50,9 +50,7 @@ export default defineComponent({ name: "FotterPage", components: {} });
     padding-top: 1rem;
   }
 }
-.row {
-  // width: (100% / 3);
-}
+
 .powered-div {
   text-align: center;
   margin: auto;
@@ -61,11 +59,12 @@ export default defineComponent({ name: "FotterPage", components: {} });
 .nav-ul {
   display: flex;
   justify-content: center;
-  align-content: center;
   list-style: none;
   font-size: 1rem;
   text-align: center;
   padding: 0 !important;
+  width: 100%;
+  max-width: 100%;
   li {
     padding: 1rem;
     a {
@@ -99,24 +98,30 @@ export default defineComponent({ name: "FotterPage", components: {} });
 }
 .hei {
   height: 100%;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: 100%;
 }
 .logo-im {
   width: 90%;
   height: 90%;
   margin: auto;
 }
-@media screen and (max-width: 800px) and (min-width: 300px) {
-  .section-foter {
-    width: 100%;
-    bottom: 100%;
-    display: block;
-    z-index: 65515;
-    left: 0;
-  }
+@media screen and (max-width: 800px) and (min-width: 200px) {
+  // .section-foter {
+  //   width: 100%;
+  //   bottom: 100%;
+  //   display: block;
+  //   z-index: 65515;
+  //   left: 0;
+  // }
   .nav-ul {
     flex-direction: column;
     width: 100%;
     height: 100%;
+  }
+  .nav-toggle-screen {
+    display: none;
   }
 }
 </style>

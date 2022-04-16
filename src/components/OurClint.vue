@@ -110,14 +110,15 @@ export default defineComponent({
 </script>
 <style lang="scss">
 .slider-container {
-  padding: 5rem 1rem;
+  padding: 1rem 1rem;
   overflow: hidden;
+  background-color: $maincolor;
 }
 .slider-content {
   color: $fontColor;
   width: 30%;
   text-align: start;
-  padding: 1rem 2rem 5rem;
+  padding: 1rem 10px;
   h3 {
     font-family: NavFont;
     font-size: 3rem;
@@ -161,7 +162,7 @@ export default defineComponent({
   }
 }
 .bg-ourclint {
-  background-color: #fff;
+  background-color: $sucColor;
 }
 @media screen and (max-width: 800px) and (min-width: 300px) {
   .slider-container {

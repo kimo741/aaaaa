@@ -37,14 +37,14 @@ export default defineComponent({
 </script>
 <style lang="scss">
 .section-pres {
-  background-color: #fff;
+  background-color: $sucColor;
   margin: 6rem 0;
 }
 .pres {
   &__content {
     width: 50%;
     margin: auto;
-    text-align: center;
+    text-align: right;
     font-family: NavFont;
     color: $fontColor;
     h2 {
@@ -60,7 +60,7 @@ export default defineComponent({
         height: 3px;
         top: 120%;
         right: 0%;
-        background: linear-gradient(to right, #fff5f5, #999);
+        background: linear-gradient(to right, $maincolor, #999);
       }
     }
     p {
@@ -80,7 +80,7 @@ export default defineComponent({
           height: 3px;
           top: 120%;
           right: 0%;
-          background: linear-gradient(to right, #fff5f5, #999);
+          background: linear-gradient(to right, $maincolor, #999);
         }
       }
     }

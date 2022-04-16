@@ -1,24 +1,25 @@
 <template>
-  <div class="container-header full-width">
-    <div class="row full-width main-logo">
-      <div class="text-center full-width">
-        <!-- LA DUNE -->
-        <logo-img :width="150" />
-      </div>
-      <div class="text-center full-width">
-        <ul class="nav-ul full-width">
-          <li><router-link :to="'/'">Home</router-link></li>
-          <li>
-            <router-link :to="'/Services'">Services</router-link>
-          </li>
-          <li>
-            <router-link :to="'ContactUs'">Contact</router-link>
-          </li>
-        </ul>
+  <section class="section-nav">
+    <div class="container-header full-width">
+      <div class="row full-width main-logo">
+        <div class="text-center full-width">
+          <!-- LA DUNE -->
+          <logo-img :width="150" />
+        </div>
+        <div class="text-center full-width">
+          <ul class="nav-ul full-width">
+            <li><router-link :to="'/'">Home</router-link></li>
+            <li>
+              <router-link :to="'/Services'">Services</router-link>
+            </li>
+            <li>
+              <router-link :to="'ContactUs'">Contact</router-link>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-
+  </section>
 </template>
 <script>
 import { defineComponent, ref } from "vue";
@@ -26,19 +27,19 @@ import LogoImg from "components/Layout/LogoImg";
 
 export default defineComponent({
   name: "HeaderNav",
-  components: {LogoImg},
+  components: { LogoImg },
 });
 </script>
 <style lang="scss" scoped>
 .container-header {
-  background-color: #fff;
+  background-color: $sucColor;
   position: relative;
 }
 .main-logo {
   font-size: 3rem;
   font-weight: 800;
   .logo {
-    width: 150px
+    width: 150px;
   }
 }
 .nav-ul {
@@ -96,4 +97,5 @@ export default defineComponent({
     font-size: 1.1rem;
   }
 }
+
 </style>

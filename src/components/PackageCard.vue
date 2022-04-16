@@ -124,6 +124,7 @@ export default defineComponent({
   transition: transform 0.8s;
   transform-style: preserve-3d;
   text-align: center;
+  padding: 0;
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
@@ -143,20 +144,48 @@ export default defineComponent({
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
-  background-color: #fff5f5;
+  margin: auto;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $sucColor;
   color: black;
   border-radius: 20px;
+  border: 1px solid #ddd;
+  padding: 0;
   .show-details {
     display: none;
+  }
+  h1 {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      bottom: -10%;
+      left: 0%;
+      background: linear-gradient(to right, $maincolor, #000);
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      top: -10%;
+      left: 0%;
+      background: linear-gradient(to right, #000, $maincolor);
+    }
   }
 }
 
 /* Style the back side */
 .flip-card-back {
-  background-color: #cb8a49;
+  background-color: $maincolor;
   color: #000;
   transform: rotateY(180deg);
   border-radius: 20px;
+  margin: auto;
   .body {
     font-size: 1.3rem;
     font-weight: 400;
@@ -193,7 +222,7 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   .edd-but {
-    background-color: #fff5f5 !important;
+    background-color: $maincolor !important;
     color: rgb(31, 31, 31) !important;
     width: 50% !important;
     height: 60px !important;
@@ -202,7 +231,7 @@ export default defineComponent({
     &:hover {
       transition: all 0.4s ease-in-out;
       border: 1px solid #000;
-      background-color: #cb8a49 !important;
+      background-color: $sucColor !important;
       color: #000;
     }
   }
@@ -219,7 +248,7 @@ export default defineComponent({
         height: 3px;
         bottom: -10%;
         left: 0;
-        background: linear-gradient(to right, rgba(0, 0, 0, 0.722), #fff);
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.722), $sucColor);
       }
     }
     .show-details {
@@ -229,16 +258,17 @@ export default defineComponent({
       height: 10%;
       border-radius: 15px;
       font-weight: bold;
-      // background: linear-gradient(to right, #cb8a49, #fff5f5);
       background-color: #cb8a49;
       border: none;
-      color: #fff;
+      color: $sucColor;
       font-family: NavFont;
       font-size: 1.6rem;
       border: 1px solid rgba(0, 0, 0, 0.66);
       animation: leaves 0.8s ease-in-out infinite;
       text-shadow: 1px 1px 1px #000;
     }
+  }
+  .flip-card-back {
   }
 }
 

@@ -11,7 +11,7 @@
         >
           <!-- <transition name="slide" mode="out-in"> -->
         <StartNav v-show="navStatus" />
-        <ScrolleNav v-show="!navStatus" class="asdasd" />
+<!--        <ScrolleNav v-show="!navStatus" class="asdasd" />-->
         </transition-group>
 
       </q-toolbar>
@@ -45,12 +45,12 @@ import Fotter from "src/components/Layout/Fotter.vue";
 import DesctopNav from "components/Layout/desctop-nav";
 import LogoImg from "components/Layout/LogoImg";
 import StartNav from "components/Layout/Start-nav";
-import ScrolleNav from "components/Layout/Scrolle-nav";
+// import ScrolleNav from "components/Layout/Scrolle-nav";
 export default defineComponent({
   name: "MainLayout",
 
   components: {
-    ScrolleNav,
+    // ScrolleNav,
     StartNav,
     Fotter,
   },

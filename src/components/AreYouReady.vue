@@ -104,7 +104,7 @@ h3 {
   }
 }
 .aur {
-  background-color: #fff5f5;
+  background-color: $sucColor;
 }
 @media screen and (max-width: 800px) and (min-width: 300px) {
   .ready-section {
@@ -127,7 +127,7 @@ h3 {
         height: 3px;
         bottom: -5%;
         right: 0%;
-        background: linear-gradient(to left, #fff5f5, #ddd);
+        background: linear-gradient(to left, $maincolor, #ddd);
       }
     }
   }

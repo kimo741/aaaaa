@@ -2,7 +2,7 @@
   <section class="section-serveces">
     <div class="container section-serveces__container">
       <div class="row">
-        <div class="col section-serveces__container__col-2">
+        <div class="col section-serveces__container--col-2">
           <h2>First consultation for free</h2>
           <div class="col-paragraph">
             <b
@@ -19,7 +19,7 @@
             />
           </div>
         </div>
-        <div class="col section-serveces__container__col-1">
+        <div class="col section-serveces__container--col-1">
           <img class="servess-img" src="serv.avif" alt="" />
         </div>
       </div>
@@ -38,56 +38,49 @@ export default defineComponent({
 .section-serveces {
   height: 100% !important;
   width: 100%;
-  margin: 4rem;
-  a &__container {
+  margin: 4rem 0;
+  &__container {
     margin: auto;
 
-    &__col-1 {
+    &--col-1 {
       height: 100%;
       width: 100%;
       width: auto;
       min-width: 0;
       max-width: 100%;
+      .servess-img {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+      }
+    }
 
-      &__container {
-        margin: auto;
+    &--col-2 {
+      height: 100%;
+      padding: 2rem;
+      font-family: NavFont;
+      h2 {
+        font-family: NavFont;
+        font-size: 5rem;
+        color: $fontColor;
+        text-align: start;
+        font-weight: 500;
+      }
 
-        &__col-1 {
-          .servess-img {
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            height: 100%;
-            width: 100%;
-          }
-        }
+      .col-paragraph {
+        width: 80%;
 
-        &__col-2 {
-          height: 100%;
-          padding: 4rem 5rem;
-
-          h2 {
-            font-family: NavFont;
-            font-size: 5rem;
-            color: $fontColor;
-            text-align: start;
-            font-weight: 500;
-          }
-
-          .col-paragraph {
-            width: 80%;
-
-            b {
-              font-weight: 400;
-              color: $fontColor;
-              line-height: 10px;
-              overflow-wrap: break-word;
-              white-space: break-spaces;
-              font-family: NavFont;
-              line-height: 1.7rem;
-              font-size: 1.4rem;
-            }
-          }
+        b {
+          font-weight: 400;
+          color: $fontColor;
+          line-height: 10px;
+          overflow-wrap: break-word;
+          white-space: break-spaces;
+          font-family: NavFont;
+          line-height: 1.7rem;
+          font-size: 1.4rem;
         }
       }
     }
@@ -103,10 +96,13 @@ export default defineComponent({
   font-size: 1rem !important;
   font-weight: 300 !important;
   padding: 1rem 2rem;
-  color: #fff5f5 !important;
+  color: $maincolor !important;
 }
 
 @media screen and (max-width: 800px) and (min-width: 300px) {
+  .section-serveces {
+    margin: 0;
+  }
   .col {
     width: 100% !important;
 
@@ -139,6 +135,9 @@ export default defineComponent({
   }
   .col-paragraph {
     width: 100%;
+  }
+  .div-but {
+    padding: 5rem 0;
   }
 }
 </style>

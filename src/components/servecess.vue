@@ -11,7 +11,7 @@
             <div class="col-paragraph">
               <b>
                 <b>كل ما يلم بالتسويق وتبعاتھ </b>
-                <b> <strong>الدراسات الاس()اتيجية و التخطيط </strong> <br /></b>
+                <b> <strong>الدراسات الاساتيجية و التخطيط </strong> <br /></b>
                 <b>التسويق - التواصل - العلامة التجارية </b>
                 <b>تصميم الهويات البصرية والعلامات التجارية </b>
                 <b
@@ -45,7 +45,7 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .section-serveces {
-  background-color: #fff5f5;
+  background-color: $maincolor;
   &__container {
     margin: auto;
     &__col-1 {
@@ -58,6 +58,7 @@ export default defineComponent({
       }
     }
     &__col-2 {
+      text-align: right;
       height: 100%;
       padding: 4rem 5rem;
       h2 {
@@ -65,7 +66,7 @@ export default defineComponent({
         font-family: NavFont;
         font-size: 5rem;
         color: $fontColor;
-        text-align: start;
+        text-align: center;
         font-weight: 500;
         &::after {
           content: "";
@@ -74,7 +75,7 @@ export default defineComponent({
           height: 3px;
           top: 120%;
           right: 0%;
-          background: linear-gradient(to left, #fff5f5, #ddd);
+          background: linear-gradient(to left, $maincolor, #ddd);
         }
       }
       .col-paragraph {
@@ -111,7 +112,7 @@ export default defineComponent({
     right: 0;
     width: 0;
     height: 0;
-    color: #fff;
+    color: $maincolor;
     font-size: 2.5rem;
     background-color: rgb(0, 0, 0);
     font-weight: bolder;
@@ -136,6 +137,29 @@ export default defineComponent({
     text-align: right !important;
     h2 {
       text-align: center;
+    }
+  }
+  .div-but {
+    text-align: center;
+  }
+  .edd-but {
+    margin: auto;
+    font-size: 3rem !important;
+    border: 1px solid rgba(0, 0, 0, 0.582);
+    &::before {
+      content: "Our Services";
+      position: absolute;
+      padding-top: 20%;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      color: $maincolor;
+      font-size: 1.5rem;
+      background-color: rgb(32, 32, 32);
+      font-weight: bolder;
+      font-family: NavFont;
+      z-index: 10;
     }
   }
 }

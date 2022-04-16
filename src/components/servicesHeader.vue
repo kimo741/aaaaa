@@ -47,7 +47,7 @@ export default defineComponent({
   font-size: 1rem !important;
   font-weight: 300 !important;
   padding: 1rem 2rem;
-  color: #fff5f5 !important;
+  color: $maincolor !important;
 }
 .heder-context {
   text-align: start;
@@ -73,7 +73,7 @@ export default defineComponent({
 }
 .container-headers {
   width: 100% !important;
-  background-color: #fff5f5 !important;
+  background-color: $maincolor !important;
 }
 
 @media screen and (max-width: 800px) and (min-width: 300px) {

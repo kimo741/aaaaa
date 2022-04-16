@@ -110,7 +110,7 @@ export default defineComponent({
 .col{
   width: 100%;
   padding: 0 3rem;
-    box-shadow: 2px 2px 1px #fff5f5;
+    box-shadow: 2px 2px 1px $maincolor;
 
 }
 .main-h{
@@ -122,7 +122,7 @@ export default defineComponent({
         height: 3px;
         bottom: -50% ;
         left: 0%;
-        background:linear-gradient(to right ,  #fff5f5 ,#000);
+        background:linear-gradient(to right ,  $maincolor ,#000);
       }
    &::before {
         content: "";
@@ -131,7 +131,7 @@ export default defineComponent({
         height: 3px;
         top: -50% ;
         left: 0%;
-        background:linear-gradient(to right , #000 , #fff5f5);
+        background:linear-gradient(to right , #000 , $maincolor);
       }
 
 }
