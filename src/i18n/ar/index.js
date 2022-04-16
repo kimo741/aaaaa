@@ -3,5 +3,6 @@
 
 export default {
   failed: ' سيبت مهخعا هع',
-  success: 'Action was successful'
+  success: 'Action was successful',
+  name: 'احمد'
 }

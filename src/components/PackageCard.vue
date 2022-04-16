@@ -191,7 +191,7 @@ export default defineComponent({
   .body {
     font-size: 1.3rem;
     font-weight: 400;
-    text-align: right;
+    text-align: left;
     margin: auto;
     margin: 10% 6% 0 !important;
     p {

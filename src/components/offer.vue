@@ -65,7 +65,7 @@ export default defineComponent({
         font-family: NavFont;
         font-size: 5rem;
         color: $fontColor;
-        text-align: start;
+        text-align: left;
         font-weight: 500;
       }
 

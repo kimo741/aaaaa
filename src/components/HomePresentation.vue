@@ -42,9 +42,9 @@ export default defineComponent({
 }
 .pres {
   &__content {
-    width: 50%;
+    width: 60%;
     margin: auto;
-    text-align: right;
+    text-align: left;
     font-family: NavFont;
     color: $fontColor;
     h2 {
@@ -92,13 +92,20 @@ export default defineComponent({
     max-width: 100% !important;
   }
   .pres__content {
-    text-align: right !important;
+    padding: 0 !important;
+    text-align: left;
+
     h2 {
       position: relative;
     }
     p {
       line-height: 3rem;
     }
+  }
+}
+.pres {
+  &__content {
+    width: 80% !important;
   }
 }
 </style>

@@ -58,15 +58,14 @@ export default defineComponent({
   font-family: NavFont;
 
     width: 70%;
-    &-col{
-      margin:auto;
+    margin:auto;
       h3{
 
       }
 
     }
 
-}
+
 .col,
 .row {
   color: $fontColor;

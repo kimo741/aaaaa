@@ -50,7 +50,7 @@ export default defineComponent({
   color: $maincolor !important;
 }
 .heder-context {
-  text-align: start;
+  text-align: left;
   margin: auto;
   margin-top: 10%;
   &__h1 {
@@ -82,7 +82,7 @@ export default defineComponent({
     width: auto;
 
     .heder-context {
-      text-align: center;
+      text-align: left;
       width: 80%;
       padding: 50px;
     }

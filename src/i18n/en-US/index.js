@@ -4,5 +4,6 @@
 export default {
   isoName: 'en-US',
   failed: 'Action failed',
-  success: 'Action was successful'
+  success: 'Action was successful',
+  name: 'ahmed'
 }

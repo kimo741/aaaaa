@@ -11,7 +11,7 @@
       navigation
       padding
       arrows
-      height="450px"
+      height="100%"
       class="text-white shadow-1 rounded-borders bg-ourclint slider"
       :autoplay="2500"
     >
@@ -117,17 +117,17 @@ export default defineComponent({
 .slider-content {
   color: $fontColor;
   width: 30%;
-  text-align: start;
+  text-align: left;
   padding: 1rem 10px;
   h3 {
     font-family: NavFont;
     font-size: 3rem;
-    text-align: start;
+    text-align: left;
   }
   p {
     font-family: NavFont;
     font-size: 1rem;
-    text-align: start;
+    text-align: left;
     line-height: 10px;
     overflow-wrap: break-word;
     white-space: break-spaces;
@@ -169,14 +169,16 @@ export default defineComponent({
     width: 100% !important;
     height: auto !important;
     padding: 20px;
-    height: max-content !important;
     overflow: none !important;
     flex-direction: row !important;
-    text-align: right !important;
+    text-align: left ;
+    display: flex;
+    flex-direction: column !important;
     .sliderimg {
       padding: 0;
-      width: 40%;
-      height: 75%;
+      width: 100%;
+      height: 100%;
+      background-position: center;
       img {
         width: 100%;
         height: 100%;
@@ -184,14 +186,13 @@ export default defineComponent({
     }
     .slider-content {
       line-height: 2rem;
-      width: 50%;
-      height: 100% !important;
+      width: 100%;
       h3 {
-        font-size: 2.5rem;
-        padding: 0;
+        font-size: 2.2rem;
+        font-weight: normal;
       }
       p {
-        padding: 0 !important;
+        font-size: 1.1rem;
       }
     }
 

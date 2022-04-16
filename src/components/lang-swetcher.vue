@@ -1,35 +1,44 @@
 <template>
-  <!-- ...... -->
   <q-select
     v-model="locale"
     :options="localeOptions"
-    label="Quasar Language"
-    dense
-    borderless
-    emit-value
-    map-options
-    options-dense
-    style="min-width: 150px"
+    filled
+    use-input
+    input-debounce="0"
+    label="Simple filter"
+    @filter="filterFn"
+    style="width: 250px"
+    bg-color="#551a8b"
+    behavior="dialog"
+    rounded
+    class="lang-swetch"
   />
-  <!-- ...... -->
-  {{ locale }}
-  {{ $t('failed') }}
 </template>
 
 <script>
-import { ref, watch } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { ref, watch } from "vue";
+import { useI18n } from "vue-i18n";
 
 export default {
-  setup () {
-    const { locale } = useI18n({ useScope: 'global' })
+  setup() {
+    const { locale } = useI18n({ useScope: "global" });
     return {
       locale,
       localeOptions: [
-        { value: 'en-US', label: 'English' },
-        { value: 'ar', label: 'العربيه' }
-      ]
-    }
-  }
-}
+        { value: "en-US", label: "English" },
+        { value: "ar", label: "العربيه" },
+      ],
+    };
+  },
+};
 </script>
+<style scoped>
+.lang-swetch {
+  height: 3rem !important;
+  width: 200px !important;
+  background-color: #fff5f5 !important;
+  border-radius: 25px 25px 0 0;
+  text-align: center !important;
+  color: #000 !important;
+}
+</style>

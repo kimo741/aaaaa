@@ -5,7 +5,6 @@
         <div class="heder-context col">
           <div class="flex column">
             <h1 class="heder-context__h1">Hello, so good to see you!</h1>
-            <lang-swetcher/>
 
             <b class="heder-context__b"
               >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
@@ -41,11 +40,10 @@
 </template>
 <script>
 import { defineComponent } from "vue";
-import LangSwetcher from "components/lang-swetcher";
 
 export default defineComponent({
   name: "ErrorNotFound",
-  components: {LangSwetcher},
+  components: {},
 });
 </script>
 <style lang="scss">

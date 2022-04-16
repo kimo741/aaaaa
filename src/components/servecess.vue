@@ -58,7 +58,7 @@ export default defineComponent({
       }
     }
     &__col-2 {
-      text-align: right;
+      text-align: left;
       height: 100%;
       padding: 4rem 5rem;
       h2 {
@@ -134,7 +134,7 @@ export default defineComponent({
   }
   .row {
     flex-direction: column-reverse;
-    text-align: right !important;
+    text-align: left;
     h2 {
       text-align: center;
     }
