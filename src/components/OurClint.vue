@@ -11,7 +11,7 @@
       navigation
       padding
       arrows
-      height="100%"
+      height="650px"
       class="text-white shadow-1 rounded-borders bg-ourclint slider"
       :autoplay="2500"
     >
@@ -171,7 +171,7 @@ export default defineComponent({
     padding: 20px;
     overflow: none !important;
     flex-direction: row !important;
-    text-align: left ;
+    text-align: left;
     display: flex;
     flex-direction: column !important;
     .sliderimg {
