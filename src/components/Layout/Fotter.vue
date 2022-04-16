@@ -103,7 +103,7 @@ export default defineComponent({ name: "FotterPage", components: {} });
   box-sizing: 100%;
 }
 .logo-im {
-  width: 90%;
+  //width: 90%;
   height: 90%;
   margin: auto;
 }
