@@ -3,7 +3,9 @@
 
 export default {
   isoName: 'en-US',
-  failed: 'Action failed',
-  success: 'Action was successful',
-  name: 'ahmed'
+  nativeName: 'english',
+  status: 'en',
+  rtl: false,
+  appName: 'La Dune',
+
 }
