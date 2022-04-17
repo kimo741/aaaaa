@@ -1,7 +1,8 @@
 <template>
   <q-page class="">
     <HomeSlide />
-    <!-- <brand-name /> -->
+    <StartNav :navStatus="true" />
+     <brand-name />
     <HomePresentation />
     <Servecess />
     <package-card />
@@ -18,11 +19,13 @@ import AreYouReady from "../components/AreYouReady.vue";
 import OurClint from "../components/OurClint.vue";
 import PackageCard from "src/components/PackageCard.vue";
 import { defineComponent } from "vue";
+import StartNav from "components/Layout/Start-nav";
 
 export default defineComponent({
   name: "IndexPage",
   components: {
     HomeSlide,
+    StartNav,
     // BrandName,
     HomePresentation,
     Servecess,

@@ -1,6 +1,6 @@
 <template>
-  <a :href="link + label" class="text-black icon-label ">
-    <q-icon :size="iconSize + 'rem'" class="icon-label" color="black" :name="icon" />
+  <a :href="link + (label ? label :'') " :target="target" :class="textColor" class=" icon-label ">
+    <q-icon :size="iconSize + 'rem'" class="icon-label" :color="color" :name="icon" />
     {{ label }}
   </a>
 </template>
@@ -12,7 +12,11 @@
         type: String
       },
       label:{
-        type: String
+        type: String,
+      },
+      target:{
+        type: String,
+        default: ''
       },
       link:{
         type: String,
@@ -20,7 +24,12 @@
       iconSize:{
         type: String
       },
-
+      color: {
+        type: String,
+      },
+      textColor: {
+        type: String,
+      }
     }
   }
 </script>

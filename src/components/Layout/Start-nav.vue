@@ -1,57 +1,61 @@
 <template>
-  <div class="text-center q-py-lg container full-width">
-    <div class="flex justify-between">
-      <div class="q-gutter-sm">
-        <!-- contact link -->
-        <IconLabel
-          :icon-size="1.1"
-          class=""
-          icon="eva-phone-call-outline"
-          label="01146084849"
-          link="tel:"
-        />
-        <IconLabel
-          :icon-size="1.1"
-          class=""
-          icon="eva-email-outline"
-          label="la.dune3@gmail.com"
-          link="mailto:"
-        />
-      </div>
-      <!--social icons -->
-      <div class="flex justify-between link-social">
-        <a class="col chil" href=""
-          ><i class="fa-brands fa-snapchat-square fa-2xl"></i
-        ></a>
-        <a class="col chil" href="">
-          <i class="fa-brands fa-instagram-square fa-2xl"></i
-        ></a>
-        <a class="col chil" href="">
-          <i class="fa-brands fa-tiktok fa-2xl"></i
-        ></a>
-        <a class="col chil" href="">
-          <i class="fa-brands fa-facebook-square fa-2xl"></i
-        ></a>
-        <a class="col chil" href="">
-          <i class="fa-brands fa-linkedin fa-2xl"></i
-        ></a>
-      </div>
+  <q-header  class="bg-grey-3">
+    <transition appear
+                enter-active-class="animated fadeIn"
+                leave-active-class="animated fadeOut">
 
-      <div>
-        <lang-swetcher class="lang" />
-      </div>
+      <div dir="ltr" class="flex q-py-sm justify-between items-center text-center container" v-if="navStatus">
+        <div class="q-gutter-x-md ">
 
-      <!-- log in -->
-      <div>
-        <IconLabel icon="las la-sign-in-alt" :icon-size="2" />
+          <IconLabel
+            :icon-size="1.1"
+            class=""
+            icon="eva-phone-call-outline"
+            label="01146084849"
+            color="black"
+            text-color="text-black"
+            link="tel:"
+          />
+          <IconLabel
+            :icon-size="1.1"
+            color="black"
+            icon="eva-email-outline"
+            label="la.dune3@gmail.com"
+            link="mailto:"
+            text-color="text-black"
+          />
+        </div>
+        <div class="q-gutter-x-md q-mr-lg" >
+          <IconLabel
+            v-for="(i, index) in icons"
+            :key="index"
+            :icon="i.name"
+            target="_blank"
+            :link="i.link"
+            color="black"
+            :icon-size="1.5"
+            class="q-mt-lg"
+          />
+        </div>
+        <div class="q-gutter-x-md cursor-pointer text-black">
+          <span class="inline-block text-caption">{{ $t('Einglish') }}</span>
+          <span class="inline-block text-caption">{{ $t('Arabic') }}</span>
+        </div>
+      </div>
+    </transition>
+    <div class=" full-width bg-white q-pb-xs q-pt-xs ">
+      <div class="flex justify-between items-center container">
+        <div><DesctopNav /></div>
+        <div></div>
+        <div dir="ltr" class="">
+          <LogoImg src="logo.png" width="100" v-show="1"/>
+        </div>
       </div>
     </div>
-    <div class="row items-center nav">
-      <logo-img :width="150" class="q-mb-md" />
-      <q-space />
-      <desctop-nav :font-size="1.4" />
-    </div>
-  </div>
+  </q-header>
+
+
+
 </template>
 
 <script>
@@ -64,8 +68,35 @@ export default {
     IconLabel,
     DesctopNav,
     LogoImg,
-    LangSwetcher,
+    // LangSwetcher,
   },
+  props:['navStatus'],
+  data () {
+    return {
+      icons: [
+        {
+          name: 'lab la-snapchat-ghost',
+          link: 'https://www.snapchat.com/en-GB/la.dune3'
+        },
+        {
+          name: 'lab la-instagram',
+          link: 'https://www.instagram.com/la_dune3/'
+        },
+        {
+          name: 'fa-brands fa-tiktok',
+          link: 'https://www.tiktok.com/@la.dune3'
+        },
+        {
+          name: 'lab la-facebook-f',
+          link: 'https://www.facebook.com/la.dune.3'
+        },
+        {
+          name: 'lab la-linkedin-in',
+          link: 'https://www.linkedin.com/la.dune.3'
+        },
+      ]
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

@@ -5,7 +5,7 @@
     :to="link.url"
     class="link"
     :style="'font-size:' + fontSize + 'rem;' + 'font-famile:' + fontFamile"
-    >{{ link.name }}</router-link
+    >{{ $t(link.name) }}</router-link
   >
 </template>
 
@@ -29,19 +29,19 @@ export default {
     return {
       links: [
         {
-          name: "Home",
+          name: 'links.home',
           url: "/",
         },
         {
-          name: "Services",
+          name: 'services.services',
           url: "/Services",
         },
         {
-          name: "About",
+          name: 'about.aboutus',
           url: "/About",
         },
         {
-          name: "ContactUs",
+          name: 'links.contact',
           url: "/ContactUs",
         },
       ],
@@ -54,11 +54,11 @@ export default {
 .link {
   position: relative;
   color: $fontColor;
-  font-family: NavFont;
+  //font-family: NavFont;
   position: relative;
   margin-left: 3rem;
   font-weight: bold;
-  letter-spacing: 3px;
+  //letter-spacing: 3px;
   text-decoration: none;
   &::before {
     content: "";
@@ -75,5 +75,8 @@ export default {
       width: 100%;
     }
   }
+}
+.link:first-child {
+  margin-left: 0;
 }
 </style>
