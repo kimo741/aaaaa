@@ -1,14 +1,10 @@
 <template>
-  <q-page >
+  <q-page class="q-pt-none" >
     <HomeSlide />
     <StartNav :navStatus="true" class="z-max" />
     <home-carousel />
-     <brand-name />
-    <HomePresentation />
-    <Servecess />
-    <package-card />
-    <AreYouReady />
-    <OurClint />
+    <about-us />
+<!---->
   </q-page>
 </template>
 <script>
@@ -22,19 +18,21 @@ import OurClint from "../components/OurClint.vue";
 import PackageCard from "src/components/PackageCard.vue";
 import { defineComponent } from "vue";
 import StartNav from "components/Layout/Start-nav";
+import AboutUs from "components/about-us";
 
 export default defineComponent({
   name: "IndexPage",
   components: {
     HomeSlide,
+    AboutUs,
     StartNav,
-    // BrandName,
     homeCarousel,
-    HomePresentation,
-    Servecess,
-    AreYouReady,
-    OurClint,
-    PackageCard,
+    // BrandName,
+    // HomePresentation,
+    // Servecess,
+    // AreYouReady,
+    // OurClint,
+    // PackageCard,
   },
 });
 </script>

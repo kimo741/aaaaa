@@ -53,8 +53,7 @@ export default defineComponent({
   z-index: 10
 }
 .slider-container {
-  border-bottom: 9px solid $primary;
-  border-top: 9px solid $primary;
+  border-bottom: 5px solid $primary;
 }
 .slider-content {
   .container {

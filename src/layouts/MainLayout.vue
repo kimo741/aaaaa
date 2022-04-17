@@ -9,7 +9,7 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container >
+    <q-page-container style="padding-top: 0 !important;" >
       <transition
         appear
         enter-active-class="animated fadeIn"

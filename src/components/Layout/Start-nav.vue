@@ -1,5 +1,5 @@
 <template>
-  <q-header class="bg-grey-3" style="position: sticky;">
+  <q-header class="" style="position: sticky;background-color: #fdb813">
     <transition appear
                 enter-active-class="animated fadeIn"
                 leave-active-class="animated fadeOut">
@@ -43,7 +43,7 @@
         </div>
       </div>
     </transition>
-    <div class=" full-width bg-white q-pb-xs q-pt-xs ">
+    <div class=" full-width bg-white q-pb-xs q-pt-xs " style="">
       <div class="flex justify-between items-center container">
         <div><DesctopNav /></div>
         <div></div>

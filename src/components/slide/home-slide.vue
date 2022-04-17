@@ -1,5 +1,5 @@
 <template>
-  <section style="height: 97vh   overflow: hidden; ">
+  <section style="height: 97vh   overflow: hidden;padding: 30px 0; ">
     <div class="container-fluid">
       <div class="row">
         <!-- <div class="row col-lg">
@@ -10,107 +10,39 @@
           <div class="row">
             <div
               class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--1"
+              v-for="i in 4" :key="i"
             >
-              <img class="col__main-eader--image" src="1-2-min.png" />
+              <div class="overflow-hidden">
+                <img class="hover-iamge" src="1-3-min.png" />
+                <img class="col__main-eader--image" src="1-2-min.png" />
+              </div>
             </div>
-            <div
-              class="col-xl-3 col-md-3 col-sm-6 col-xs-6 col-lg-3 col__main-eader col__main-eader--2"
-            >
-              <img class="col__main-eader--image" src="1-2-min.png" />
-            </div>
-            <div
-              class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--3"
-            >
-              <img class="col__main-eader--image" src="1-2-min.png" />
-            </div>
-            <div
-              class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--4"
-            >
-              <img class="col__main-eader--image" src="1-2-min.png" />
-            </div>
+<!--            <div-->
+<!--              class="col-xl-3 col-md-3 col-sm-6 col-xs-6 col-lg-3 col__main-eader col__main-eader&#45;&#45;2"-->
+<!--            >-->
+<!--              <img class="col__main-eader&#45;&#45;image" src="1-2-min.png" />-->
+<!--            </div>-->
+<!--            <div-->
+<!--              class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader&#45;&#45;3"-->
+<!--            >-->
+<!--              <img class="col__main-eader&#45;&#45;image" src="1-2-min.png" />-->
+<!--            </div>-->
+<!--            <div-->
+<!--              class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader&#45;&#45;4"-->
+<!--            >-->
+<!--              <img class="col__main-eader&#45;&#45;image" src="1-2-min.png" />-->
+<!--            </div>-->
           </div>
         </div>
         <div class="col-4 diplayh left-header">
           <div><img src="logo.png" /></div>
           <q-space />
           <div class="name-logo">
-            {{ $t("appName") }}
+            La Dune
           </div>
         </div>
       </div>
-      <!-- <div class="row overflow-hidden q-mb-sm">
-          <div class="col-12 col-md-8 col-sm-0 column " style="height: 97vh">
-            <div class="q-px-md col-md-12 col-sm-6 q-pt-md overflow-hidden">
-              <img
-                src="1-2-min.png"
-                style="position: absolute; top: -110px; z-index: 1"
-              />
-              <img src="1-min.jpg" class="" />
-            </div>
-            <div class="q-px-md col-md-12 col-sm-6 q-pt-md overflow-hidden">
-              <img
-                src="2-2-min.png"
-                style="position: absolute; top: -110px; z-index: 1"
-              />
-              <img src="2-min.jpg" class="" />
-            </div>
-            <div class="q-px-md col-md-12 col-sm-6 q-pt-md overflow-hidden">
-              <img
-                src="1-2-min.png"
-                style="position: absolute; top: -110px; z-index: 1"
-              />
-              <img src="1-min.jpg" class="" />
-            </div>
 
-            <div class="q-px-md col-md-12 col-sm-6 q-pt-md overflow-hidden">
-              <img
-                src="1-2-min.png"
-                style="position: absolute; top: -110px; z-index: 1"
-              />
-              <img src="1-min.jpg" class="" />
-            </div>
-          </div>
-          <div
-            class="col-0 col-md-4 col-lg-4 relative-position overflow-hidden"
-            style="height: 97vh"
-          >
-            <div><img src="logo.png" /></div>
-            <q-space />
-            <div class="">
-              <div>
-                {{ $t("appName") }}
-              </div>
-              <img src="Group-200-min.png" style="width:100%; height: auto" class="absolute-bottom" />
-            </div>
-          </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- -->
     </div>
   </section>
 </template>
@@ -123,17 +55,24 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
+.col__main-eader--1:hover .hover-iamge {
+  transform: translate(10%);
+  //display: none
+}
 .left-header {
   position: relative;
   background-image: url(/Group-200-min.png);
-  background-position: center;
-  background-size: cover;
+  background-position-y: bottom;
+  background-size: 100%;
+  background-repeat: no-repeat;
 
   .name-logo {
+    right: 30%;
+    transform: translate(-50%, 50%);
+    color: #fff;
+    font-weight: 700;
     position: absolute;
-    left: 20%;
-    top: 50%;
-    transform: translate(50%, 50%);
+    top: 74%;
     font-size: 4rem;
   }
 }
@@ -141,12 +80,25 @@ export default defineComponent({
   position: relative;
   height: 100vh !important;
   &--1 {
-    background: linear-gradient(
-      to left,
-      rgb(170, 18, 18),
-      rgb(35, 131, 35),
-      #567
-    );
+    padding: 0 2.6%;
+    .hover-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-73%);
+      transition: all 0.3s eas-in-out;
+    }
+  }
+  &--1 div {
+    //background: linear-gradient(
+    //  to left,
+    //  rgb(170, 18, 18),
+    //  rgb(35, 131, 35),
+    //  #567
+    //);
+    width: 100%;
+    height: 100%;
+    background-image: url('/1-min.jpg');
     background-size: 200% 200%;
     animation: AnimateBG 20s ease infinite !important;
   }
