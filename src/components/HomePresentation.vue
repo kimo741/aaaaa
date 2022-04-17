@@ -3,25 +3,44 @@
     <section class="section-pres">
       <div class="pres container">
         <div class="pres__content text-center">
-          <h2>من نحن</h2>
+          <h2>{{ $t("about.aboutus") }}</h2>
           <p>
-            لدون - كعملائھ مشروع ناUVW يسSى للارتقاء بالمشاريع الناشئة مثلھ من
-            الناحية التسويقية.
+            {{ $t("about.title") }}
           </p>
           <p>
-            <strong>لدون</strong> <br />
-            كعملائة مشروع ناشئ يسعى للارتقاءبالمشاريع الناشئة مثله من الناحية
-            التسويقيه
+            {{ $t("about.body") }}
           </p>
           <p>
-            <strong>رؤيتنا</strong> <br />
-            هي ان نكون الذراع الأيمن والخيار الأقرب للمشاريع الصغيره
+            <!-- <strong>لدون</strong> <br /> -->
+            {{ $t("about.body2") }}
           </p>
           <p>
-            <strong>مهمتنا</strong> <br />
-            نشرثقافة التسويق الكريم والمعطاء لإيماننا بأنھ أحد أهم سبل نجاح
-            المشاريع وتطويرها ونموها من الفكرة إuى العمل وإuى شركات تشغيلية ذات
-            رأس مال مستقل وقوة بشرية داعمة للمجتمع الخاص والمصلحة العامة.
+            <strong> {{ $t("about.vision") }}</strong> <br />
+            {{ $t("about.vision_body") }}
+          </p>
+          <p>
+            <strong> {{ $t("about.mission") }}</strong> <br />
+            {{ $t("about.mission_body") }}
+          </p>
+          <p>
+            <strong> {{ $t("about.ourValue") }}</strong> <br />
+            {{ $t("about.mission_body") }}
+          </p>
+          <p>
+            <strong> {{ $t("about.support") }}</strong> <br />
+            {{ $t("about.support_body") }}
+          </p>
+          <p>
+            <strong> {{ $t("about.passion") }}</strong> <br />
+            {{ $t("about.passion_body") }}
+          </p>
+          <p>
+            <strong> {{ $t("about.dedication") }}</strong> <br />
+            {{ $t("about.dedication_body") }}
+          </p>
+          <p>
+            <strong> {{ $t("about.Sincerity") }}</strong> <br />
+            {{ $t("about.Sincerity_body") }}
           </p>
         </div>
       </div>
@@ -35,7 +54,7 @@ export default defineComponent({
   components: {},
 });
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .section-pres {
   background-color: $sucColor;
   margin: 6rem 0;

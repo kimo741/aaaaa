@@ -8,7 +8,9 @@
         </div>
         <div class="text-center full-width">
           <ul class="nav-ul full-width">
-            <li><router-link :to="'/'">Home</router-link></li>
+            <li>
+              <router-link :to="'/'"> Home</router-link>
+            </li>
             <li>
               <router-link :to="'/Services'">Services</router-link>
             </li>
@@ -97,5 +99,4 @@ export default defineComponent({
     font-size: 1.1rem;
   }
 }
-
 </style>

@@ -13,12 +13,16 @@
           </div>
           <div class="col-4 nav-toggle-screen">
             <ul class="nav-ul">
-              <li><router-link :to="'/'">Home</router-link></li>
+              <li>
+                <router-link :to="'/'">{{ $t("links.home") }}</router-link>
+              </li>
               <li>
                 <router-link :to="'/Services'">Services</router-link>
               </li>
               <li>
-                <router-link :to="'/ContactUs'">Contact</router-link>
+                <router-link :to="'/contact'">{{
+                  $t("links.contact")
+                }}</router-link>
               </li>
             </ul>
           </div>
