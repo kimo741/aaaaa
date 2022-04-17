@@ -1,41 +1,118 @@
 <template>
-  <div class="full-width   q-pa-sm q-pr-none" style="height:  97vh">
-    <div class="row overflow-hidden q-mb-sm">
-      <div class="col-9 flex overflow-hidden" style="height:  97vh">
-        <div class=" q-px-md q-pt-md column overflow-hidden" >
-          <img src="1-2-min.png" style="position: absolute;top: -110px;z-index: 1"/>
-          <img src="1-min.jpg" class=""/>
-
-        </div>
-        <div class=" q-px-md q-pt-md column overflow-hidden" >
-          <img src="2-2-min.png" style="position: absolute;top: -110px;z-index: 1"/>
-          <img src="2-min.jpg" class=""/>
-        </div>
-        <div class=" q-px-md q-pt-md column overflow-hidden" >
-          <img src="1-2-min.png" style="position: absolute;top: -110px;z-index: 1"/>
-          <img src="1-min.jpg" class=""/>
-
-        </div>
-
-        <div class=" q-px-md q-pt-md column overflow-hidden" >
-          <img src="1-2-min.png" style="position: absolute;top: -110px;z-index: 1"/>
-          <img src="1-min.jpg" class=""/>
-
-        </div>
-      </div>
-      <div class="col-3 relative-position column overflow-hidden" style="height:  97vh">
-        <div><img src="logo.png" /></div>
-        <q-space/>
-        <div class="absolute-bottom">
-          <div>
-            {{ $t('appName') }}
+  <section style="height: 97vh   overflow: hidden; ">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- <div class="row col-lg">
+          <div class="col-12 .d-xg-none .d-lg-none .d-md-none"></div> -->
+        <!-- this is just in smal screen -->
+        <!-- </div> -->
+        <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-xs-12">
+          <div class="row">
+            <div
+              class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--1"
+            >
+              <img class="col__main-eader--image" src="1-2-min.png" />
+            </div>
+            <div
+              class="col-xl-3 col-md-3 col-sm-6 col-xs-6 col-lg-3 col__main-eader col__main-eader--2"
+            >
+              <img class="col__main-eader--image" src="1-2-min.png" />
+            </div>
+            <div
+              class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--3"
+            >
+              <img class="col__main-eader--image" src="1-2-min.png" />
+            </div>
+            <div
+              class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--4"
+            >
+              <img class="col__main-eader--image" src="1-2-min.png" />
+            </div>
           </div>
-          <img src="Group-200-min.png" />
+        </div>
+        <div class="col-4 diplayh left-header">
+          <div><img src="logo.png" /></div>
+          <q-space />
+          <div class="name-logo">
+            {{ $t("appName") }}
+          </div>
         </div>
       </div>
+      <!-- <div class="row overflow-hidden q-mb-sm">
+          <div class="col-12 col-md-8 col-sm-0 column " style="height: 97vh">
+            <div class="q-px-md col-md-12 col-sm-6 q-pt-md overflow-hidden">
+              <img
+                src="1-2-min.png"
+                style="position: absolute; top: -110px; z-index: 1"
+              />
+              <img src="1-min.jpg" class="" />
+            </div>
+            <div class="q-px-md col-md-12 col-sm-6 q-pt-md overflow-hidden">
+              <img
+                src="2-2-min.png"
+                style="position: absolute; top: -110px; z-index: 1"
+              />
+              <img src="2-min.jpg" class="" />
+            </div>
+            <div class="q-px-md col-md-12 col-sm-6 q-pt-md overflow-hidden">
+              <img
+                src="1-2-min.png"
+                style="position: absolute; top: -110px; z-index: 1"
+              />
+              <img src="1-min.jpg" class="" />
+            </div>
 
+            <div class="q-px-md col-md-12 col-sm-6 q-pt-md overflow-hidden">
+              <img
+                src="1-2-min.png"
+                style="position: absolute; top: -110px; z-index: 1"
+              />
+              <img src="1-min.jpg" class="" />
+            </div>
+          </div>
+          <div
+            class="col-0 col-md-4 col-lg-4 relative-position overflow-hidden"
+            style="height: 97vh"
+          >
+            <div><img src="logo.png" /></div>
+            <q-space />
+            <div class="">
+              <div>
+                {{ $t("appName") }}
+              </div>
+              <img src="Group-200-min.png" style="width:100%; height: auto" class="absolute-bottom" />
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -->
     </div>
-  </div>
+  </section>
 </template>
 <script>
 import { defineComponent } from "vue";
@@ -45,7 +122,61 @@ export default defineComponent({
   components: {},
 });
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
+.left-header {
+  position: relative;
+  background-image: url(/Group-200-min.png);
+  background-position: center;
+  background-size: cover;
+
+  .name-logo {
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    transform: translate(50%, 50%);
+    font-size: 4rem;
+  }
+}
+.col__main-eader {
+  position: relative;
+  height: 100vh !important;
+  &--1 {
+    background: linear-gradient(
+      to left,
+      rgb(170, 18, 18),
+      rgb(35, 131, 35),
+      #567
+    );
+    background-size: 200% 200%;
+    animation: AnimateBG 20s ease infinite !important;
+  }
+  &--2 {
+    background-color: $secondary;
+  }
+  &--3 {
+    background-color: $accent;
+  }
+  &--4 {
+    background-color: $positive;
+  }
+  &--image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 80%;
+    height: 100%;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 900px) and (min-width: 300px) {
+  .col__main-eader {
+    height: 50vh !important;
+  }
+  .diplayh {
+    display: none;
+  }
+}
 .container-header {
   // height: 100vh;
   position: relative;
@@ -138,7 +269,7 @@ export default defineComponent({
   background-size: cover;
   background-repeat: no-repeat;
 }
-@media screen and (max-width: 800px) and (min-width: 300px) {
+@media screen and (max-width: 900) and (min-width: 300px) {
   .container {
     width: 100%;
     max-width: 100%;
@@ -168,7 +299,19 @@ export default defineComponent({
     }
   }
 }
+@keyframes AnimateBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 </style>
+
 <!--<template>-->
 <!--  <div class="container-header full-width main-header q-mt-md">-->
 <!--    <div class="container">-->

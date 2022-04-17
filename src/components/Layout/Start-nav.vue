@@ -1,12 +1,16 @@
 <template>
-  <q-header  class="bg-grey-3">
-    <transition appear
-                enter-active-class="animated fadeIn"
-                leave-active-class="animated fadeOut">
-
-      <div dir="ltr" class="flex q-py-sm justify-between items-center text-center container" v-if="navStatus">
-        <div class="q-gutter-x-md ">
-
+  <q-header class="bg-grey-3">
+    <transition
+      appear
+      enter-active-class="animated fadeIn"
+      leave-active-class="animated fadeOut"
+    >
+      <div
+        dir="ltr"
+        class="flex q-py-sm justify-between items-center text-center container"
+        v-if="navStatus"
+      >
+        <div class="q-gutter-x-md">
           <IconLabel
             :icon-size="1.1"
             class=""
@@ -25,7 +29,7 @@
             text-color="text-black"
           />
         </div>
-        <div class="q-gutter-x-md q-mr-lg" >
+        <div class="q-gutter-x-md q-mr-lg">
           <IconLabel
             v-for="(i, index) in icons"
             :key="index"
@@ -38,24 +42,21 @@
           />
         </div>
         <div class="q-gutter-x-md cursor-pointer text-black">
-          <span class="inline-block text-caption">{{ $t('Einglish') }}</span>
-          <span class="inline-block text-caption">{{ $t('Arabic') }}</span>
+          <span class="inline-block text-caption">{{ $t("Einglish") }}</span>
+          <span class="inline-block text-caption">{{ $t("Arabic") }}</span>
         </div>
       </div>
     </transition>
-    <div class=" full-width bg-white q-pb-xs q-pt-xs ">
+    <div class="full-width bg-white q-pb-xs q-pt-xs">
       <div class="flex justify-between items-center container">
         <div><DesctopNav /></div>
         <div></div>
         <div dir="ltr" class="">
-          <LogoImg src="logo.png" width="100" v-show="1"/>
+          <LogoImg src="logo.png" width="100" v-show="1" />
         </div>
       </div>
     </div>
   </q-header>
-
-
-
 </template>
 
 <script>
@@ -70,33 +71,33 @@ export default {
     LogoImg,
     // LangSwetcher,
   },
-  props:['navStatus'],
-  data () {
+  props: ["navStatus"],
+  data() {
     return {
       icons: [
         {
-          name: 'lab la-snapchat-ghost',
-          link: 'https://www.snapchat.com/en-GB/la.dune3'
+          name: "lab la-snapchat-ghost",
+          link: "https://www.snapchat.com/en-GB/la.dune3",
         },
         {
-          name: 'lab la-instagram',
-          link: 'https://www.instagram.com/la_dune3/'
+          name: "lab la-instagram",
+          link: "https://www.instagram.com/la_dune3/",
         },
         {
-          name: 'fa-brands fa-tiktok',
-          link: 'https://www.tiktok.com/@la.dune3'
+          name: "fa-brands fa-tiktok",
+          link: "https://www.tiktok.com/@la.dune3",
         },
         {
-          name: 'lab la-facebook-f',
-          link: 'https://www.facebook.com/la.dune.3'
+          name: "lab la-facebook-f",
+          link: "https://www.facebook.com/la.dune.3",
         },
         {
-          name: 'lab la-linkedin-in',
-          link: 'https://www.linkedin.com/la.dune.3'
+          name: "lab la-linkedin-in",
+          link: "https://www.linkedin.com/la.dune.3",
         },
-      ]
-    }
-  }
+      ],
+    };
+  },
 };
 </script>
 <style lang="scss" scoped>

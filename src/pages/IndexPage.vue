@@ -2,7 +2,7 @@
   <q-page class="">
     <HomeSlide />
     <StartNav :navStatus="true" />
-     <brand-name />
+    <brand-name />
     <HomePresentation />
     <Servecess />
     <package-card />
@@ -18,8 +18,8 @@ import Servecess from "../components/servecess.vue";
 import AreYouReady from "../components/AreYouReady.vue";
 import OurClint from "../components/OurClint.vue";
 import PackageCard from "src/components/PackageCard.vue";
-import { defineComponent } from "vue";
 import StartNav from "components/Layout/Start-nav";
+import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "IndexPage",
