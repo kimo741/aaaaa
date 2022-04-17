@@ -1,5 +1,5 @@
 <template>
-  <q-header  class="bg-grey-3">
+  <q-header class="bg-grey-3" style="position: sticky;">
     <transition appear
                 enter-active-class="animated fadeIn"
                 leave-active-class="animated fadeOut">

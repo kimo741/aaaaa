@@ -108,7 +108,7 @@ export default defineComponent({
   },
 });
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .slider-container {
   padding: 1rem 1rem;
   overflow: hidden;

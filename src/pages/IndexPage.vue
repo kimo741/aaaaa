@@ -1,7 +1,8 @@
 <template>
-  <q-page class="">
+  <q-page >
     <HomeSlide />
-    <StartNav :navStatus="true" />
+    <StartNav :navStatus="true" class="z-max" />
+    <home-carousel />
      <brand-name />
     <HomePresentation />
     <Servecess />
@@ -14,6 +15,7 @@
 import HomeSlide from "src/components/slide/home-slide.vue";
 // import BrandName from "src/components/brandName.vue";
 import HomePresentation from "src/components/HomePresentation.vue";
+import homeCarousel from "src/components/home-carousel.vue";
 import Servecess from "../components/servecess.vue";
 import AreYouReady from "../components/AreYouReady.vue";
 import OurClint from "../components/OurClint.vue";
@@ -27,6 +29,7 @@ export default defineComponent({
     HomeSlide,
     StartNav,
     // BrandName,
+    homeCarousel,
     HomePresentation,
     Servecess,
     AreYouReady,

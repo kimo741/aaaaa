@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="hHh lpR fFf" :dir="$t('status') == 'ar' ? 'rtl' : 'ltr' ">
+  <q-layout view="hhh lpR fFf" :dir="$t('status') == 'ar' ? 'rtl' : 'ltr' ">
 <!--        <StartNav :navStatus="navStatus" />-->
 
     <q-drawer v-model="leftDrawerOpen" side="left" overlay bordered>
