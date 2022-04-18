@@ -1,35 +1,64 @@
 <template>
   <div class=" container">
     <div class="row justify-center about q-my-xl">
-      <div class="col-12  q-pa-md" :style="!$q.screen.lt.md ? 'width: calc(100% / 1)' : ''">
-        <q-card class="about-card" :style="'background: url(about/1.jpg)'">
+
+      <div  class="col-12 col-md-6 row q-pa-none">
+        <div  class="col-12 q-pa-md">
+          <q-card :style="'background: url(about/1.jpg)'" class="about-card _V">
             <div class="absolute-bottom q-ma-md card-info text-primary">
+              <img src="slider/2.jpg" class="bg_image" />
               <div class="text-h4 title">{{ this.$t('about.vision') }}<span class="underline bg-accent"></span></div>
               <div class="text-h6 body">{{ this.$t('about.vision_body') }}</div>
             </div>
-        </q-card>
-      </div>
-      <div class="col-12 col-sm-6  col-md-4 col-lg-3 q-pa-md" :style="!$q.screen.lt.md ? 'width: calc(100% / 2)' : ''">
-        <q-card class="about-card" :style="'background: url(about/2.jpg)'">
+          </q-card>
+        </div>
+        <div class="col-12  q-pa-md">
+          <q-card :style="'background: url(about/2.jpg)'" class="about-card _V">
             <div class="absolute-bottom q-ma-md card-info text-primary">
+              <img src="slider/2.jpg" class="bg_image" />
               <div class="text-h4 title">{{ this.$t('about.mission') }}<span class="underline bg-accent"></span></div>
               <div class="text-h6 body">{{ this.$t('about.mission_body') }}</div>
             </div>
-        </q-card>
+          </q-card>
+        </div>
       </div>
-      <div class="col-12 col-sm-6  col-md-4 col-lg-3 q-pa-md" :style="!$q.screen.lt.md ? 'width: calc(100% / 2)' : ''">
-        <q-card class="about-card" :style="'background: url(about/3.jpg)'">
+
+      <div :style="!$q.screen.lt.md ? 'width: calc(100% / 2)' : ''" class="col-12 col-md-6 q-pa-md">
+        <q-card :style="'background: url(about/3.jpg)'" class="about-card _H">
           <div class="absolute-bottom q-ma-md card-info text-primary">
-            <div class="text-h4 title">{{ this.$t('about.ourValue') }}<span class="underline bg-accent"></span></div>
-            <div class="text-h6 body">{{ this.$t('about.mission_body') }}</div>
+            <img src="slider/2.jpg" class="bg_image" />
+
+            <div class="text-h4 title">
+              {{ this.$t('about.ourValue') }}
+              <span class="underline bg-accent"></span>
+            </div>
             <q-list>
               <q-item>
                 <q-item-section>
-                  <q-item-label>{{ this.$t('about.ourValue') }}</q-item-label>
-                  <q-item-label  lines="2">Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
+                  <q-item-label class="text-h4 list-title">{{ this.$t('about.support') }}</q-item-label>
+                  <q-item-label class="text-h6 body" lines="2">{{ this.$t('about.support_body') }}</q-item-label>
+                </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section>
+                  <q-item-label class="text-h4 list-title">{{ this.$t('about.passion') }}</q-item-label>
+                  <q-item-label class="text-h6 body" lines="2">{{ this.$t('about.passion_body') }}</q-item-label>
+                </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section>
+                  <q-item-label class="text-h4 list-title">{{ this.$t('about.dedication') }}</q-item-label>
+                  <q-item-label class="text-h6 body" lines="2">{{ this.$t('about.dedication_body') }}</q-item-label>
+                </q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section>
+                  <q-item-label class="text-h4 list-title">{{ this.$t('about.Sincerity') }}</q-item-label>
+                  <q-item-label class="text-h6 body" lines="2">{{ this.$t('about.Sincerity_body') }}</q-item-label>
                 </q-item-section>
               </q-item>
             </q-list>
+
           </div>
         </q-card>
       </div>
@@ -38,11 +67,9 @@
 </template>
 
 <script>
-import { useQuasar } from 'quasar'
-import { computed } from 'vue'
 
 export default {
-  data () {
+  data() {
     return {
       aboutUs: [
         {
@@ -62,29 +89,61 @@ export default {
 </script>
 
 
-<style lang="scss">
-.about {
-  .about-card {
-    min-height: 65vh;
-    background-size: cover !important;
-    background-position: center !important;
-    .card-info {
-      background-color: rgba(255, 255, 255, 0.9019607843137255);
-      padding: 20px;
-      .title {
-        font-size: 40px;
-        font-weight: 700;
-        .underline{
-          width: 7%;
-          height: 3px;
-          background: #313131;
-          display: inherit;
-          margin: 20px 0;
+<style lang="scss" scoped>
+.container {
+  zoom: 78%;
+  .about {
+    ._V {
+      min-height: 50vh !important;
+    }
+    ._H {
+      min-height: calc(100vh + 32px);
+    }
+    .about-card {
+      background-size: cover !important;
+      background-position: center !important;
+
+      .card-info {
+        background-color: rgba(255, 255, 255, 0.9019607843137255);
+        padding: 30px;
+        margin: 30px;
+        z-index: 0;
+        .title {
+          z-index: 1;
+          font-size: 40px;
+          font-weight: 700;
+
+          .underline {
+            width: 7%;
+            height: 3px;
+            background: #313131;
+            display: inherit;
+            margin: 20px 0;
+          }
+        }
+
+        .list-title {
+          font-size: 1.4rem;
+          font-weight: 600;
+        }
+
+        .body {
+          line-height: 2.9rem !important;
+          font-weight: 300
         }
       }
-      .body {
-        line-height: 2.9rem !important;
-        font-weight: 300
+      .card-info .bg_image {
+        z-index: -1;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        background-size: cover;
       }
     }
   }
