@@ -10,7 +10,34 @@
           <div class="row">
             <div
               class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--1"
-              v-for="i in 4" :key="i"
+
+            >
+              <div class="overflow-hidden">
+                <img class="hover-iamge" src="1-3-min.png" />
+                <img class="col__main-eader--image" src="1-2-min.png" />
+              </div>
+            </div>
+            <div
+              class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--2"
+
+            >
+              <div class="overflow-hidden">
+                <img class="hover-iamge" src="1-3-min.png" />
+                <img class="col__main-eader--image" src="2-2-min.png" />
+              </div>
+            </div>
+            <div
+              class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--1"
+
+            >
+              <div class="overflow-hidden">
+                <img class="hover-iamge" src="1-3-min.png" />
+                <img class="col__main-eader--image" src="1-2-min.png" />
+              </div>
+            </div>
+            <div
+              class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--1"
+
             >
               <div class="overflow-hidden">
                 <img class="hover-iamge" src="1-3-min.png" />
@@ -34,8 +61,8 @@
 <!--            </div>-->
           </div>
         </div>
-        <div class="col-4 diplayh left-header">
-          <div><img src="logo.png" /></div>
+        <div class="col-4 diplayh left-header overflow-hidden">
+          <div style="transform: translate(-30%, 100%);"><img src="logo.png" /></div>
           <q-space />
           <div class="name-logo">
             La Dune
@@ -65,7 +92,6 @@ export default defineComponent({
   background-position-y: bottom;
   background-size: 100%;
   background-repeat: no-repeat;
-
   .name-logo {
     right: 30%;
     transform: translate(-50%, 50%);
@@ -78,7 +104,7 @@ export default defineComponent({
 }
 .col__main-eader {
   position: relative;
-  height: 100vh !important;
+  height: calc(100vh - 60px) !important;
   &--1 {
     padding: 0 2.6%;
     .hover-image {
@@ -90,12 +116,6 @@ export default defineComponent({
     }
   }
   &--1 div {
-    //background: linear-gradient(
-    //  to left,
-    //  rgb(170, 18, 18),
-    //  rgb(35, 131, 35),
-    //  #567
-    //);
     width: 100%;
     height: 100%;
     background-image: url('/1-min.jpg');
@@ -103,7 +123,21 @@ export default defineComponent({
     animation: AnimateBG 20s ease infinite !important;
   }
   &--2 {
-    background-color: $secondary;
+    padding: 0 2.6%;
+    .hover-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-73%);
+      transition: all 0.3s eas-in-out;
+    }
+  }
+  &--2 div {
+    width: 100%;
+    height: 100%;
+    background-image: url('/2-min.jpg');
+    background-size: 200% 200%;
+    animation: AnimateBG 20s ease infinite !important;
   }
   &--3 {
     background-color: $accent;

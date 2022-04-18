@@ -1,64 +1,39 @@
 <template>
-  <div class="q-px-lg q-pb-md container">
-    <q-timeline :layout="layout" color="secondary">
-      <q-timeline-entry heading>
-        Timeline heading
-        <br>
-        ({{$q.screen.lt.sm ? 'Dense' : ($q.screen.lt.md ? 'Comfortable' : 'Loose')}} layout)
-      </q-timeline-entry>
-
-      <q-timeline-entry
-        title="Event Title"
-        subtitle="February 22, 1986"
-        side="left"
-      >
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
-      </q-timeline-entry>
-
-      <q-timeline-entry
-        title="Event Title"
-        subtitle="February 22, 1986"
-        side="right"
-      >
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
-      </q-timeline-entry>
-
-      <q-timeline-entry
-        title="Event Title"
-        subtitle="February 22, 1986"
-        side="left"
-        color="orange"
-        icon="done_all"
-      >
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
-      </q-timeline-entry>
-
-      <q-timeline-entry
-        title="Event Title"
-        subtitle="February 22, 1986"
-        side="right"
-      >
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
-      </q-timeline-entry>
-
-      <q-timeline-entry
-        title="Event Title"
-        subtitle="February 22, 1986"
-        side="left"
-      >
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
-      </q-timeline-entry>
-    </q-timeline>
+  <div class=" container">
+    <div class="row justify-center about q-my-xl">
+      <div class="col-12  q-pa-md" :style="!$q.screen.lt.md ? 'width: calc(100% / 1)' : ''">
+        <q-card class="about-card" :style="'background: url(about/1.jpg)'">
+            <div class="absolute-bottom q-ma-md card-info text-primary">
+              <div class="text-h4 title">{{ this.$t('about.vision') }}<span class="underline bg-accent"></span></div>
+              <div class="text-h6 body">{{ this.$t('about.vision_body') }}</div>
+            </div>
+        </q-card>
+      </div>
+      <div class="col-12 col-sm-6  col-md-4 col-lg-3 q-pa-md" :style="!$q.screen.lt.md ? 'width: calc(100% / 2)' : ''">
+        <q-card class="about-card" :style="'background: url(about/2.jpg)'">
+            <div class="absolute-bottom q-ma-md card-info text-primary">
+              <div class="text-h4 title">{{ this.$t('about.mission') }}<span class="underline bg-accent"></span></div>
+              <div class="text-h6 body">{{ this.$t('about.mission_body') }}</div>
+            </div>
+        </q-card>
+      </div>
+      <div class="col-12 col-sm-6  col-md-4 col-lg-3 q-pa-md" :style="!$q.screen.lt.md ? 'width: calc(100% / 2)' : ''">
+        <q-card class="about-card" :style="'background: url(about/3.jpg)'">
+          <div class="absolute-bottom q-ma-md card-info text-primary">
+            <div class="text-h4 title">{{ this.$t('about.ourValue') }}<span class="underline bg-accent"></span></div>
+            <div class="text-h6 body">{{ this.$t('about.mission_body') }}</div>
+            <q-list>
+              <q-item>
+                <q-item-section>
+                  <q-item-label>{{ this.$t('about.ourValue') }}</q-item-label>
+                  <q-item-label  lines="2">Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
+                </q-item-section>
+              </q-item>
+            </q-list>
+          </div>
+        </q-card>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -67,14 +42,51 @@ import { useQuasar } from 'quasar'
 import { computed } from 'vue'
 
 export default {
-  setup () {
-    const $q = useQuasar()
-
+  data () {
     return {
-      layout: computed(() => {
-        return $q.screen.lt.sm ? 'dense' : ($q.screen.lt.md ? 'comfortable' : 'loose')
-      })
+      aboutUs: [
+        {
+          img: 'about/2.jpg',
+          title: this.$t('about.vision'),
+          value: this.$t('about.vision_body')
+        },
+        {
+          img: 'about/3.jpg',
+          title: this.$t('about.mission'),
+          value: this.$t('about.mission_body')
+        },
+      ]
     }
   }
 }
 </script>
+
+
+<style lang="scss">
+.about {
+  .about-card {
+    min-height: 65vh;
+    background-size: cover !important;
+    background-position: center !important;
+    .card-info {
+      background-color: rgba(255, 255, 255, 0.9019607843137255);
+      padding: 20px;
+      .title {
+        font-size: 40px;
+        font-weight: 700;
+        .underline{
+          width: 7%;
+          height: 3px;
+          background: #313131;
+          display: inherit;
+          margin: 20px 0;
+        }
+      }
+      .body {
+        line-height: 2.9rem !important;
+        font-weight: 300
+      }
+    }
+  }
+}
+</style>
