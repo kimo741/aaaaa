@@ -1,7 +1,7 @@
 <template>
   <div class="about-section overflow-hidden">
-    <img class="chip _L" src="/c-1-2.png" />
-    <img class="chip _R" src="/c-1.png" />
+      <img class="chip _L" src="/c-1-2.png" />
+      <img class="chip _R" src="/c-1.png" />
     <div class=" container">
       <div class="text-h2 text-primary text-center caption" >
         {{ $t('services.partners.body') }}
@@ -104,7 +104,7 @@ export default {
     direction: ltr;
   }
   ._L {
-    right: -15em !important;
+    left: -15em !important;
     width: 21em;
   }
   ._R {

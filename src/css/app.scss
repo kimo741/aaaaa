@@ -53,3 +53,21 @@ h3 {
     max-width: 100%;
   }
 }
+
+
+.q-field--filled .q-field__control {
+  height: 65px !important;
+}
+.q-field__bottom {
+  background-color: #00609c;
+
+}
+.q-field__native {
+  color: #fff !important;
+  font-size: 1.5rem !important;
+  text-align: center;
+}
+
+.q-textarea .q-field__control {
+  height: auto !important;
+}

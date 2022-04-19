@@ -1,7 +1,27 @@
 <template>
   <section class="section-form">
     <div class="container">
-      <h2>Get our Brochure</h2>
+      <h2>
+        التواصل
+        <div class="flex justify-center q-mt-xl q-mb-xl">
+          <q-item style="width: 2.5em;">
+            <q-item-section side>
+              <q-icon name="lab la-instagram" size="0.7em" color="white" />
+            </q-item-section>
+            <q-item-section dir="ltr" class="text-white  text-subtitle1" >
+              @LaDune
+            </q-item-section>
+          </q-item>
+          <q-item style="width: 2.5em;">
+            <q-item-section side>
+              <q-icon name="lab la-twitter" size="0.7em" color="white" />
+            </q-item-section>
+            <q-item-section dir="ltr" class="text-white  text-subtitle1" >
+              @LaDune
+            </q-item-section>
+          </q-item>
+        </div>
+      </h2>
       <div class="row">
         <div class="col flex justify-center">
           <div class="q-pa-md" style="max-width: 60%">
@@ -13,7 +33,7 @@
               <q-input
                 filled
                 v-model="name"
-                label="Your name *"
+                placeholder="الاسم *"
                 color="white"
                 class="inputs"
                 lazy-rules
@@ -24,20 +44,22 @@
               />
               <q-input
                 v-model="email"
-                label="Your Email *"
+                placeholder="الموضوع*"
                 filled
                 class="inputs"
                 type="email"
-                hint="Email"
                 loading="true"
                 label-color="white"
                 outlined="false"
+                :rules="[
+                  (val) => (val && val.length > 0) || 'Please type something',
+                ]"
               />
               <q-input
                 filled
                 type="Phone number"
                 v-model="number"
-                label="Phone number *"
+                placeholder="البريد الكتروني *"
                 color="white"
                 class="inputs"
                 lazy-rules
@@ -54,8 +76,9 @@
                 clearable
                 filled
                 v-model="text"
-                class="inputs"
-                label="Message *"
+                class="inputs auto"
+                type="textarea"
+                placeholder="أخبرني ازي اقدر اساعدك"
                 label-color="white"
               />
 
@@ -63,8 +86,10 @@
                 <q-btn
                   label="Submit"
                   type="submit"
-                  color="red-7"
-                  class="full-width form__but-sub"
+                  color="white"
+
+                  text-color="primary"
+                  class="full-width text-capitalize form__but-sub shadow-0 q-my-lg"
 
                 />
 <!--                <q-btn-->
@@ -125,18 +150,21 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .section-form {
+  background-color: #0C7EA5;
   h2 {
     color: #fff;
     font-weight: 700;
     position: relative;
     padding: 2rem 0;
+    margin-bottom: 0px;
+    padding-bottom: 0;
     &::after {
       content: "";
       position: absolute;
-      bottom: -40%;
+      bottom: -19%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 5rem;
+      width: 28rem;
       height: 5px;
       background-color: #3ff2c6;
     }
@@ -154,11 +182,10 @@ export default defineComponent({
   }
 }
 .form__but-sub {
-  //width: 8rem !important;
-  height: 3rem !important;
-  background-color: #fff;
-  font-size: 1rem;
-  margin: 0 2rem;
+  width: 16rem !important;
+  height: 4rem !important;
+  font-size: 1.5rem;
+  //margin: 0 2rem;
 }
 .form__but-res {
   width: 8rem !important;
@@ -171,4 +198,27 @@ export default defineComponent({
 .inputs {
   background-color: #2175a9;
 }
+
+.q-field__native {
+  color: #fff !important;
+  font-size: 1.5rem !important;
+  text-align: center;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  text-align: center;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  text-align: center;
+}
+
 </style>

@@ -19,7 +19,7 @@
         <router-view />
       </transition>
     </q-page-container>
-    <Fotter />
+
   </q-layout>
 </template>
 
@@ -37,8 +37,6 @@ export default defineComponent({
 
   components: {
     // ScrolleNav,
-
-    Fotter,
   },
   data () {
     return {

@@ -15,6 +15,17 @@
                 <img class="hover-iamge" src="1-3-min.png" />
                 <img class="col__main-eader--image" src="1-2-min.png" />
               </div>
+              <div class="q-x-auto z-max" style="
+
+    position: absolute;
+    top: 20%;
+    left: 79%;
+    display: inline-block;
+    width: 0px;
+    font-size: 3.5rem;
+    color: #fff;
+    font-weight: 800;
+">تخطيط</div>
             </div>
             <div
               class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--2"
@@ -23,6 +34,17 @@
                 <img class="hover-iamge" src="1-3-min.png" />
                 <img class="col__main-eader--image" src="2-2-min.png" />
               </div>
+              <div class="q-x-auto z-max" style="
+
+    position: absolute;
+    top: 20%;
+    left: 79%;
+    display: inline-block;
+    width: 0px;
+    font-size: 3.5rem;
+    color: #fff;
+    font-weight: 800;
+">تسويق</div>
             </div>
             <div
               class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--1"
@@ -31,6 +53,17 @@
                 <img class="hover-iamge" src="1-3-min.png" />
                 <img class="col__main-eader--image" src="1-2-min.png" />
               </div>
+              <div class="q-x-auto z-max" style="
+
+    position: absolute;
+    top: 20%;
+    left: 79%;
+    display: inline-block;
+    width: 0px;
+    font-size: 3.5rem;
+    color: #fff;
+    font-weight: 800;
+">تصميم</div>
             </div>
             <div
               class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--1"
@@ -39,6 +72,17 @@
                 <img class="hover-iamge" src="1-3-min.png" />
                 <img class="col__main-eader--image" src="1-2-min.png" />
               </div>
+              <div class="q-x-auto z-max" style="
+
+    position: absolute;
+    top: 20%;
+    left: 73%;
+    display: inline-block;
+    width: 0px;
+    font-size: 3.5rem;
+    color: #fff;
+    font-weight: 800;
+">تصوير</div>
             </div>
             <!--            <div-->
             <!--              class="col-xl-3 col-md-3 col-sm-6 col-xs-6 col-lg-3 col__main-eader col__main-eader&#45;&#45;2"-->
