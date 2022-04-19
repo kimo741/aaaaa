@@ -10,7 +10,6 @@
           <div class="row">
             <div
               class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--1"
-
             >
               <div class="overflow-hidden">
                 <img class="hover-iamge" src="1-3-min.png" />
@@ -19,7 +18,6 @@
             </div>
             <div
               class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--2"
-
             >
               <div class="overflow-hidden">
                 <img class="hover-iamge" src="1-3-min.png" />
@@ -28,7 +26,6 @@
             </div>
             <div
               class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--1"
-
             >
               <div class="overflow-hidden">
                 <img class="hover-iamge" src="1-3-min.png" />
@@ -37,39 +34,37 @@
             </div>
             <div
               class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--1"
-
             >
               <div class="overflow-hidden">
                 <img class="hover-iamge" src="1-3-min.png" />
                 <img class="col__main-eader--image" src="1-2-min.png" />
               </div>
             </div>
-<!--            <div-->
-<!--              class="col-xl-3 col-md-3 col-sm-6 col-xs-6 col-lg-3 col__main-eader col__main-eader&#45;&#45;2"-->
-<!--            >-->
-<!--              <img class="col__main-eader&#45;&#45;image" src="1-2-min.png" />-->
-<!--            </div>-->
-<!--            <div-->
-<!--              class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader&#45;&#45;3"-->
-<!--            >-->
-<!--              <img class="col__main-eader&#45;&#45;image" src="1-2-min.png" />-->
-<!--            </div>-->
-<!--            <div-->
-<!--              class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader&#45;&#45;4"-->
-<!--            >-->
-<!--              <img class="col__main-eader&#45;&#45;image" src="1-2-min.png" />-->
-<!--            </div>-->
+            <!--            <div-->
+            <!--              class="col-xl-3 col-md-3 col-sm-6 col-xs-6 col-lg-3 col__main-eader col__main-eader&#45;&#45;2"-->
+            <!--            >-->
+            <!--              <img class="col__main-eader&#45;&#45;image" src="1-2-min.png" />-->
+            <!--            </div>-->
+            <!--            <div-->
+            <!--              class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader&#45;&#45;3"-->
+            <!--            >-->
+            <!--              <img class="col__main-eader&#45;&#45;image" src="1-2-min.png" />-->
+            <!--            </div>-->
+            <!--            <div-->
+            <!--              class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader&#45;&#45;4"-->
+            <!--            >-->
+            <!--              <img class="col__main-eader&#45;&#45;image" src="1-2-min.png" />-->
+            <!--            </div>-->
           </div>
         </div>
         <div class="col-4 diplayh left-header overflow-hidden">
-          <div style="transform: translate(-30%, 100%);"><img src="logo.png" /></div>
-          <q-space />
-          <div class="name-logo">
-            La Dune
+          <div style="transform: translate(-30%, 100%)">
+            <img src="logo.png" />
           </div>
+          <q-space />
+          <div class="name-logo">La Dune</div>
         </div>
       </div>
-
     </div>
   </section>
 </template>
@@ -82,9 +77,36 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-.col__main-eader--1:hover .hover-iamge {
-  transform: translate(10%);
-  //display: none
+.hover-iamge {
+  animation: righttBackground 15s ease-in-out infinite;
+}
+
+.col__main-eader:hover {
+  transition: all 0.56s ease-in-out;
+  transform: translateY(-1%);
+}
+@keyframes righttBackground {
+  0% {
+    transform: translateX(800px);
+  }
+  25% {
+    transform: translateX(600px);
+  }
+  35% {
+    transform: translateX(300px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  65% {
+    transform: translateX(300px);
+  }
+  80% {
+    transform: translateX(600px);
+  }
+  100% {
+    transform: translateX(800px);
+  }
 }
 .left-header {
   position: relative;
@@ -105,6 +127,7 @@ export default defineComponent({
 .col__main-eader {
   position: relative;
   height: calc(100vh - 60px) !important;
+
   &--1 {
     padding: 0 2.6%;
     .hover-image {
@@ -118,7 +141,7 @@ export default defineComponent({
   &--1 div {
     width: 100%;
     height: 100%;
-    background-image: url('/1-min.jpg');
+    background-image: url("/1-min.jpg");
     background-size: 200% 200%;
     animation: AnimateBG 20s ease infinite !important;
   }
@@ -135,15 +158,13 @@ export default defineComponent({
   &--2 div {
     width: 100%;
     height: 100%;
-    background-image: url('/2-min.jpg');
+    background-image: url("/2-min.jpg");
     background-size: 200% 200%;
     animation: AnimateBG 20s ease infinite !important;
   }
   &--3 {
-    background-color: $accent;
   }
   &--4 {
-    background-color: $positive;
   }
   &--image {
     position: absolute;
@@ -153,6 +174,7 @@ export default defineComponent({
     width: 80%;
     height: 100%;
     margin: auto;
+    cursor: pointer;
   }
 }
 @media screen and (max-width: 900px) and (min-width: 300px) {
