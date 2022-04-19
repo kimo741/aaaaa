@@ -1,36 +1,39 @@
 <template>
   <div>
-
     <q-carousel
       v-model="slide"
       swipeable
       height="103vh"
-      class="text-white shadow-1 rounded-borders bg-ourclint slider "
+      class="text-white shadow-1 rounded-borders bg-ourclint slider"
       style="z-index: 100"
       :autoplay="2500"
     >
       <q-carousel-slide
         name="style"
-        class=" slider-container q-pa-none"
+        class="slider-container q-pa-none"
         img-src="slider/1.png"
       >
         <div class="container row items-end full-height relative-position">
           <div class="bg-white slider-card col-12 col-md-6">
             <div class="text-left bold text-h1 text-primary appName block">
-              {{ $t('appName') }}
-              <div class="text-left bold text-h5 text-primary about-body q-mt-lg inline-block" >
-                {{ $t('about.title') }}
+              {{ $t("appName") }}
+              <div
+                class="text-left bold text-h5 text-primary about-body q-mt-lg inline-block"
+              >
+                {{ $t("about.title") }}
               </div>
               <span class="underline bg-accent"></span>
             </div>
-            <div class="text-left bold text-h5 text-primary about-body full-width block q-mt-lg " >{{ $t('about.body') }} {{ $t('about.body2') }}</div>
+            <div
+              class="text-left bold text-h5 text-primary about-body full-width block q-mt-lg"
+            >
+              {{ $t("about.body") }} {{ $t("about.body2") }}
+            </div>
           </div>
-
         </div>
 
-<!--        <div class="overlay"></div>-->
+        <!--        <div class="overlay"></div>-->
       </q-carousel-slide>
-
     </q-carousel>
   </div>
 </template>
@@ -48,19 +51,19 @@ export default defineComponent({
   },
 });
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .container {
   zoom: 78%;
 }
 .slider {
-  z-index: 10
+  z-index: 10;
 }
 .slider-container {
   border-bottom: 5px solid $primary;
 }
 .slider-content {
   .container {
-    max-width : 960px;
+    max-width: 960px;
   }
 }
 .slider-card {
@@ -69,17 +72,17 @@ export default defineComponent({
     font-size: 40px;
     font-weight: 700;
     line-height: 0;
-  .underline{
-    width: 7%;
-    height: 3px;
-    background: #313131;
-    display: inherit;
-    margin-top: 11px;
-  }
+    .underline {
+      width: 7%;
+      height: 3px;
+      background: #313131;
+      display: inherit;
+      margin-top: 11px;
+    }
   }
   .about-body {
     line-height: 2.9rem !important;
-    font-weight: 300
+    font-weight: 300;
   }
 }
 @media screen and (max-width: 800px) and (min-width: 300px) {

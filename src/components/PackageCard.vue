@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row text-center justify-around">
         <!------------------package-1-------------------->
-        <div class="col-xl-6 -xol-lg-6 lt-lg-col-12">
+        <div class="col-xl-4 -xol-lg-6 lt-lg-col-12 card-1">
           <h2>{{ $t("packages.package_1.title") }}</h2>
           <p>
             <b>{{ $t("packages.package_1.item1") }}</b>
@@ -17,7 +17,7 @@
           <span>{{ $t("packages.package_1.price") }}</span>
         </div>
         <!------------------package-2-------------------->
-        <div class="col-xl-6 -xol-lg-6 lt-lg-col-12">
+        <div class="col-xl-4 -xol-lg-6 lt-lg-col-12 card-2">
           <h2>{{ $t("packages.package_2.title") }}</h2>
           <p>
             <b>{{ $t("packages.package_2.item1") }}</b>
@@ -45,6 +45,32 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.packages-con {
+}
+.sc {
+  background-color: #fff;
+}
+.card-1 {
+  height: 60% !important;
+  border: 1px solid #000;
+  height: 60% !important;
+  border: 1px solid #000;
+  padding: 0 10%;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+
+  h2 {
+    font-size: 2.5rem !important;
+    font-weight: 700;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+}
+
 // .flip-card {
 //   background-color: transparent;
 //   width: 25rem;
