@@ -4,6 +4,8 @@
     <StartNav :navStatus="true" class="z-max" />
     <home-carousel />
     <about-us />
+    <VueSweber/>
+    <about-us />
 <!---->
   </q-page>
 </template>
@@ -19,10 +21,12 @@ import PackageCard from "src/components/PackageCard.vue";
 import { defineComponent } from "vue";
 import StartNav from "components/Layout/Start-nav";
 import AboutUs from "components/about-us";
+import VueSweber from "components/Vue-sweber";
 
 export default defineComponent({
   name: "IndexPage",
   components: {
+    VueSweber,
     HomeSlide,
     AboutUs,
     StartNav,

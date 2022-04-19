@@ -49,6 +49,9 @@ export default defineComponent({
 });
 </script>
 <style lang="scss">
+.container {
+  zoom: 78%;
+}
 .slider {
   z-index: 10
 }

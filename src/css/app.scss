@@ -3,10 +3,16 @@ body,
   font-family: "Cairo", sans-serif;
 }
 
+body{
+  font-family: "Cairo", sans-serif;
+  background-color: #f9f5f2;
+}
+
 .container {
   max-width: 1360px;
   margin: auto;
 }
+
 .slither-enter-active,
 .slither-leave-active {
   transition: transform 1s;
