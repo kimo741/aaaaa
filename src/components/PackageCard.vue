@@ -5,9 +5,14 @@
         <!------------------package-1-------------------->
         <div class="col-xl-4 -xol-lg-6 lt-lg-col-12 card-1 row items-center">
           <div class="card-1__header text-center">
-            <span>
-              {{ $t("packages.package_1.price") }}
-            </span>
+            <!-- <span>
+              <q-icon
+                name="fa-solid fa-circle-dollar"
+                color="white"
+                size="1rem" />
+
+                </span> -->
+            <span> {{ $t("packages.package_1.price") }} $ </span>
             <h2>{{ $t("packages.package_1.title") }}</h2>
           </div>
           <div class="card-1__body">
@@ -49,6 +54,13 @@
               /><b>{{ $t("packages.package_1.item7") }}</b> <br />
             </p>
           </div>
+          <q-btn
+            push
+            color="white"
+            text-color="primary"
+            label="Get Pgackage"
+            class="q-mx-* but-1"
+          />
         </div>
         <!------------------package-2-------------------->
         <div class="col-xl-4 -xol-lg-6 lt-lg-col-12 card-2 items-center">
@@ -56,7 +68,7 @@
             <span>
               {{ $t("packages.package_1.price") }}
             </span>
-            <h2>{{ $t("packages.package_2.title") }}</h2>
+            <h2>{{ $t("packages.package_2.title") }} $</h2>
           </div>
           <div class="card-2__body">
             <p>
@@ -117,6 +129,13 @@
               <b> {{ $t("packages.package_2.item8") }}</b>
             </p>
           </div>
+          <q-btn
+            push
+            color="white"
+            text-color="primary"
+            label="Get Pgackage"
+            class="q-mt-lg but-2"
+          />
         </div>
         <!-- /////////////////////////////////////////---------------->
 
@@ -138,7 +157,7 @@ export default defineComponent({
 }
 .sc {
   background-color: #fff;
-  padding: 6rem 0;
+  padding: 5rem 0;
   transition: all 0.4s ease-in-out;
 
   .card-1,
@@ -151,18 +170,24 @@ export default defineComponent({
     text-align: center;
     border-radius: 10px;
     transition: all 0.4s ease-in-out;
+    width: 30%;
+    border: none !important;
+    outline: none;
+    box-shadow: 1px 1px 5px 2px #ddd;
     &__header {
       margin: auto !important;
       width: 90% !important;
       span {
-        font-size: 3rem;
+        font-size: 2rem;
         border-radius: 10px;
-        background-color: rgba(255, 255, 255, 0.925);
+        background-color: #fff;
         padding: 0 4rem;
+        font-weight: bolder;
+        letter-spacing: 5px;
         color: $primary;
       }
       h2 {
-        font-size: 2.2rem;
+        font-size: 2rem;
         font-weight: bold;
         display: block;
         width: 100%;
@@ -179,7 +204,7 @@ export default defineComponent({
       border-radius: 10px;
       background-color: rgba(255, 255, 255, 0.925);
       text-align: center;
-      line-height: 2.5rem !important;
+      line-height: 1.5rem !important;
       font-size: 3rem;
       margin: auto;
       width: 100%;
@@ -189,10 +214,11 @@ export default defineComponent({
         font-size: 1rem !important;
         text-align: left !important;
         b {
-          margin-left: 1rem;
+          margin-left: 0.6rem;
         }
       }
       span {
+        font-size: 10px;
       }
     }
     &::before {
@@ -217,20 +243,39 @@ export default defineComponent({
       border-radius: 50px;
       transform: translate(-50%, -50%);
     }
-    // &:hover {
-    //   background-color: #fff;
-    //   color: #fff;
-    // }
-    // &:hover .card-1__body {
-    //   background-color: #00609c;
-    //   color: #fff;
-    // }
+    &:hover {
+      transition: all 0.6s ease-in-out;
+      background-color: #fff;
+      color: $primary;
+      h2 {
+        color: #00609c !important;
+      }
+      .card-1__body,
+      .card-2__body {
+        background-color: #00609c;
+        color: #fff;
+        transform: translateY(-20px);
+      }
+      .but-1,
+      .but-2 {
+        background: $primary !important;
+        color: #fff !important;
+      }
+      span {
+        background-color: #00609c;
+        color: #fff;
+      }
+    }
   }
 }
 .glossy {
   width: 100% !important;
   height: 100% !important;
   border-radius: 50% !important;
+}
+.but-1 {
+  margin: auto !important;
+  font-size: 1rem;
 }
 // .flip-card {
 //   background-color: transparent;

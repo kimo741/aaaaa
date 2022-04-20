@@ -9,13 +9,13 @@
         <div class="text-center full-width">
           <ul class="nav-ul full-width">
             <li>
-              <router-link :to="'/'"> Home</router-link>
+              <a @click="toId"> Home</a>
             </li>
             <li>
-              <router-link :to="'/Services'">Services</router-link>
+              <a @click="toId">Services</a>
             </li>
             <li>
-              <router-link :to="'ContactUs'">Contact</router-link>
+              <a @click="toId">Contact</a>
             </li>
           </ul>
         </div>
@@ -26,10 +26,18 @@
 <script>
 import { defineComponent, ref } from "vue";
 import LogoImg from "components/Layout/LogoImg";
+import { scroll } from "quasar";
+const { getScrollTarget, setVerticalScrollPosition } = scroll;
 
 export default defineComponent({
   name: "HeaderNav",
   components: { LogoImg },
+
+  methods: {
+    toId() {
+      console.log(this.$refs.homePage);
+    },
+  },
 });
 </script>
 <style lang="scss" scoped>
