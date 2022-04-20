@@ -1,33 +1,29 @@
+.env
+.env.backup
 .DS_Store
-.thumbs.db
-node_modules
-
-# Quasar core related directories
-.quasar
-/dist
-
-# Cordova related directories and files
-/src-cordova/node_modules
-/src-cordova/platforms
-/src-cordova/plugins
-/src-cordova/www
-
-# Capacitor related directories and files
-/src-capacitor/www
-/src-capacitor/node_modules
-
-# BEX related directories and files
-/src-bex/www
-/src-bex/js/core
-
-# Log files
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Editor directories and files
+.phpunit.result.cache
+docker-compose.override.yml
 .idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
+.php_cs.cache
+.vscode
+todo.txt
+.vagrant
+/data
+/docker-compose-collection
+Homestead.json
+Homestead.yaml
+/ignorables/*
+/node_modules
+npm-debug.log
+package-lock.json
+/public/css
+/public/fonts
+/public/js
+/public/hot
+/public/storage
+/public/themes
+/public/vendor
+/storage/*.key
+/storage/dcc-data/
+/stubs
+/vendor
