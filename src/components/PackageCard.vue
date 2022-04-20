@@ -3,34 +3,123 @@
     <div class="container">
       <div class="row text-center justify-around">
         <!------------------package-1-------------------->
-        <div class="col-xl-4 -xol-lg-6 lt-lg-col-12 card-1">
-          <h2>{{ $t("packages.package_1.title") }}</h2>
-          <p>
-            <b>{{ $t("packages.package_1.item1") }}</b>
-            <b>{{ $t("packages.package_1.item2") }}</b>
-            <b>{{ $t("packages.package_1.item3") }}</b>
-            <b>{{ $t("packages.package_1.item4") }}</b>
-            <b>{{ $t("packages.package_1.item5") }}</b>
-            <b>{{ $t("packages.package_1.item6") }}</b>
-            <b>{{ $t("packages.package_1.item7") }}</b>
-          </p>
-          <span>{{ $t("packages.package_1.price") }}</span>
+        <div class="col-xl-4 -xol-lg-6 lt-lg-col-12 card-1 row items-center">
+          <div class="card-1__header text-center">
+            <span>
+              {{ $t("packages.package_1.price") }}
+            </span>
+            <h2>{{ $t("packages.package_1.title") }}</h2>
+          </div>
+          <div class="card-1__body">
+            <p>
+              <q-icon
+                name="fa-solid fa-circle-check"
+                color="green"
+                size="1rem"
+              /><b>{{ $t("packages.package_1.item1") }}</b> <br />
+              <q-icon
+                name="fa-solid fa-circle-check"
+                color="green"
+                size="1rem"
+              /><b>{{ $t("packages.package_1.item2") }}</b> <br />
+              <q-icon
+                name="fa-solid fa-circle-check"
+                color="green"
+                size="1rem"
+              /><b>{{ $t("packages.package_1.item3") }}</b> <br />
+              <q-icon
+                name="fa-solid fa-circle-check"
+                color="green"
+                size="1rem"
+              /><b>{{ $t("packages.package_1.item4") }}</b> <br />
+              <q-icon
+                name="fa-solid fa-circle-check"
+                color="green"
+                size="1rem"
+              /><b>{{ $t("packages.package_1.item5") }}</b> <br />
+              <q-icon
+                name="fa-solid fa-circle-check"
+                color="green"
+                size="1rem"
+              /><b>{{ $t("packages.package_1.item6") }}</b> <br />
+              <q-icon
+                name="fa-solid fa-circle-check"
+                color="green"
+                size="1rem"
+              /><b>{{ $t("packages.package_1.item7") }}</b> <br />
+            </p>
+          </div>
         </div>
         <!------------------package-2-------------------->
-        <div class="col-xl-4 -xol-lg-6 lt-lg-col-12 card-2">
-          <h2>{{ $t("packages.package_2.title") }}</h2>
-          <p>
-            <b>{{ $t("packages.package_2.item1") }}</b>
-            <b>{{ $t("packages.package_2.item2") }}</b>
-            <b>{{ $t("packages.package_2.item3") }}</b>
-            <b>{{ $t("packages.package_2.item4") }}</b>
-            <b>{{ $t("packages.package_2.item5") }}</b>
-            <b>{{ $t("packages.package_2.item6") }}</b>
-            <b>{{ $t("packages.package_2.item7") }}</b>
-            <b>{{ $t("packages.package_2.item8") }}</b>
-          </p>
-          <span>{{ $t("packages.package_2.price") }}</span>
+        <div class="col-xl-4 -xol-lg-6 lt-lg-col-12 card-2 items-center">
+          <div class="card-2__header">
+            <span>
+              {{ $t("packages.package_1.price") }}
+            </span>
+            <h2>{{ $t("packages.package_2.title") }}</h2>
+          </div>
+          <div class="card-2__body">
+            <p>
+              <q-icon
+                name="fa-solid fa-circle-check"
+                color="green"
+                size="1rem"
+              />
+              <b> {{ $t("packages.package_2.item1") }}</b>
+              <br />
+              <q-icon
+                name="fa-solid fa-circle-check"
+                color="green"
+                size="1rem"
+              />
+              <b> {{ $t("packages.package_2.item2") }}</b>
+              <br />
+              <q-icon
+                name="fa-solid fa-circle-check"
+                color="green"
+                size="1rem"
+              />
+              <b> {{ $t("packages.package_2.item3") }}</b>
+              <br />
+              <q-icon
+                name="fa-solid fa-circle-check"
+                color="green"
+                size="1rem"
+              />
+              <b> {{ $t("packages.package_2.item4") }}</b>
+              <br />
+              <q-icon
+                name="fa-solid fa-circle-check"
+                color="green"
+                size="1rem"
+              />
+              <b> {{ $t("packages.package_2.item5") }}</b>
+              <br />
+              <q-icon
+                name="fa-solid fa-circle-check"
+                color="green"
+                size="1rem"
+              />
+              <b> {{ $t("packages.package_2.item6") }}</b>
+              <br />
+              <q-icon
+                name="fa-solid fa-circle-check"
+                color="green"
+                size="1rem"
+              />
+              <b> {{ $t("packages.package_2.item7") }}</b>
+              <br />
+              <q-icon
+                name="fa-solid fa-circle-check"
+                color="green"
+                size="1rem"
+              />
+              <b> {{ $t("packages.package_2.item8") }}</b>
+            </p>
+          </div>
         </div>
+        <!-- /////////////////////////////////////////---------------->
+
         <!------------------package-3-------------------->
       </div>
     </div>
@@ -49,28 +138,100 @@ export default defineComponent({
 }
 .sc {
   background-color: #fff;
-}
-.card-1 {
-  height: 60% !important;
-  border: 1px solid #000;
-  height: 60% !important;
-  border: 1px solid #000;
-  padding: 0 10%;
-  background-color: rgba(255, 255, 255, 0.8);
-  font-size: 1.5rem;
-  padding: 2.5rem;
-  text-align: center;
-  border-radius: 3px;
+  padding: 6rem 0;
+  transition: all 0.4s ease-in-out;
 
-  h2 {
-    font-size: 2.5rem !important;
-    font-weight: 700;
-  }
-  p {
-    font-size: 1.2rem;
+  .card-1,
+  .card-2 {
+    position: relative;
+    height: auto;
+    padding: 2rem;
+    box-shadow: 1px 1px 1px #ddd;
+    background-color: #00609c;
+    text-align: center;
+    border-radius: 10px;
+    transition: all 0.4s ease-in-out;
+    &__header {
+      margin: auto !important;
+      width: 90% !important;
+      span {
+        font-size: 3rem;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.925);
+        padding: 0 4rem;
+        color: $primary;
+      }
+      h2 {
+        font-size: 2.2rem;
+        font-weight: bold;
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        letter-spacing: 0.2rem;
+        border-radius: 10px;
+      }
+    }
+
+    &__body {
+      transition: all 0.4s ease-in-out;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.925);
+      text-align: center;
+      line-height: 2.5rem !important;
+      font-size: 3rem;
+      margin: auto;
+      width: 100%;
+      color: $primary;
+
+      p {
+        font-size: 1rem !important;
+        text-align: left !important;
+        b {
+          margin-left: 1rem;
+        }
+      }
+      span {
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: #fff;
+      width: 15%;
+      height: 5px;
+      top: 15px;
+      left: 50%;
+      border-radius: 50px;
+      transform: translate(-50%, -50%);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: #fff;
+      width: 15%;
+      height: 5px;
+      bottom: 10px;
+      left: 50%;
+      border-radius: 50px;
+      transform: translate(-50%, -50%);
+    }
+    // &:hover {
+    //   background-color: #fff;
+    //   color: #fff;
+    // }
+    // &:hover .card-1__body {
+    //   background-color: #00609c;
+    //   color: #fff;
+    // }
   }
 }
-
+.glossy {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+}
 // .flip-card {
 //   background-color: transparent;
 //   width: 25rem;
