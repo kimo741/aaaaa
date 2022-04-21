@@ -3,20 +3,25 @@
     <div class="container">
       <h2>
         التواصل
-        <div class="flex justify-center q-mt-xl q-mb-xl">
-          <q-item style="width: 2.5em;">
+        <div class="social-div flex justify-center q-mt-xl q-mb-xl">
+          <q-item style="width: 3em">
             <q-item-section side>
-              <q-icon name="lab la-instagram" size="0.7em" color="white" />
+              <q-icon
+                name="lab la-instagram"
+                size="0.7em"
+                color="white"
+                class="icon"
+              />
             </q-item-section>
-            <q-item-section dir="ltr" class="text-white  text-subtitle1" >
+            <q-item-section dir="ltr" class="text-white text-subtitle1">
               @LaDune
             </q-item-section>
           </q-item>
-          <q-item style="width: 2.5em;">
+          <q-item style="width: 3em">
             <q-item-section side>
               <q-icon name="lab la-twitter" size="0.7em" color="white" />
             </q-item-section>
-            <q-item-section dir="ltr" class="text-white  text-subtitle1" >
+            <q-item-section dir="ltr" class="text-white text-subtitle1">
               @LaDune
             </q-item-section>
           </q-item>
@@ -24,7 +29,7 @@
       </h2>
       <div class="row">
         <div class="col flex justify-center">
-          <div class="q-pa-md" style="max-width: 60%">
+          <div class="q-pa-md" style="max-width: 100%">
             <q-form
               @submit="onSubmit"
               @reset="onReset"
@@ -87,19 +92,17 @@
                   label="Submit"
                   type="submit"
                   color="white"
-
                   text-color="primary"
                   class="full-width text-capitalize form__but-sub shadow-0 q-my-lg"
-
                 />
-<!--                <q-btn-->
-<!--                  label="Reset"-->
-<!--                  type="reset"-->
-<!--                  color="white"-->
-<!--                  flat-->
-<!--                  class="q-ml-sm form__but-res"-->
-<!--                  rounded-->
-<!--                />-->
+                <!--                <q-btn-->
+                <!--                  label="Reset"-->
+                <!--                  type="reset"-->
+                <!--                  color="white"-->
+                <!--                  flat-->
+                <!--                  class="q-ml-sm form__but-res"-->
+                <!--                  rounded-->
+                <!--                />-->
               </div>
             </q-form>
           </div>
@@ -150,7 +153,7 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .section-form {
-  background-color: #0C7EA5;
+  background: linear-gradient(to top, #00609c, #0c7ea5);
   h2 {
     color: #fff;
     font-weight: 700;
@@ -164,7 +167,7 @@ export default defineComponent({
       bottom: -19%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 28rem;
+      width: 25rem;
       height: 5px;
       background-color: #3ff2c6;
     }
@@ -209,16 +212,35 @@ export default defineComponent({
   text-align: center;
 }
 
-:-moz-placeholder { /* Firefox 18- */
+:-moz-placeholder {
+  /* Firefox 18- */
   text-align: center;
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
+::-moz-placeholder {
+  /* Firefox 19+ */
   text-align: center;
 }
 
 :-ms-input-placeholder {
   text-align: center;
 }
-
+@media screen and (max-width: 800px) and (min-width: 300px) {
+  .section-form {
+    h2 {
+      font-size: 3rem;
+    }
+    .social-div {
+    }
+  }
+}
+.inputs {
+  width: 100% !important;
+  margin: 16px auto !important;
+}
+.q-pa-md {
+  width: 80%;
+  margin: auto !important;
+  padding: 0;
+}
 </style>

@@ -166,7 +166,7 @@ export default defineComponent({
     height: auto;
     padding: 2rem;
     box-shadow: 1px 1px 1px #ddd;
-    background-color: #00609c;
+    background: linear-gradient(to right, #fab338, #febf50);
     text-align: center;
     border-radius: 10px;
     transition: all 0.4s ease-in-out;
@@ -174,17 +174,19 @@ export default defineComponent({
     border: none !important;
     outline: none;
     box-shadow: 1px 1px 5px 2px #ddd;
+    border: 1px solid #777 !important;
     &__header {
       margin: auto !important;
       width: 90% !important;
       span {
         font-size: 2rem;
         border-radius: 10px;
-        background-color: #fff;
-        padding: 0 4rem;
+        background-color: rgba(255, 255, 255, 0.493);
+        padding: 0 2rem;
         font-weight: bolder;
         letter-spacing: 5px;
         color: $primary;
+        box-shadow: 3px 3px 5px #777;
       }
       h2 {
         font-size: 2rem;
@@ -252,7 +254,7 @@ export default defineComponent({
       }
       .card-1__body,
       .card-2__body {
-        background-color: #00609c;
+        background: linear-gradient(to bottom, #fab338, #febe507e);
         color: #fff;
         transform: translateY(-20px);
       }
@@ -262,7 +264,7 @@ export default defineComponent({
         color: #fff !important;
       }
       span {
-        background-color: #00609c;
+        background: linear-gradient(to right, #fab338, #febf50);
         color: #fff;
       }
     }
@@ -275,7 +277,6 @@ export default defineComponent({
 }
 .but-1 {
   margin: auto !important;
-  font-size: 1rem;
 }
 // .flip-card {
 //   background-color: transparent;
@@ -475,4 +476,30 @@ export default defineComponent({
 //     -webkit-transform: scale(1.05);
 //   }
 // }
+
+@media screen and (max-width: 800px) and (min-width: 300px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+    .card-1,
+    .card-2 {
+      width: 90%;
+      height: auto;
+      margin: 1rem auto;
+    }
+  }
+  .but-1 {
+    margin-top: 1rem !important;
+    width: 100%;
+    height: 3rem;
+    font-size: 1.1rem;
+    font-weight: bolder;
+  }
+  .but-2 {
+    width: 100%;
+    height: 3rem;
+    font-size: 1.1rem;
+    font-weight: bolder;
+  }
+}
 </style>

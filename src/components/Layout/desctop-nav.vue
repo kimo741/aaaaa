@@ -1,15 +1,20 @@
 <template>
-  <router-link
+  <span
     v-for="(link, i) in links"
     :key="i"
-    :to="link.url"
     class="link"
+    @click="scrollToElement ('about-section')"
     :style="'font-size:' + fontSize + 'rem;' + 'font-famile:' + fontFamile"
-    >{{ $t(link.name) }}</router-link
+    >{{ $t(link.name) }}</span
   >
+<!--    :to="link.url"-->
 </template>
 
 <script>
+import { scroll } from 'quasar'
+
+const { getScrollTarget, setVerticalScrollPosition } = scroll
+
 export default {
   props: {
     fontSize: {
@@ -47,6 +52,15 @@ export default {
       ],
     };
   },
+  methods: {
+    scrollToElement (el) {
+      // const target = getScrollTarget(el)
+      return console.log(document.getElementById('about-section').scrollIntoView(true))
+      const offset = el.offsetTop
+      const duration = 1000
+      setVerticalScrollPosition(target, offset, duration)
+    }
+  }
 };
 </script>
 

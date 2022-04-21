@@ -85,10 +85,14 @@ export default defineComponent({
     font-weight: 300;
   }
 }
-@media screen and (max-width: 800px) and (min-width: 300px) {
+@media screen and (max-width: 1000px) and (min-width: 300px) {
+  .slider-card {
+    width: 70%;
+  }
   .slider-container {
     width: 100% !important;
     height: auto !important;
+    background-position: 60% 127% !important;
     padding: 20px;
     overflow: none !important;
     flex-direction: row !important;
@@ -119,6 +123,14 @@ export default defineComponent({
 
     h2 {
       text-align: center;
+    }
+  }
+}
+@media screen and (max-width: 500px) and (min-width: 0px) {
+  .slider-container {
+    height: auto !important;
+    .slider-card {
+      width: 100%;
     }
   }
 }

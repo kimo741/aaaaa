@@ -1,5 +1,5 @@
 <template>
-  <div class="about-section overflow-hidden">
+  <div id="about-section" class="about-section overflow-hidden">
     <img class="chip _L" src="/c-1-2.png" />
     <img class="chip _R" src="/c-1.png" />
     <div class="container">
@@ -205,5 +205,19 @@ export default {
       }
     }
   }
+}
+@media screen and (max-width: 800px) and (min-width: 200px) {
+  .about-section {
+  }
+}
+._L {
+  display: none;
+}
+
+._R {
+  transform: translate(-1px, 50%) !important;
+}
+.text-h2 {
+  font-size: 35px;
 }
 </style>

@@ -10,7 +10,7 @@
           <div class="col-12 .d-xg-none .d-lg-none .d-md-none"></div> -->
         <!-- this is just in smal screen -->
         <!-- </div> -->
-        <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-xs-12">
+        <div class="del-marg col-xl-8 col-lg-8 col-md-12 col-sm-12 col-xs-12">
           <div class="row">
             <div
               class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--1"
@@ -27,7 +27,7 @@
                   left: 79%;
                   display: inline-block;
                   width: 0px;
-                  font-size: 3.5rem;
+                  font-size: 3rem;
                   color: #fff;
                   font-weight: 800;
                 "
@@ -50,7 +50,7 @@
                   left: 79%;
                   display: inline-block;
                   width: 0px;
-                  font-size: 3.5rem;
+                  font-size: 3rem;
                   color: #fff;
                   font-weight: 800;
                 "
@@ -73,7 +73,7 @@
                   left: 79%;
                   display: inline-block;
                   width: 0px;
-                  font-size: 3.5rem;
+                  font-size: 3rem;
                   color: #fff;
                   font-weight: 800;
                 "
@@ -96,7 +96,7 @@
                   left: 73%;
                   display: inline-block;
                   width: 0px;
-                  font-size: 3.5rem;
+                  font-size: 3rem;
                   color: #fff;
                   font-weight: 800;
                 "
@@ -380,6 +380,18 @@ export default defineComponent({
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+@media screen and (max-width: 1000px) and (min-width: 0px) {
+  #homePage {
+    height: 100vh;
+    padding: 0 !important;
+  }
+  .col__main-eader {
+    width: 50%;
+    height: 45vh !important;
+    margin: auto !important;
+    margin-top: 30px !important;
   }
 }
 </style>

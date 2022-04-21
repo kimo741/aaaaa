@@ -342,4 +342,18 @@ export default defineComponent({
     }
   }
 }
+@media screen and (max-width: 950px) and (min-width: 300px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+    .col-6 {
+      width: 90%;
+      max-width: 2rem auto;
+      border-radius: 1px;
+      height: auto !important;
+      box-shadow: 2px 2px 3px 3px #000;
+      padding: 1rem;
+    }
+  }
+}
 </style>

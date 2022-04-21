@@ -70,6 +70,8 @@ import LogoImg from "components/Layout/LogoImg";
 import IconLabel from "components/Layout/Icon-label";
 import LangSwetcher from "../lang-swetcher.vue";
 import LoginButton from "./LoginButton.vue";
+
+
 export default {
   components: {
     IconLabel,
@@ -105,6 +107,7 @@ export default {
       ],
     };
   },
+
 };
 </script>
 <style lang="scss" scoped>
