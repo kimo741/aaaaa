@@ -1,10 +1,12 @@
 <?php
 
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\ItemController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Models\Admin\Client;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,15 +33,27 @@ Route::prefix('client')->group(function () {
 
     /*** E-mail Verification ***/
     Route::get('/notice','App\Http\Controllers\Client\AuthController@getNotice')->name('verification.notice'); // get View
+    // Get Verified
+
+    Route::get('/email/verification-notification/{id}', function ($email) {
+        $email = Client::where('email', $email)->first();
+        if (!$email)
+            abort(401);
+        event(new Registered($email));
+        return redirect()->back()->with('success', 'Verification link sent!');
+
+    })->name('verification.send');
+//    })->name('verification.send');
+
+//    Route::get('/email/verification-notification', function (Request $request) {
+//        return Client::find(6);
+//        return redirect()->back()->with('success', 'Verification link sent!');
+//    })->name('verification.send');
+
     Route::get('/email/verify/{id}/{hash}','App\Http\Controllers\Client\AuthController@getverify')  // Send email
             ->middleware(['auth:client', 'signed'])
             ->name('verification.verify');
 
-    // Get Verified
-    Route::post('/email/verification-notification', function (Request $request) {
-        $request->user()->sendEmailVerificationNotification();
-        return redirect()->back()->with('success', 'Verification link sent!');
-    })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
     /* Client Routes For Authenticated */
     Route::middleware(['auth:client'])->group(function (){

@@ -57,7 +57,7 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(),[
             'first_name' => 'required',
             'last_name'  => 'required',
-            'email'      => 'required|email',
+            'email'      => 'required|email|unique:clients',
             'phone'      => 'required',
             'password'   => 'required'
         ]);
@@ -79,15 +79,16 @@ class AuthController extends Controller
             return redirect()->back()->with('error','Your Password Confirm Invalid');
 
         $client->first_name = $request->first_name;
-        $client->last_name = $request->last_name;
-        $client->email     = $request->email;
-        $client->phone     = $request->phone;
-        $client->password  = Hash::make($request->password);
+        $client->last_name  = $request->last_name;
+        $client->email      = $request->email;
+        $client->phone      = $request->phone;
+        $client->code       = rand(1111, 9999);
+        $client->password   = Hash::make($request->password);
         $client->save();
 
         event(new Registered($client));
 
-        return view('client.notice')->with('success','Register Successfully');
+        return view('client.notice')->with(['success','Password Changed Successfully', 'client' => $client]);
 
     }
 
@@ -119,9 +120,9 @@ class AuthController extends Controller
 
         $client->save();
 
+        event(new Registered($client));
 
-
-        return redirect()->intended(route('client.home'))->with('success','Password Changed Successfully');
+        return view('client.notice')->with(['success','Password Changed Successfully', 'client' => $client]);
     }
     public function destroy()
     {
@@ -130,7 +131,7 @@ class AuthController extends Controller
     }
     // Return Notice View
     public function getNotice(){
-        return view('client.notice');
+        return view('client.notice')->with(['client' => Client::find(6)]);
     }
     /*
      * The EmailVerificationRequest is a form request that is included with Laravel.

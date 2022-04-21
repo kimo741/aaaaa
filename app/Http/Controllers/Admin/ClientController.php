@@ -17,14 +17,8 @@ class ClientController extends Controller
         return view('client.manage.index', ['clients' => $clients]);
     }
     public function addForm(){
-        return view('client.manage.info');
-    }
-    public function addFormPackage(){
-        $packages = Package::all();
-        return view('client.manage.package',['packages' => $packages]);
-    }
-    public function addFormTask(){
-        return view('client.manage.task');
+        $packages = Package::select(['id', 'name'])->where('status', '1')->get();
+        return view('client.manage.info', ['packages' => $packages]);
     }
     public function editForm($id){
         $client = Client::find($id);
@@ -56,6 +50,7 @@ class ClientController extends Controller
         if ($request->password !== $request->confirm_password)
             return redirect()->back()->with('error','Your Password Confirm Invalid');
 
+        $client->package_id = $request->package_id;
         $client->first_name = $request->first_name;
         $client->last_name = $request->last_name;
         $client->email     = $request->email;

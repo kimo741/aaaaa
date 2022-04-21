@@ -7,19 +7,19 @@
             <div class="card-body">
                 <div class="row justify-content-around">
                     <div class="col-md-3 display-grid text-center bg-warning shadow-sm px-5 py-3 rounded-pill my-3">
-                        <h3 class="card-title text-white pb-2"><span class="fs-3">20</span> Clients</h3>
-                        <div class="d-flex gap-2 text-center">
+                        <h3 class="card-title text-white pb-2"><span class="fs-3 fw-bold">20</span> Clients</h3>
+                        <div class="d-flex gap-2 text-center m-auto">
                             <span class="card-text rounded-pill badge bg-success pulse">15</span>
                             <span class="card-text rounded-pill badge bg-secondary">8</span>
                         </div>
                     </div>
-                    <div class="col-md-3 display-grid text-center bg-primary shadow-sm px-5 py-3 rounded-pill my-3">
+                    <div class="col-md-3 display-grid  text-center bg-primary shadow-sm px-5 py-3 rounded-pill my-3">
                         <h3 class="card-title text-white pb-2">Clients With Package</h3>
                         <p class="card-text text-white fs-3"><span class="fs-1 fw-bold text-white">12</span> Clients</p>
                     </div>
-                    <div class="col-md-3 display-grid text-center bg-primary shadow-sm px-5 py-3 rounded-pill my-3">
+                    <div class="col-md-3 display-grid text-center shadow-sm px-5 py-3 rounded-pill my-3 bnfsg-color">
                         <h3 class="card-title text-white pb-2">Clients Not Assigned</h3>
-                        <p class="card-text text-white fs-3"><span class="fs-1 fw-bold text-danger">8</span> Clients</p>
+                        <p class="card-text text-white fs-3"><span class="fs-1 fw-bold">8</span> Clients</p>
                     </div>
                 </div>
             </div>
@@ -59,16 +59,17 @@
                             <div class="card-body">
                                 <div class="card-title my-0 row">
                                     <div class="col-md-9">
-                                        <h2 class=" mx-0 my-0">{{$client->first_name}} {{$client->last_name}}</h2>
+                                        <h2 class="text-capitalize mx-0 my-0">{{$client->first_name}} {{$client->last_name}}</h2>
                                         <span class="text-muted fs-13">{{$client->email}}</span>
                                     </div>
                                     <div class="col-md-3 position-relative">
-                                        <span class="position-absolute translate-middle p-2 border border-light rounded-circle {{$client->status == 0 ? 'bg-sercondry':'bg-success pulse'}}" style="top: 10px; left: 80%;">
+                                        <span class="position-absolute translate-middle p-2 border border-light rounded-circle {{$client->status == 0 ? 'bg-sercondry':'online-color pulse'}}" style="top: 10px; left: 80%;">
                                         </span>
                                     </div>
                                 </div>
-                                <div>
-                                    <span class="fs-13 text-muted">phone : {{$client->phone}}</span>
+                                <div class="display-grid">
+                                    <span class="fs-13 text-muted">📞 Phone : {{$client->phone}}</span>
+                                    <span class="fs-13 text-muted text-capitalize">✨ Package : {{$client->package_id ? $client->package->name . '🤩' :'No 😕'}}</span>
                                 </div>
                                 <div class="d-flex justify-content-start gap-3 mt-3">
                                     <a href="{{route('client.get.edit.form',$client->id)}}" class="badge badge-primary">Edit</a>
@@ -88,6 +89,10 @@
 @stack('child-scripts')
 @push('css')
     <style>
+        .bnfsg-color{background-color: #6f31ad;}
+        .yellow-color{background-color: #ffc800;}
+        .red-color{background-color: #ed1b24;}
+        .online-color{background-color: rgba(47, 255, 0, 0.84);}
         .fs-13{font-size: 15px}
         .pulse {
             overflow: visible;

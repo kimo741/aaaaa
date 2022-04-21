@@ -44,7 +44,7 @@
                 <div class="adjacent-center">
 
                     <div class="brand-logo">
-                        <img class="" style="height: 0%;width: 45%;" src="{{ asset('ui/logo-2.jpeg') }}" alt="{{ config('app.name') }}"/>
+                        <img class="" style="height: auto;width: 45%;" src="{{ asset('ui/logo-2.jpeg') }}" alt="{{ config('app.name') }}"/>
                     </div>
 
                     {!! view_render_event('admin.anonymous-layout.content.before') !!}
