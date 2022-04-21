@@ -9,6 +9,7 @@ module.exports = {
   links: {
     home: "الرئيسيه",
     contact: "تواصل معنا",
+    packages: "الباقات",
 
     //  - services in not definde 👈
   },

@@ -322,18 +322,20 @@ export default defineComponent({
 //   }
 // }
 .services {
-  padding: 7rem 0;
-  background-image: url(/serv.jpg);
+  padding: 7rem rem 0;
+  background-image: url(/serv-cov.png);
   background-attachment: fixed;
-  background-position: center;
+  background-position: -69px 170px;
+  /* zoom: 57%; */
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: unset;
   .col-6 {
     width: 40%;
     height: 400px !important;
     margin: auto;
     font-size: 1.2rem;
     background-image: url(/slider/2.jpg);
+    background-size: cover;
     opacity: 0.7;
     margin: 1rem 1rem;
     color: $primary;
@@ -357,7 +359,8 @@ export default defineComponent({
     }
     p b {
       font-size: 1.1rem;
-      line-height: 2.1rem;
+      line-height: 2.3rem;
+      font-weight: 500;
     }
     &:hover {
       transition: all 0.6s ease-in-out;

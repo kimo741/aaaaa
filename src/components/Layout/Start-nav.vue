@@ -48,7 +48,15 @@
         <div>
           <LoginButton v-if="this.logeedIn" />
 
-          <q-btn color="primary" label="LOGIN" v-else />
+          <!-- <q-btn color="primary" label="LOGIN" v-else /> -->
+          <q-btn
+            icon-right="fa-solid fa-arrow-right-to-bracket"
+            label="تسجيل الدخول"
+            size="md"
+            flat
+            v-else
+            color="white"
+          />
         </div>
       </div>
     </transition>
@@ -62,9 +70,6 @@
       </div>
     </div>
   </q-header>
-
-
-
 </template>
 
 <script>
@@ -108,7 +113,6 @@ export default {
       ],
     };
   },
-
 };
 </script>
 <style lang="scss" scoped>

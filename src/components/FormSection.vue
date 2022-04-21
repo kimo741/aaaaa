@@ -89,8 +89,9 @@
 
               <div>
                 <q-btn
-                  label="Submit"
+                  label="أرسال"
                   type="submit"
+                  rounded
                   color="white"
                   text-color="primary"
                   class="full-width text-capitalize form__but-sub shadow-0 q-my-lg"
@@ -237,6 +238,7 @@ export default defineComponent({
 .inputs {
   width: 100% !important;
   margin: 16px auto !important;
+  background-color: #0399e3;
 }
 .q-pa-md {
   width: 80%;

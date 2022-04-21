@@ -25,11 +25,32 @@
           class="flex justify-center items-center col-md-4 col-sm-4 -col-xs-4 m-quiry"
         >
           <div class="justify-center row">
-            <ul class="flex q-gutter-x-lg">
-              <li>{{ $t("links.home") }}</li>
-              <li>{{ $t("about.aboutus") }}</li>
-              <li>{{ $t("services.services") }}</li>
-              <li>{{ $t("links.contact") }}</li>
+            <ul class="flex q-gutter-x-lg footer-link">
+              <li>
+                <a @click="scrollToElement('homePage')">{{
+                  $t("links.home")
+                }}</a>
+              </li>
+              <li>
+                <a @click="scrollToElement('aboutSection')">{{
+                  $t("about.aboutus")
+                }}</a>
+              </li>
+              <li>
+                <a @click="scrollToElement('services')">{{
+                  $t("services.services")
+                }}</a>
+              </li>
+              <li>
+                <a @click="scrollToElement('services')">{{
+                  $t("links.packages")
+                }}</a>
+              </li>
+              <li>
+                <a @click="scrollToElement('contact')">{{
+                  $t("links.contact")
+                }}</a>
+              </li>
             </ul>
             <ul class="flex q-gutter-x-lg">
               <IconLabel
@@ -88,6 +109,11 @@ export default defineComponent({
       ],
     };
   },
+  methods: {
+    scrollToElement(el) {
+      document.getElementById(el).scrollIntoView({ behavior: "smooth" });
+    },
+  },
 });
 </script>
 <style lang="scss" scoped>
@@ -103,6 +129,7 @@ export default defineComponent({
 ul {
   list-style: none;
   li {
+    cursor: pointer;
     font-size: 1.3rem;
     color: #fff;
     font-weight: 100 !important;

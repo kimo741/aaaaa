@@ -17,13 +17,12 @@
             >
               <div class="overflow-hidden">
                 <img class="hover-iamge" src="1-3-min.png" />
-                <img class="col__main-eader--image" src="1-2-min.png" />
               </div>
               <div
                 class="q-x-auto z-max"
                 style="
                   position: absolute;
-                  top: 20%;
+                  top: 40%;
                   left: 79%;
                   display: inline-block;
                   width: 0px;
@@ -40,13 +39,12 @@
             >
               <div class="overflow-hidden">
                 <img class="hover-iamge" src="1-3-min.png" />
-                <img class="col__main-eader--image" src="2-2-min.png" />
               </div>
               <div
                 class="q-x-auto z-max"
                 style="
                   position: absolute;
-                  top: 20%;
+                  top: 50%;
                   left: 79%;
                   display: inline-block;
                   width: 0px;
@@ -59,17 +57,16 @@
               </div>
             </div>
             <div
-              class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--1"
+              class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--3"
             >
               <div class="overflow-hidden">
                 <img class="hover-iamge" src="1-3-min.png" />
-                <img class="col__main-eader--image" src="1-2-min.png" />
               </div>
               <div
                 class="q-x-auto z-max"
                 style="
                   position: absolute;
-                  top: 20%;
+                  top: 60%;
                   left: 79%;
                   display: inline-block;
                   width: 0px;
@@ -82,17 +79,16 @@
               </div>
             </div>
             <div
-              class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--1"
+              class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--4"
             >
               <div class="overflow-hidden">
                 <img class="hover-iamge" src="1-3-min.png" />
-                <img class="col__main-eader--image" src="1-2-min.png" />
               </div>
               <div
                 class="q-x-auto z-max"
                 style="
                   position: absolute;
-                  top: 20%;
+                  top: 70%;
                   left: 73%;
                   display: inline-block;
                   width: 0px;
@@ -194,6 +190,8 @@ export default defineComponent({
 
   &--1 {
     padding: 0 2.6%;
+    background-color: #4d217a;
+    height: 35vh !important;
     .hover-image {
       position: absolute;
       top: 0;
@@ -202,33 +200,40 @@ export default defineComponent({
       transition: all 0.3s eas-in-out;
     }
   }
-  &--1 div {
-    width: 100%;
-    height: 100%;
-    background-image: url("/1-min.jpg");
-    background-size: 200% 200%;
-    animation: AnimateBG 20s ease infinite !important;
-  }
+  // &--1 div {
+  //   width: 100%;
+  //   height: 100%;
+  //   background-image: url("/1-min.jpg");
+  //   background-size: 200% 200%;
+  //   animation: AnimateBG 20s ease infinite !important;
+  // }
+  // &--2 {
+  //   padding: 0 2.6%;
+  //   .hover-image {
+  //     position: absolute;
+  //     top: 0;
+  //     left: 0;
+  //     transform: translate(-73%);
+  //     transition: all 0.3s eas-in-out;
+  //   }
+  // }
   &--2 {
     padding: 0 2.6%;
-    .hover-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: translate(-73%);
-      transition: all 0.3s eas-in-out;
-    }
-  }
-  &--2 div {
-    width: 100%;
-    height: 100%;
-    background-image: url("/2-min.jpg");
+    height: 60vh !important;
+
     background-size: 200% 200%;
     animation: AnimateBG 20s ease infinite !important;
+    background-color: #ed1b24;
   }
   &--3 {
+    padding: 0 2.6%;
+    background-color: #fdb813;
+    height: 77vh !important;
   }
   &--4 {
+    padding: 0 2.6%;
+    height: 97vh !important;
+    background-color: #0065b3;
   }
   &--image {
     position: absolute;
@@ -383,44 +388,13 @@ export default defineComponent({
   }
 }
 @media screen and (max-width: 1000px) and (min-width: 0px) {
+  .del-marg {
+  }
   #homePage {
     height: 100vh;
-    padding: 0 !important;
   }
   .col__main-eader {
-    width: 50%;
-    height: 45vh !important;
-    margin: auto !important;
-    margin-top: 30px !important;
-  }
-  .overflow-hidden {
-    img {
-      width: 90% !important;
-      // animation: minckground;
-    }
-  }
-}
-@keyframes minckground {
-  0% {
-    transform: translateX(600x);
-  }
-  25% {
-    transform: translateX(700px);
-  }
-  35% {
-    transform: translateX(800px);
-  }
-  50% {
-    transform: translateX(900);
-  }
-  65% {
-    transform: translateX(800px);
-  }
-  80% {
-    transform: translateX(700px);
-  }
-  100% {
-    transform: translateX(600px);
+    padding: 0rem 0;
   }
 }
 </style>

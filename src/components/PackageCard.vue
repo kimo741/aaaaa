@@ -1,7 +1,7 @@
 <template>
   <section id="package" class="sc">
     <div class="container">
-      <h2 class="package-header">Packages</h2>
+      <h2 class="package-header">الباقات</h2>
       <div class="row text-center justify-around">
         <!------------------package-1-------------------->
         <div class="col-xl-4 -xol-lg-6 lt-lg-col-12 card-1 row items-center">
@@ -13,7 +13,7 @@
                 size="1rem" />
 
                 </span> -->
-            <span> {{ $t("packages.package_1.price") }} $ </span>
+            <span> {{ $t("packages.package_1.price") }}ريال </span>
             <h2>{{ $t("packages.package_1.title") }}</h2>
           </div>
           <div class="card-1__body">
@@ -59,7 +59,7 @@
             push
             color="white"
             text-color="primary"
-            label="Get Pgackage"
+            label="تسجيل الأن"
             class="q-mx-* but-1"
             size="1rem"
           />
@@ -67,10 +67,8 @@
         <!------------------package-2-------------------->
         <div class="col-xl-4 -xol-lg-6 lt-lg-col-12 card-2 items-center">
           <div class="card-2__header">
-            <span>
-              {{ $t("packages.package_1.price") }}
-            </span>
-            <h2>{{ $t("packages.package_2.title") }} $</h2>
+            <span> {{ $t("packages.package_1.price") }}ريال </span>
+            <h2>{{ $t("packages.package_2.title") }}</h2>
           </div>
           <div class="card-2__body">
             <p>
@@ -135,7 +133,7 @@
             push
             color="white"
             text-color="primary"
-            label="Get Pgackage"
+            label="تسجيل الأن"
             size="1rem"
             class="q-mt-lg but-2"
           />
@@ -179,17 +177,17 @@ export default defineComponent({
 .packages-con {
 }
 .sc {
-  background-color: #fff;
+  background-image: url(/packages.png);
   padding: 5rem 0;
   transition: all 0.4s ease-in-out;
 
   .card-1,
   .card-2 {
+    background-color: #fff;
+    opacity: 0.6;
     position: relative;
     height: auto;
     padding: 2rem;
-    box-shadow: 1px 1px 1px #ddd;
-    background: linear-gradient(to top right, $primary, #fad8a1);
     text-align: center;
     transition: all 0.4s ease-in-out;
     width: 30%;
@@ -197,25 +195,24 @@ export default defineComponent({
     outline: none;
     box-shadow: 1px 1px 5px 2px #ddd;
     border: 1px solid #777 !important;
+    border-radius: 20px;
     &__header {
       margin: auto !important;
       width: 90% !important;
       span {
         font-size: 2rem;
-        background-color: rgba(255, 255, 255, 0.493);
         padding: 0 2rem;
         font-weight: normal;
         letter-spacing: 5px;
         color: $primary;
-        box-shadow: 3px 3px 5px #777;
       }
       h2 {
         font-size: 2rem;
-        font-weight: 600;
+        font-weight: 700;
         display: block;
         width: 100%;
         height: 100%;
-        color: #fff;
+        color: $primary;
         letter-spacing: 0.2rem;
       }
     }
@@ -225,7 +222,7 @@ export default defineComponent({
       padding: 10px;
       background-color: rgba(255, 255, 255, 0.925);
       text-align: center;
-      line-height: 1.5rem !important;
+      line-height: 2rem !important;
       font-size: 3rem;
       margin: auto;
       width: 100%;
@@ -264,15 +261,12 @@ export default defineComponent({
     }
     &:hover {
       transition: all 0.6s ease-in-out;
-      background-color: #fff;
-      color: $primary;
       h2 {
         color: #00609c !important;
       }
       .card-1__body,
       .card-2__body {
         transform: translateY(-20px);
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.74);
       }
       .but-1,
       .but-2 {
@@ -281,8 +275,8 @@ export default defineComponent({
         font-weight: 700 !important;
       }
       span {
-        background: linear-gradient(to right, #fab338, #febf50);
-        color: #fff;
+        border: 1px solid #00609c;
+        border-radius: 10px;
       }
     }
   }

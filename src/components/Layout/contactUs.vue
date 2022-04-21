@@ -7,6 +7,7 @@
           <div class="q-pa-md" style="max-width: 400px">
             <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
               <q-input
+                class="inputs"
                 filled
                 v-model="form.name"
                 label="Your Name"
@@ -17,6 +18,7 @@
                 ]"
               />
               <q-input
+                class="inputs"
                 filled
                 v-model="form.email"
                 label="Your Email"
@@ -27,6 +29,7 @@
                 ]"
               />
               <q-input
+                class="inputs"
                 filled
                 v-model="form.message"
                 label="Message"
@@ -38,14 +41,14 @@
               />
 
               <div>
-                <q-btn label="Submit" type="submit" color="primary" />
-                <q-btn
-                  label="Reset"
+                <q-btn label="أرسال" type="submit" color="primary" />
+                <!-- <q-btn
+                  label="أرسال"
                   type="reset"
                   color="primary"
                   flat
-                  class="q-ml-sm"
-                />
+                  class="q-ml-sm inputs"
+                /> -->
               </div>
             </q-form>
           </div>
@@ -102,5 +105,8 @@ export default defineComponent({
 .image-head {
   height: 100%;
   width: 100%;
+}
+.inputs {
+  background-color: #0399e3;
 }
 </style>

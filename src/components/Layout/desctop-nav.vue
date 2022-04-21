@@ -3,17 +3,17 @@
     v-for="(link, i) in links"
     :key="i"
     class="link"
-    @click="scrollToElement (link.url)"
+    @click="scrollToElement(link.url)"
     :style="'font-size:' + fontSize + 'rem;' + 'font-famile:' + fontFamile"
     >{{ $t(link.name) }}</span
   >
-<!--    :to="link.url"-->
+  <!--    :to="link.url"-->
 </template>
 
 <script>
-import { scroll } from 'quasar'
+import { scroll } from "quasar";
 
-const { getScrollTarget, setVerticalScrollPosition } = scroll
+const { getScrollTarget, setVerticalScrollPosition } = scroll;
 
 export default {
   props: {
@@ -34,33 +34,33 @@ export default {
     return {
       links: [
         {
-          name: 'links.home',
+          name: "links.home",
           url: "homePage",
         },
         {
-          name: 'about.aboutus',
-          url: "about-section",
+          name: "about.aboutus",
+          url: "aboutSection",
         },
         {
-          name: 'links.package',
+          name: "links.packages",
           url: "package",
         },
         {
-          name: 'services.services',
+          name: "services.services",
           url: "services",
         },
         {
-          name: 'links.contact',
+          name: "links.contact",
           url: "contact",
         },
       ],
     };
   },
   methods: {
-    scrollToElement (el) {
-      document.getElementById(el).scrollIntoView({behavior: "smooth"})
-    }
-  }
+    scrollToElement(el) {
+      document.getElementById(el).scrollIntoView({ behavior: "smooth" });
+    },
+  },
 };
 </script>
 

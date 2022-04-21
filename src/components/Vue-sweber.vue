@@ -1,6 +1,6 @@
 <template>
   <div class="partners flex flex-center wrap items-center">
-    <h2 class="partners-h">about partners</h2>
+    <h2 class="partners-h">شركاء النجاح</h2>
     <br />
     <div class="q-pa-md" v-for="i in 11" :key="i">
       <q-img width="80px" :src="'/partners/' + i + '.png'" />
@@ -39,7 +39,7 @@ export default {
 }
 .partners-h {
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: 600;
   display: block;
   width: 100%;
   text-align: center;
