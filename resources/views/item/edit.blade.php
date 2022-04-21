@@ -6,6 +6,7 @@
         <div class="mt-2">
             <h1>Edit Item</h1>
         </div>
+        @if (bouncer()->hasPermission('settings.front-setting.item.edit'))
         <div class="mt-5 w-md bg-white px-5 py-5 shadow-sm">
             <form method="POST" action="{{ route('item.update') }}" @submit.prevent="onSubmit">
                 @csrf
@@ -48,6 +49,12 @@
                 </div>
             </form>
         </div>
+        @else
+        <div class="mt-5">
+            <h3 class="align-middle text-center fs-2"> You Don't Have Permission</h3>
+        </div>
+        @endif
+
     </div>
 </div>
 

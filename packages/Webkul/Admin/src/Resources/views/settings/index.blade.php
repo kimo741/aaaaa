@@ -8,7 +8,7 @@
     <div class="content full-page">
 
         <div class="page-header">
-            
+
             {{ Breadcrumbs::render('settings') }}
 
             <div class="page-title">
@@ -28,7 +28,7 @@
 
                         <p>{{ __($setting['info']) }}</p>
                     </div>
-                    
+
                     <div class="panel-body">
                         <div class="setting-link-container">
 
@@ -39,7 +39,7 @@
                                         <div class="icon-container">
                                             <i class="icon {{ $subSetting['icon-class'] ?? '' }}"></i>
                                         </div>
-                                        
+
                                         <div class="setting-info">
                                             <label>{{ $subSetting['name'] }}</label>
                                             <p>{{ __($subSetting['info'] ?? '') }}</p>

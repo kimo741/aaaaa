@@ -2,15 +2,12 @@
 @extends('admin::layouts.master')
 @section('content-wrapper')
 
-    {{--<div class="bg-primary">--}}
-{{--    <h1>{{$package[0]->name}}</h1>--}}
-{{--    <h1>{{$package[0]->price}}</h1>--}}
-{{--    <h1>{{$package[0]->description}}</h1>--}}
-{{--</div>--}}
 <div class="position-relative">
+    @if(bouncer()->hasPermission('settings.front-setting.service.add'))
     <div class="position-absolute bottom-0 end-0">
         <a class="btn btn-primary rounded-circle" href="{{route('service.get.add.form')}}" role="button"><i class="icon plus-white-icon"></i></a>
     </div>
+    @endif
     <div class="container">
         <div class="mt-2">
             <h1>All Services</h1>

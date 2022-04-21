@@ -2,9 +2,11 @@
 @extends('admin::layouts.master')
 @section('content-wrapper')
 <div class="position-relative">
+    @if(bouncer()->hasPermission('settings.front-setting.item.add'))
     <div class="position-absolute bottom-0 end-0">
         <a class="btn btn-primary rounded-circle" href="{{route('item.get.add.form')}}" role="button"><i class="icon plus-white-icon"></i></a>
     </div>
+    @endif
     <div class="container">
         <div class="mt-2">
             <h1>All Items</h1>
@@ -18,7 +20,6 @@
                             {{asset('/vendor/webkul/admin/assets/images/empty-table-icon.svg')}}
                         "
                     />
-
                     <p class="mt-5">No Records Found</p>
                 </div>
             </div>

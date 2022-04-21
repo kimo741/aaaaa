@@ -79,9 +79,23 @@ Route::prefix('dashboard')->group(function (){
         Route::get('/','App\Http\Controllers\Admin\ServiceController@index')->name('service.get.all');
         Route::get('/add','App\Http\Controllers\Admin\ServiceController@addForm')->name('service.get.add.form');
         Route::get('/edit/{id}','App\Http\Controllers\Admin\ServiceController@editForm')->name('service.get.edit.form');
+
         Route::post('/add','App\Http\Controllers\Admin\ServiceController@update')->name('service.add');
         Route::post('/edit','App\Http\Controllers\Admin\ServiceController@update')->name('service.update');
         Route::get('/delete/{id}','App\Http\Controllers\Admin\ServiceController@delete')->name('service.delete');
+    });
+
+    /**  clients  **/
+    Route::prefix('client')->group(function (){
+        Route::get('/','App\Http\Controllers\Admin\ClientController@index')->name('client.get.all');
+        Route::get('/add','App\Http\Controllers\Admin\ClientController@addForm')->name('client.get.add.form');
+        Route::get('/add/package','App\Http\Controllers\Admin\ClientController@addFormPackage')->name('client.get.add.package.form');
+        Route::get('/add/task','App\Http\Controllers\Admin\ClientController@addFormTask')->name('client.get.add.task.form');
+        Route::get('/edit/{id}','App\Http\Controllers\Admin\ClientController@editForm')->name('client.get.edit.form');
+
+        Route::post('/add','App\Http\Controllers\Admin\ClientController@update')->name('client.add');
+        Route::post('/edit','App\Http\Controllers\Admin\ClientController@update')->name('client.update');
+        Route::get('/delete/{id}','App\Http\Controllers\Admin\ClientController@delete')->name('client.delete');
     });
 
 });
