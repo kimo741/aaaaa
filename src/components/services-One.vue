@@ -1,11 +1,15 @@
 <template>
-  <section class="services">
+  <section id="services" class="services">
     <div class="container content-between">
+      <h2 class="services-header">
+        {{ $t("services.services") }}
+      </h2>
       <div class="row justify-center border-rad items-center">
         <!------------------sevice one ------------------->
         <div class="col-6 justify-center text-center">
-          <h2>{{ $t("services.services") }}</h2>
-          <span>{{ $t("services.slogen") }}</span>
+          <h2>
+            {{ $t("services.slogen") }}
+          </h2>
           <p>
             <q-icon
               name="fa-solid fa-camera-retro"
@@ -134,6 +138,27 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
+.services-header {
+  text-align: center;
+  font-weight: 800;
+  font-family: "Cairo", sans-serif;
+  font-size: 3.5rem;
+  line-height: 0;
+  color: $primary;
+  position: relative;
+  height: 50px;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 4px;
+    background-color: $accent;
+    border-radius: 80px;
+  }
+}
 // .col-6 {
 //   min-height: 50vh;
 // }
@@ -326,7 +351,7 @@ export default defineComponent({
         left: 0;
         width: 30%;
         height: 4px;
-        background-color: $secondary;
+        background-color: $accent;
         border-radius: 80px;
       }
     }

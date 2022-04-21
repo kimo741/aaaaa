@@ -3,7 +3,7 @@ body,
   font-family: "Cairo", sans-serif;
 }
 
-body{
+body {
   font-family: "Cairo", sans-serif;
   background-color: #f9f5f2;
 }
@@ -44,7 +44,8 @@ body{
 }
 h1,
 h2,
-h3 {
+h3,
+h4 {
   text-transform: capitalize;
 }
 @media screen and (max-width: 800px) and (min-width: 300px) {
@@ -54,13 +55,11 @@ h3 {
   }
 }
 
-
 .q-field--filled .q-field__control {
   height: 65px !important;
 }
 .q-field__bottom {
-  background-color: #00609c;
-
+  //background-color: transparent;
 }
 .q-field__native {
   color: #fff !important;

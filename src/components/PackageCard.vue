@@ -1,6 +1,7 @@
 <template>
-  <section class="sc">
+  <section id="package" class="sc">
     <div class="container">
+      <h2 class="package-header">Packages</h2>
       <div class="row text-center justify-around">
         <!------------------package-1-------------------->
         <div class="col-xl-4 -xol-lg-6 lt-lg-col-12 card-1 row items-center">
@@ -134,6 +135,7 @@
             color="white"
             text-color="primary"
             label="Get Pgackage"
+            size="1.3rem"
             class="q-mt-lg but-2"
           />
         </div>
@@ -153,6 +155,26 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.package-header {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 4rem;
+  padding-bottom: 10px;
+  font-weight: 500;
+  margin-top: 20px;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    height: 4px;
+    background-color: $accent;
+    border-radius: 80px;
+  }
+}
 .packages-con {
 }
 .sc {
@@ -166,9 +188,8 @@ export default defineComponent({
     height: auto;
     padding: 2rem;
     box-shadow: 1px 1px 1px #ddd;
-    background: linear-gradient(to right, #fab338, #febf50);
+    background: linear-gradient(to top right, $primary, #fad8a1);
     text-align: center;
-    border-radius: 10px;
     transition: all 0.4s ease-in-out;
     width: 30%;
     border: none !important;
@@ -180,30 +201,27 @@ export default defineComponent({
       width: 90% !important;
       span {
         font-size: 2rem;
-        border-radius: 10px;
         background-color: rgba(255, 255, 255, 0.493);
         padding: 0 2rem;
-        font-weight: bolder;
+        font-weight: normal;
         letter-spacing: 5px;
         color: $primary;
         box-shadow: 3px 3px 5px #777;
       }
       h2 {
         font-size: 2rem;
-        font-weight: bold;
+        font-weight: 600;
         display: block;
         width: 100%;
         height: 100%;
         color: #fff;
         letter-spacing: 0.2rem;
-        border-radius: 10px;
       }
     }
 
     &__body {
       transition: all 0.4s ease-in-out;
       padding: 10px;
-      border-radius: 10px;
       background-color: rgba(255, 255, 255, 0.925);
       text-align: center;
       line-height: 1.5rem !important;
@@ -231,7 +249,6 @@ export default defineComponent({
       height: 5px;
       top: 15px;
       left: 50%;
-      border-radius: 50px;
       transform: translate(-50%, -50%);
     }
     &::after {
@@ -242,7 +259,6 @@ export default defineComponent({
       height: 5px;
       bottom: 10px;
       left: 50%;
-      border-radius: 50px;
       transform: translate(-50%, -50%);
     }
     &:hover {
@@ -254,14 +270,14 @@ export default defineComponent({
       }
       .card-1__body,
       .card-2__body {
-        background: linear-gradient(to bottom, #fab338, #febe507e);
-        color: #fff;
         transform: translateY(-20px);
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.74);
       }
       .but-1,
       .but-2 {
         background: $primary !important;
         color: #fff !important;
+        font-weight: 700 !important;
       }
       span {
         background: linear-gradient(to right, #fab338, #febf50);
@@ -273,7 +289,6 @@ export default defineComponent({
 .glossy {
   width: 100% !important;
   height: 100% !important;
-  border-radius: 50% !important;
 }
 .but-1 {
   margin: auto !important;
@@ -483,9 +498,32 @@ export default defineComponent({
     flex-direction: column;
     .card-1,
     .card-2 {
-      width: 90%;
+      width: 80%;
       height: auto;
       margin: 1rem auto;
+      &:hover {
+        transition: all 0.6s ease-in-out;
+        background-color: #fff;
+        color: #fff;
+        h2 {
+          color: #fff !important;
+        }
+        .card-1__body,
+        .card-2__body {
+          transform: none;
+          box-shadow: none;
+        }
+        .but-1,
+        .but-2 {
+          background: #fff !important;
+          color: $primary !important;
+          font-weight: 700 !important;
+        }
+        span {
+          background: linear-gradient(to right, #fab338, #e9e1d4);
+          color: #fff;
+        }
+      }
     }
   }
   .but-1 {
@@ -500,6 +538,15 @@ export default defineComponent({
     height: 3rem;
     font-size: 1.1rem;
     font-weight: bolder;
+  }
+  .package-header {
+    font-size: 3.5rem;
+    padding-bottom: 5px;
+    font-weight: 500;
+    position: relative;
+    &::after {
+      width: 50%;
+    }
   }
 }
 </style>

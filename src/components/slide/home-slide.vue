@@ -393,6 +393,35 @@ export default defineComponent({
     margin: auto !important;
     margin-top: 30px !important;
   }
+  .overflow-hidden {
+    img {
+      width: 90% !important;
+      // animation: minckground;
+    }
+  }
+}
+@keyframes minckground {
+  0% {
+    transform: translateX(600x);
+  }
+  25% {
+    transform: translateX(700px);
+  }
+  35% {
+    transform: translateX(800px);
+  }
+  50% {
+    transform: translateX(900);
+  }
+  65% {
+    transform: translateX(800px);
+  }
+  80% {
+    transform: translateX(700px);
+  }
+  100% {
+    transform: translateX(600px);
+  }
 }
 </style>
 

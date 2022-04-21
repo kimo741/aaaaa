@@ -3,7 +3,7 @@
     v-for="(link, i) in links"
     :key="i"
     class="link"
-    @click="scrollToElement ('about-section')"
+    @click="scrollToElement (link.url)"
     :style="'font-size:' + fontSize + 'rem;' + 'font-famile:' + fontFamile"
     >{{ $t(link.name) }}</span
   >
@@ -35,30 +35,30 @@ export default {
       links: [
         {
           name: 'links.home',
-          url: "/",
-        },
-        {
-          name: 'services.services',
-          url: "/Services",
+          url: "homePage",
         },
         {
           name: 'about.aboutus',
-          url: "/About",
+          url: "about-section",
+        },
+        {
+          name: 'links.package',
+          url: "package",
+        },
+        {
+          name: 'services.services',
+          url: "services",
         },
         {
           name: 'links.contact',
-          url: "/ContactUs",
+          url: "contact",
         },
       ],
     };
   },
   methods: {
     scrollToElement (el) {
-      // const target = getScrollTarget(el)
-      return console.log(document.getElementById('about-section').scrollIntoView(true))
-      const offset = el.offsetTop
-      const duration = 1000
-      setVerticalScrollPosition(target, offset, duration)
+      document.getElementById(el).scrollIntoView({behavior: "smooth"})
     }
   }
 };

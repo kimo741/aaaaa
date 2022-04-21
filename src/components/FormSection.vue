@@ -1,5 +1,5 @@
 <template>
-  <section class="section-form">
+  <section id="contact" class="section-form">
     <div class="container">
       <h2>
         التواصل

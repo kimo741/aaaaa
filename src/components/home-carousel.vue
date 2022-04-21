@@ -92,18 +92,19 @@ export default defineComponent({
   .slider-container {
     width: 100% !important;
     height: auto !important;
-    background-position: 60% 127% !important;
+    background-position: 85% 120% !important;
+    background-size: auto !important;
     padding: 20px;
     overflow: none !important;
     flex-direction: row !important;
     text-align: left;
     display: flex;
     flex-direction: column !important;
+    position: relative;
     .sliderimg {
       padding: 0;
       width: 100%;
       height: 100%;
-      background-position: center;
       img {
         width: 100%;
         height: 100%;
@@ -123,6 +124,11 @@ export default defineComponent({
 
     h2 {
       text-align: center;
+    }
+    .slider-card {
+      position: absolute;
+      top: 0 !important;
+      left: 0;
     }
   }
 }

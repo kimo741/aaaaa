@@ -220,4 +220,8 @@ export default {
 .text-h2 {
   font-size: 35px;
 }
+.about-card {
+  width: 90%;
+  margin: auto;
+}
 </style>
