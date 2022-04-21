@@ -199,7 +199,7 @@ return [
         'route'      => 'admin.settings.tags.index',
         'sort'       => 1,
         'icon-class' => 'tag-icon',
-    ], [
+    ],[
         'key'        => 'configuration',
         'name'       => 'admin::app.layouts.configuration',
         'route'      => 'admin.configuration.index',

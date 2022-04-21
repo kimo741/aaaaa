@@ -427,69 +427,84 @@ return [
         'route' => 'admin.configuration.index',
         'sort'  => 9,
     ], [
-        'key' => 'package',
+        'key' => 'settings.front-setting',
+        'name' => 'Front Setting',
+        'route' => 'package.get.all',
+        'sort' => 5,
+    ], [
+        'key' => 'settings.front-setting.package',
         'name' => 'Package',
         'route' => 'package.get.all',
-        'sort' => 1
+        'sort' => 1,
     ], [
-        'key' => 'package.all',
-        'name' => 'All Package',
+        'key' => 'settings.front-setting.package.all',
+        'name' => 'View',
         'route' => 'package.get.all',
-        'sort' => 4
+        'sort' => 1,
     ], [
-        'key' => 'package.create',
+        'key' => 'settings.front-setting.package.create',
         'name' => 'Create',
         'route' => ['package.get.add.form','package.add'],
-        'sort' => 1
+        'sort' => 2,
     ], [
-        'key' => 'package.edit',
+        'key' => 'settings.front-setting.package.edit',
         'name' => 'Edit',
         'route' => ['package.get.edit.form','package.update'],
-        'sort' => 2
+        'sort' => 3,
     ], [
-        'key' => 'package.delete',
+        'key' => 'settings.front-setting.package.delete',
         'name' => 'Delete',
         'route' => 'package.delete',
-        'sort' => 3
+        'sort' => 4,
     ], [
-        'key' => 'item',
+        'key' => 'settings.front-setting.item',
         'name' => 'Item',
         'route' => 'item.get.all',
-        'sort' => 1
+        'sort' => 2,
     ], [
-        'key' => 'item.create',
+        'key' => 'settings.front-setting.item.create',
         'name' => 'Create',
         'route' => ['item.get.add.form','item.add'],
-        'sort' => 1
+        'sort' => 1,
     ], [
-        'key' => 'item.edit',
+        'key' => 'settings.front-setting.item.all',
+        'name' => 'View',
+        'route' => 'item.get.all',
+        'sort' => 2,
+    ], [
+        'key' => 'settings.front-setting.item.edit',
         'name' => 'Edit',
         'route' => ['item.get.edit.form','item.update'],
-        'sort' => 2
+        'sort' => 3,
     ], [
-        'key' => 'item.delete',
+        'key' => 'settings.front-setting.item.delete',
         'name' => 'Delete',
         'route' => 'item.delete',
-        'sort' => 3
+        'sort' => 4,
     ], [
-        'key' => 'service',
+        'key' => 'settings.front-setting.service',
         'name' => 'Service',
         'route' => 'service.get.all',
-        'sort' => 1
+        'sort' => 3,
     ], [
-        'key' => 'service.create',
+        'key' => 'settings.front-setting.service.create',
         'name' => 'Create',
         'route' => ['service.get.add.form','service.add'],
-        'sort' => 1
+        'sort' => 1,
     ], [
-        'key' => 'service.edit',
+        'key' => 'settings.front-setting.service.all',
+        'name' => 'View',
+        'route' => 'service.get.all',
+        'sort' => 2,
+    ],[
+        'key' => 'settings.front-setting.service.edit',
         'name' => 'Edit',
         'route' => ['service.get.edit.form','service.update'],
-        'sort' => 2
+        'sort' => 2,
     ], [
-        'key' => 'service.delete',
+        'key' => 'settings.front-setting.service.delete',
         'name' => 'Delete',
         'route' => 'service.delete',
-        'sort' => 3
+        'sort' => 3,
     ]
 ];
