@@ -43,6 +43,7 @@
 @stop
 @push('css')
     <style>
+        .fs-13{font-size: 15px;}
         .trans-content{
             transition: all .35s ease-in-out;
         }
