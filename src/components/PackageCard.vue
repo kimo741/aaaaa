@@ -61,6 +61,7 @@
             text-color="primary"
             label="Get Pgackage"
             class="q-mx-* but-1"
+            size="1rem"
           />
         </div>
         <!------------------package-2-------------------->
@@ -135,7 +136,7 @@
             color="white"
             text-color="primary"
             label="Get Pgackage"
-            size="1.3rem"
+            size="1rem"
             class="q-mt-lg but-2"
           />
         </div>
