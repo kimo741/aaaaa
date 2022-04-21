@@ -7,19 +7,19 @@
             <div class="card-body">
                 <div class="row justify-content-around">
                     <div class="col-md-3 display-grid text-center bg-warning shadow-sm px-5 py-3 rounded-pill my-3">
-                        <h3 class="card-title text-white pb-2"><span class="fs-3 fw-bold">20</span> Clients</h3>
+                        <h3 class="card-title text-white pb-2"><span class="fs-3 fw-bold">{{$all_client}}</span> {{$all_client <= 2 ? 'Client': 'Clients'}}</h3>
                         <div class="d-flex gap-2 text-center m-auto">
-                            <span class="card-text rounded-pill badge bg-success pulse">15</span>
-                            <span class="card-text rounded-pill badge bg-secondary">8</span>
+                            <span class="card-text rounded-pill badge bg-success pulse">{{$active}}</span>
+                            <span class="card-text rounded-pill badge bg-secondary">{{$all_client - $active}}</span>
                         </div>
                     </div>
                     <div class="col-md-3 display-grid  text-center bg-primary shadow-sm px-5 py-3 rounded-pill my-3">
                         <h3 class="card-title text-white pb-2">Clients With Package</h3>
-                        <p class="card-text text-white fs-3"><span class="fs-1 fw-bold text-white">12</span> Clients</p>
+                        <p class="card-text text-white fs-3"><span class="fs-1 fw-bold text-white">{{$assigned}}</span> {{$assigned <= 2 ? 'Client': 'Clients'}} </p>
                     </div>
                     <div class="col-md-3 display-grid text-center shadow-sm px-5 py-3 rounded-pill my-3 bnfsg-color">
                         <h3 class="card-title text-white pb-2">Clients Not Assigned</h3>
-                        <p class="card-text text-white fs-3"><span class="fs-1 fw-bold">8</span> Clients</p>
+                        <p class="card-text text-white fs-3"><span class="fs-1 fw-bold">{{$all_client - $assigned}}</span> {{$all_client - $assigned <= 2 ? 'Client': 'Clients'}}</p>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
 {{--    @endif--}}
     <div class="container">
         <div class="mt-3">
-            <h1>All Clients</h1>
+{{--            <h1>All Clients</h1>--}}
         </div>
         @if($clients->isEmpty())
             <div class="mt-lg-5">
@@ -63,7 +63,7 @@
                                         <span class="text-muted fs-13">{{$client->email}}</span>
                                     </div>
                                     <div class="col-md-3 position-relative">
-                                        <span class="position-absolute translate-middle p-2 border border-light rounded-circle {{$client->status == 0 ? 'bg-sercondry':'online-color pulse'}}" style="top: 10px; left: 80%;">
+                                        <span class="position-absolute translate-middle p-2 border border-light rounded-circle {{$client->status == 0 ? 'bg-secondary':'online-color pulse'}}" style="top: 10px; left: 80%;">
                                         </span>
                                     </div>
                                 </div>

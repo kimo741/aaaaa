@@ -1,10 +1,12 @@
 @extends('client.manage.add')
 @section('client-forms')
             <div class="panel-body">
-                <form method="POST" class="overflow-hidden px-2" action="{{ route('client.add') }}" @submit.prevent="$root.onSubmit">
+                <form method="POST" class="overflow-hidden px-2" action="{{ route('client.update') }}" @submit.prevent="$root.onSubmit">
                     {!! view_render_event('admin.sessions.login.form_controls.before') !!}
 
                     @csrf
+                    <input type="number" value="{{$id}}" hidden name="id">
+
                     <!-- *** Client Info *** -->
                     <div class="display-tab trans-content" id="display-info-tab">
                         <div class="uploader row">
@@ -16,9 +18,8 @@
                             </div>
                             <div class="col-md-5">
                                 <select class="form-select" name="status" aria-label="select status">
-                                    <option selected>Account Status</option>
-                                    <option value="1">Enable</option>
-                                    <option value="0">Disable</option>
+                                    <option {{$client->status == 1 ? 'selected':''}} value="1">Enable</option>
+                                    <option {{$client->status == 0 ? 'selected':''}} value="0">Disable</option>
                                 </select>
                             </div>
                         </div>
@@ -31,6 +32,7 @@
                                     name="first_name"
                                     class="control"
                                     id="first_name"
+                                    value="{{$client->first_name}}"
                                     v-validate.disable="'required'"
                                     data-vv-as="&quot;{{'First Name'}}&quot;"
                                 />
@@ -47,6 +49,7 @@
                                     name="last_name"
                                     class="control"
                                     id="last_name"
+                                    value="{{$client->last_name}}"
                                     v-validate.disable="'required'"
                                     data-vv-as="&quot;{{'Last Name'}}&quot;"
                                 />
@@ -66,6 +69,7 @@
                                     name="email"
                                     class="control"
                                     id="email"
+                                    value="{{$client->email}}"
                                     v-validate.disable="'required|email'"
                                     data-vv-as="&quot;{{ __('admin::app.sessions.login.email') }}&quot;"
                                 />
@@ -81,6 +85,7 @@
                                     type="text"
                                     name="phone"
                                     class="control"
+                                    value="{{$client->phone}}"
                                     id="phone"
                                     v-validate.disable="'required'"
                                     data-vv-as="&quot;{{'Phone'}}&quot;"
@@ -100,7 +105,6 @@
                                     name="password"
                                     class="control"
                                     id="password"
-                                    v-validate.disable="'required|min:6'"
                                     data-vv-as="&quot;{{ __('admin::app.sessions.login.password') }}&quot;"
                                 />
 
@@ -116,7 +120,6 @@
                                     name="confirm_password"
                                     class="control"
                                     id="confirm_password"
-                                    v-validate.disable="'required|min:6'"
                                     data-vv-as="&quot;{{ 'Confirm Password' }}&quot;"
                                 />
 
@@ -136,9 +139,9 @@
                         </div>
                         <div class="pb-3 mb-3">
                             <select class="form-select" aria-label="Packages" name="package_id">
-                                <option selected value="">Available Packages</option>
+                                <option selected value="0">{{$client->package_id == null|'0' ? 'No Package Selected' : 'Disable Package'}}</option>
                                 @foreach($packages as $pack)
-                                <option value="{{$pack->id}}">{{$pack->name}}</option>
+                                <option class="text-capitalize" {{$pack->id == $client->package_id ? 'selected' : ''}} value="{{$pack->id}}">{{$pack->name}}</option>
                                 @endforeach
                             </select>
                         </div>
