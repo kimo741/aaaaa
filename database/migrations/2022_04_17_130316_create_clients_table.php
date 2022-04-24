@@ -25,6 +25,8 @@ class CreateClientsTable extends Migration
             $table->string('code')->nullable();
             $table->string('image',255);
             $table->string('email_verified_at')->nullable();
+            $table->timestamp('sub_time')->nullable();
+            $table->timestamp('expire_at')->nullable();
             $table->timestamps();
         });
     }

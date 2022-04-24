@@ -28,9 +28,10 @@
             @foreach($items as $item)
             <div class="card my-2 shadow-card" style="min-width: 18rem;">
                 <div class="card-body">
-                    <div class="card-title d-flex justify-content-between">
-                        <h5 class=" fs-4 text-capitalize">{{$item->label}}</h5>
-                        <h3 class="badge rounded-pill space-latter {{$item->value === 'duration'? 'badge-warning':'badge-primary'}}">{{$item->value === 'duration'? 'Time':'Count'}}</h3>
+                    <div class="card-title row">
+                        <h5 class="col-md-7"><span class="fs-4 text-capitalize">{{$item->label}}</span></h5>
+                        <h5 class="col-md-3"><span class="badge bnfsg-color rounded-pill space-latter text-capitalize">{{$item->package->name}}</span></h5>
+                        <h3 class="col-md-2"><span class="badge rounded-pill space-latter {{$item->value === 'duration'? 'badge-warning':'badge-primary'}}">{{$item->value === 'duration'? 'Time':'Count'}}</span></h3>
                     </div>
                     @if(isset($item->duration))
                     <p class="card-text fs-3 text-capitalize">{{$item->duration}}</p>
@@ -49,6 +50,7 @@
 @stack('child-scripts')
 @push('css')
     <style>
+        .bnfsg-color{background-color: #6f31ad;}
         .space-latter{
             letter-spacing: 1px;
         }

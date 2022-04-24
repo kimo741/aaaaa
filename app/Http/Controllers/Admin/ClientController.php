@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin\Client;
 use App\Models\Admin\Package;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -14,7 +15,15 @@ class ClientController extends Controller
 {
     public function index(){
         $clients = Client::all();
-        return view('client.manage.index', ['clients' => $clients]);
+        $counts = $clients->count();
+        $active = $clients->where('status','=','1')->count();
+        $assigned = $clients->where('package_id','!=',null|'0')->count();
+        return view('client.manage.index', [
+            'clients'    => $clients,
+            'all_client' => $counts,
+            'active'     => $active,
+            'assigned'   => $assigned,
+        ]);
     }
     public function addForm(){
         $packages = Package::select(['id', 'name'])->where('status', '1')->get();
@@ -22,7 +31,8 @@ class ClientController extends Controller
     }
     public function editForm($id){
         $client = Client::find($id);
-        return view('client.manage.edit',['client' => $client, 'id' => $id]);
+        $packages = Package::select(['id', 'name'])->where('status', '1')->get();
+        return view('client.manage.edit',['client' => $client, 'id' => $id, 'packages' => $packages]);
     }
 
     public function update(Request $request){
@@ -31,7 +41,6 @@ class ClientController extends Controller
             'last_name'  => 'required',
             'email'      => 'required|email',
             'phone'      => 'required',
-            'password'   => 'required'
         ]);
         if ($validator->fails())
             return redirect()->back()->with('error', $validator->errors());
@@ -59,6 +68,9 @@ class ClientController extends Controller
         $client->password  = Hash::make($request->password);
         $client->save();
 
+        if ($request->package_id && $request->package_id != 0)
+            $this->assignPackage($client->id,$request->package_id);
+
         return redirect()->back()->with('success','Client Saved Successfully');
     }
 
@@ -66,5 +78,31 @@ class ClientController extends Controller
         $client = Client::find($id);
         $client->delete();
         return redirect()->back()->with('success', 'Client Is Deleted');
+    }
+
+    public function assignPackage($client_id, $package_id){
+        $package = Package::find($package_id);
+        $client = Client::find($client_id);
+        if (isset($client) && isset($package)){
+            $package->clients()->save($client);
+            // save time
+            $client->sub_time  = Date::now();
+            $client->expire_at = $this->expire($package);
+            $client->save();
+        }else {
+            return redirect()->back()->with('error','Package Not Saved');
+        }
+    }
+    public function expire($package){
+        switch ($package->type_label){
+            case ('day'):
+                return Date::now()->addDays($package->type_value);
+            case ('week'):
+                return Date::now()->addWeeks($package->type_value);
+            case ('month'):
+                return Date::now()->addMonths($package->type_value);
+            case ('year'):
+                return Date::now()->addYears($package->type_value);
+        }
     }
 }

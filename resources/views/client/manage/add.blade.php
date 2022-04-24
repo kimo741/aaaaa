@@ -2,8 +2,9 @@
 @extends('admin::layouts.master')
 
 @section('content-wrapper')
+    @if (bouncer()->hasPermission('client.create'))
     <div class="">
-        <h1 class="align-middle mb-5 mt-3 text-center fs-2">Add New Client</h1>
+        <h1 class="align-middle mb-5 mt-3 text-center fs-2">Update Clients</h1>
     </div>
     <div class="center-box">
         <div class="panel adjacent-center">
@@ -19,10 +20,16 @@
                         <button onclick="getTab('display-task-tab')" id="task" class="nav-link remove_active display-task-tab-btn">Tasks</button>
                     </li>
                 </ul>
-                    @yield('add-client-forms')
+                    @yield('client-forms')
             </div>
         </div>
     </div>
+    @else
+    <div class="mt-5">
+        <h3 class="align-middle text-center fs-2"> You Don't Have Permission</h3>
+    </div>
+    @endif
+
     @push('scripts')
         <script>
             function getTab(idName) {

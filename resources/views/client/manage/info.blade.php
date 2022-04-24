@@ -1,5 +1,5 @@
 @extends('client.manage.add')
-@section('add-client-forms')
+@section('client-forms')
             <div class="panel-body">
                 <form method="POST" class="overflow-hidden px-2" action="{{ route('client.add') }}" @submit.prevent="$root.onSubmit">
                     {!! view_render_event('admin.sessions.login.form_controls.before') !!}
@@ -16,8 +16,7 @@
                             </div>
                             <div class="col-md-5">
                                 <select class="form-select" name="status" aria-label="select status">
-                                    <option selected>Account Status</option>
-                                    <option value="1">Enable</option>
+                                    <option value="1" selected>Enable</option>
                                     <option value="0">Disable</option>
                                 </select>
                             </div>

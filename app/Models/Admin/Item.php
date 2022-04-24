@@ -12,7 +12,7 @@ class Item extends Model
 
     protected $fillable = ['label','value','count','duration'];
 
-    public function packages(){
+    public function package(){
         return $this->belongsTo('App\Models\Admin\Package');
     }
 
