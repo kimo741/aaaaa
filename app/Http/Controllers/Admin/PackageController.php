@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin\Client;
 use App\Models\Admin\Item;
 use App\Models\Admin\Package;
 use Illuminate\Http\Request;
@@ -12,8 +13,19 @@ use Illuminate\Support\Facades\Validator;
 class PackageController extends Controller
 {
     public function index(){
-        $packages = Package::all();
-        return view('package.index', ['packages' => $packages]);
+        $packages = Package::with('clients')->get();
+        $counts   = $packages->count();
+        $active   = $packages->where('status','=','1')->count();
+        $clients  = Client::where('package_id','!=',null|'0')->get();
+        $assigned = $clients->count();
+        $total = $this->getTotalIncomes($packages, $clients);
+        return view('package.index', [
+            'packages' => $packages,
+            'counts'   => $counts,
+            'active'   => $active,
+            'assigned'   => $assigned,
+            'total_incomes' => $total
+        ]);
     }
     public function addForm(){
         $items = Item::all();
@@ -68,5 +80,12 @@ class PackageController extends Controller
         $package = Package::find($id);
         $package->delete();
         return redirect()->back()->with('success', 'Package Is Deleted');
+    }
+    public function getTotalIncomes($packages, $clients){
+        $total = 0;
+        foreach ($clients as $client){
+            $total += $packages->where('id',$client->package_id)->first()->price;
+        }
+        return $total;
     }
 }

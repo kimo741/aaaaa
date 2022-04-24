@@ -46,10 +46,12 @@ class AuthController extends Controller
             $request->session()->regenerate();
 
             return redirect()->route('client.home');
+
+        } else {
+            return back()->withErrors([
+                'email' => 'The provided credentials do not match our records.',
+            ]);
         }
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ]);
     }
 
 
@@ -82,7 +84,7 @@ class AuthController extends Controller
         $client->last_name  = $request->last_name;
         $client->email      = $request->email;
         $client->phone      = $request->phone;
-        $client->code       = rand(1111, 9999);
+//        $client->code       = rand(1111, 9999);
         $client->password   = Hash::make($request->password);
         $client->save();
 

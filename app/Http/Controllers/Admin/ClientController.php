@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin\Client;
 use App\Models\Admin\Package;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -14,14 +15,14 @@ class ClientController extends Controller
 {
     public function index(){
         $clients = Client::all();
-        $counts = Client::count();
-        $active = Client::where('status','=',1)->count();
-        $assigned = Client::where('package_id','!=',null|'0')->count();
+        $counts = $clients->count();
+        $active = $clients->where('status','=','1')->count();
+        $assigned = $clients->where('package_id','!=',null|'0')->count();
         return view('client.manage.index', [
-            'clients' => $clients,
+            'clients'    => $clients,
             'all_client' => $counts,
-            'active'    => $active,
-            'assigned'    => $assigned,
+            'active'     => $active,
+            'assigned'   => $assigned,
         ]);
     }
     public function addForm(){
@@ -84,8 +85,24 @@ class ClientController extends Controller
         $client = Client::find($client_id);
         if (isset($client) && isset($package)){
             $package->clients()->save($client);
+            // save time
+            $client->sub_time  = Date::now();
+            $client->expire_at = $this->expire($package);
+            $client->save();
         }else {
             return redirect()->back()->with('error','Package Not Saved');
+        }
+    }
+    public function expire($package){
+        switch ($package->type_label){
+            case ('day'):
+                return Date::now()->addDays($package->type_value);
+            case ('week'):
+                return Date::now()->addWeeks($package->type_value);
+            case ('month'):
+                return Date::now()->addMonths($package->type_value);
+            case ('year'):
+                return Date::now()->addYears($package->type_value);
         }
     }
 }

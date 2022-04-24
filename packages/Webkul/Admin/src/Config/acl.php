@@ -176,11 +176,36 @@ return [
         'name'  => 'admin::app.acl.delete',
         'route' => ['admin.contacts.organizations.delete', 'admin.contacts.organizations.mass_delete'],
         'sort'  => 3,
+    ], [
+        'key'   => 'client',
+        'name'  => 'Clients',
+        'route' => 'client.get.all',
+        'sort'  => 7,
+    ],[
+        'key'   => 'client.create',
+        'name'  => 'Create',
+        'route' => ['client.get.add.form', 'client.add'],
+        'sort'  => 1,
+    ], [
+        'key'   => 'client.view',
+        'name'  => 'View',
+        'route' => 'client.get.all',
+        'sort'  => 2,
+    ], [
+        'key'   => 'client.edit',
+        'name'  => 'Edit',
+        'route' => ['client.update', 'client.get.edit.form'],
+        'sort'  => 3,
+    ], [
+        'key'   => 'client.delete',
+        'name'  => 'Delete',
+        'route' => 'client.delete',
+        'sort'  => 4,
     ],  [
         'key'   => 'products',
         'name'  => 'admin::app.acl.products',
         'route' => 'admin.products.index',
-        'sort'  => 7,
+        'sort'  => 8,
     ], [
         'key'   => 'products.create',
         'name'  => 'admin::app.acl.create',
@@ -200,7 +225,7 @@ return [
         'key'   => 'settings',
         'name'  => 'admin::app.acl.settings',
         'route' => 'admin.settings.index',
-        'sort'  => 8,
+        'sort'  => 9,
     ], [
         'key'   => 'settings.user',
         'name'  => 'admin::app.acl.user',

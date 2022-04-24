@@ -2,7 +2,7 @@
 @extends('admin::layouts.master')
 @section('content-wrapper')
     <div class="container">
-        <div class="card mt-3">
+        <div class="card border-0 shadow-sm mt-3">
             <h1 class="card-header bg-info text-white py-3">Quick Information</h1>
             <div class="card-body">
                 <div class="row justify-content-around">
@@ -52,9 +52,26 @@
             <div class="row row-cols-1 mt-3 row-cols-md-3 g-4">
             @foreach($clients as $client)
                     <div class="col-md-3 mb-5">
-                        <div class="card shadow-card border-0 shadow-sm" style="max-width: 250px">
-                            <div class="">
+                        <div class="card shadow-card border-0 shadow-sm {{$client->status == 0 ? 'bg-transparent':'bg-white'}}" style="max-width: 250px">
+                            <div id="image" class="position-relative">
                                 <img src="{{asset('ui\avatar\150-1.jpg')}}" style="max-height: 250px;" class="card-img-top" alt="client image">
+                            <div id="overlay" class="cursor-pointer">
+                                @if(isset($client->package))
+                                <div class="text-white mt-3">
+                                    <h2 class="text-white">{{$client->first_name}}'s Package</h2>
+                                    <p class="text-capitalize my-0">{{$client->package->name}}</p>
+                                    <p class="">{{$client->package->type_value}} {{$client->package->type_label}}</p>
+                                    <span class="fs-13 badge badge-warning">Subscribed From</span>
+                                    <p class="mt-1"> {{\Carbon\Carbon::parse($client->sub_time)->format('l jS \of F Y')}}</p>
+{{--                                    <p class="">Will Expired At {{date('d-m-Y', strtotime($client->expire_at))}}</p>--}}
+                                    <span class="fs-13 badge badge-danger">Expired Date</span>
+                                    <p class="mt-1"> {{\Carbon\Carbon::parse($client->expire_at)->format('l jS \of F Y')}}</p>
+
+                                </div>
+                                @else
+                                    <h3 class="text-white my-5">No Package 😕</h3>
+                                @endif
+                            </div>
                             </div>
                             <div class="card-body">
                                 <div class="card-title my-0 row">
@@ -72,8 +89,12 @@
                                     <span class="fs-13 text-muted text-capitalize">✨ Package : {{$client->package_id ? $client->package->name . '🤩' :'No 😕'}}</span>
                                 </div>
                                 <div class="d-flex justify-content-start gap-3 mt-3">
+                                    @if (bouncer()->hasPermission('client.delete'))
                                     <a href="{{route('client.get.edit.form',$client->id)}}" class="badge badge-primary">Edit</a>
+                                    @endif
+                                    @if (bouncer()->hasPermission('client.delete'))
                                     <a href="{{route('client.delete',$client->id)}}" class="badge badge-danger">Delete</a>
+                                    @endif
                                 </div>
                             </div>
                             <div class="card-footer">
@@ -93,6 +114,22 @@
         .yellow-color{background-color: #ffc800;}
         .red-color{background-color: #ed1b24;}
         .online-color{background-color: rgba(47, 255, 0, 0.84);}
+
+
+        #overlay {
+            text-align: center;
+            position: absolute;
+            z-index: 2;
+            opacity: 0;
+            background: rgba(39, 42, 43, 0.8);
+            transition: opacity 200ms ease-in-out;
+            border-radius: 4px 4px 0 0;
+            width: 100%;
+            height: 100%;
+            top: 0;
+        }
+        #image:hover #overlay { opacity: 0.9 !important; transition-delay: 150ms;}
+
         .fs-13{font-size: 15px}
         .pulse {
             overflow: visible;
