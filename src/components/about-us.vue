@@ -1,4 +1,5 @@
 <template>
+  <div class="linee"></div>
   <div id="about-section" class="about-section overflow-hidden">
     <img class="chip _L" src="/c-1-2.png" />
     <img class="chip _R" src="/c-1.png" />
@@ -128,6 +129,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.linee {
+  background-color: $primary;
+  width: 100%;
+  height: 5px;
+  position: sticky !important;
+  top: 120px !important;
+  z-index: 100;
+}
+@media screen and (max-width: 1024px) and (min-width: 200px) {
+  .linee {
+    top: 50px !important;
+  }
+}
+
 .about-section {
   position: relative;
   .chip {
@@ -136,6 +151,7 @@ export default {
     direction: ltr;
   }
   ._L {
+    display: block;
     right: -15em !important;
     width: 21em;
   }
@@ -206,12 +222,12 @@ export default {
     }
   }
 }
-@media screen and (max-width: 800px) and (min-width: 200px) {
+@media screen and (max-width: 900px) and (min-width: 200px) {
   .about-section {
   }
 }
 ._L {
-  display: none;
+  display: none !important;
 }
 
 ._R {

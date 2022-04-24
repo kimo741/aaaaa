@@ -67,6 +67,7 @@ export default {
 <style lang="scss" scoped>
 .link {
   position: relative;
+  cursor: pointer;
   color: $fontColor;
   //font-family: NavFont;
   position: relative;

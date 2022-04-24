@@ -41,9 +41,9 @@
             class="q-mt-lg"
           />
         </div>
+
         <div class="q-gutter-x-md cursor-pointer text-black">
-          <span class="inline-block text-caption">{{ $t("Einglish") }}</span>
-          <span class="inline-block text-caption">{{ $t("Arabic") }}</span>
+          <LangSwetcher />
         </div>
         <div>
           <LoginButton v-if="this.logeedIn" />
@@ -57,6 +57,17 @@
             v-else
             color="white"
           />
+        </div>
+        <div>
+          <q-toolbar>
+            <q-btn
+              flat
+              round
+              dense
+              icon="menu"
+              @click="drawerLeft = !drawerLeft"
+            />
+          </q-toolbar>
         </div>
       </div>
     </transition>
@@ -78,12 +89,34 @@ import LogoImg from "components/Layout/LogoImg";
 import IconLabel from "components/Layout/Icon-label";
 import LangSwetcher from "../lang-swetcher.vue";
 import LoginButton from "./LoginButton.vue";
+import { ref, watch } from "vue";
+import { useI18n } from "vue-i18n";
+import NavSmall from "../NavSmall.vue";
+import { useQuasar } from "quasar";
+
 export default {
+  setup() {
+    // const { locale } = useI18n({ useScope: "global" });
+    // return {
+    //   locale,
+    //   localeOptions: [
+    //     { value: "en-US", label: "English" },
+    //     { value: "ar", label: "العربيه" },
+    //   ],
+    // };
+    const $q = useQuasar();
+
+    return {
+      drawerLeft: ref($q.screen.width > 700),
+      drawerRight: ref($q.screen.width > 500),
+    };
+  },
+
   components: {
     IconLabel,
     DesctopNav,
     LogoImg,
-    // LangSwetcher,
+    LangSwetcher,
   },
   props: ["navStatus"],
   data() {
@@ -116,6 +149,11 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.fit {
+  display: block;
+  position: fixed;
+  padding: 0 !important;
+}
 .link-social {
   .chil {
     margin: auto 15px;

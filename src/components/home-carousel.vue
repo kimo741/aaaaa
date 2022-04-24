@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="linee"></div>
     <q-carousel
       v-model="slide"
       swipeable
@@ -13,8 +14,10 @@
         class="slider-container q-pa-none"
         img-src="slider/1.png"
       >
-        <div class="container row items-end full-height relative-position">
-          <div class="bg-white slider-card col-12 col-md-6">
+        <div
+          class="container row items-end full-width full-height relative-position"
+        >
+          <div class="bg-white slider-card col-12 col-md-12">
             <div class="text-left bold text-h1 text-primary appName block">
               {{ $t("appName") }}
               <div
@@ -52,6 +55,14 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
+.linee {
+  background-color: $primary;
+  width: 100%;
+  height: 5px;
+  position: sticky !important;
+  top: 0% !important;
+  z-index: 100;
+}
 .container {
   zoom: 78%;
 }
@@ -68,6 +79,11 @@ export default defineComponent({
 }
 .slider-card {
   padding: 50px !important;
+  margin: auto !important;
+  position: absolute;
+  width: 70%;
+  top: 50%;
+  left: 0;
   .appName {
     font-size: 40px;
     font-weight: 700;
@@ -87,18 +103,18 @@ export default defineComponent({
 }
 @media screen and (max-width: 1000px) and (min-width: 300px) {
   .slider-card {
-    width: 70%;
+    width: 70% !important;
+    margin: auto !important;
   }
   .slider-container {
     width: 100% !important;
-    height: auto !important;
+    height: 100% !important;
     background-position: 85% 120% !important;
     background-size: auto !important;
     padding: 20px;
-    overflow: none !important;
+    overflow: hidden !important;
     flex-direction: row !important;
     text-align: left;
-    display: flex;
     flex-direction: column !important;
     position: relative;
     .sliderimg {
@@ -127,16 +143,17 @@ export default defineComponent({
     }
     .slider-card {
       position: absolute;
-      top: 0 !important;
-      left: 0;
+      width: 90% !important;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%) !important;
     }
   }
 }
 @media screen and (max-width: 500px) and (min-width: 0px) {
   .slider-container {
-    height: auto !important;
     .slider-card {
-      width: 100%;
+      width: 100% !important;
     }
   }
 }

@@ -1,4 +1,5 @@
 <template>
+  <div class="linee"></div>
   <section id="package" class="sc">
     <div class="container">
       <h2 class="package-header">الباقات</h2>
@@ -154,6 +155,15 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.linee {
+  background-color: $accent;
+  opacity: 0.8;
+  width: 100%;
+  height: 5px;
+  position: sticky !important;
+  top: 0% !important;
+  z-index: 100;
+}
 .package-header {
   text-align: center;
   text-transform: capitalize;

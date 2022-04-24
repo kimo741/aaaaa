@@ -1,11 +1,14 @@
 <template>
   <q-page class="q-pt-none">
     <HomeSlide />
-    <StartNav :navStatus="true" class="z-max" />
+    <StartNavMobile v-if="$q.screen.lt.md" :navStatus="true" class="" />
+
+    <StartNav v-else :navStatus="true" class="z-max" />
+
     <home-carousel />
     <about-us />
     <VueSweber />
-<!--    <about-us />-->
+    <!--    <about-us />-->
 
     <servicesOne />
     <package-card />
@@ -25,6 +28,7 @@ import servicesOne from "src/components/services-One.vue";
 import FormSection from "src/components/FormSection.vue";
 import VueSweber from "components/Vue-sweber";
 import Fotter from "components/Layout/Fotter";
+import StartNavMobile from "../components/Layout/Start-nav-mobile.vue";
 
 export default defineComponent({
   name: "IndexPage",
@@ -37,7 +41,8 @@ export default defineComponent({
     homeCarousel,
     FormSection,
     servicesOne,
-    Fotter
+    Fotter,
+    StartNavMobile,
   },
 });
 </script>

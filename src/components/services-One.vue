@@ -1,22 +1,21 @@
 <template>
   <section id="services" class="services">
+    <div class="linee"></div>
     <div class="container content-between">
       <h2 class="services-header">
         {{ $t("services.services") }}
       </h2>
+      <span class="services-span">
+        {{ $t("services.slogen") }}
+      </span>
+
       <div class="row justify-center border-rad items-center">
         <!------------------sevice one ------------------->
         <div class="col-6 justify-center text-center">
           <h2>
-            {{ $t("services.slogen") }}
+            {{ $t("services.panning.title") }}
           </h2>
           <p>
-            <q-icon
-              name="fa-solid fa-camera-retro"
-              color="green"
-              size="1rem"
-            /><b>{{ $t("services.panning.title") }}</b>
-            <br />
             <q-icon
               name="fa-solid fa-camera-retro"
               color="green"
@@ -39,18 +38,18 @@
 
         <!------------------sevice tow ------------------->
         <div class="col-6 justify-center text-center m-b">
-          <h2>{{ $t("services.design.title") }}</h2>
+          <h2>{{ $t("services.content_writing.title") }}</h2>
           <p>
-            <q-icon name="fa-brands fa-black-tie" color="green" size="1rem" /><b
-              >{{ $t("services.content_writing.title") }}</b
-            >
-            <br />
             <q-icon name="fa-brands fa-black-tie" color="green" size="1rem" /><b
               >{{ $t("services.content_writing.slogen") }}</b
             >
             <br />
             <q-icon name="fa-brands fa-black-tie" color="green" size="1rem" /><b
               >{{ $t("services.content_writing.profile") }}</b
+            >
+            <br />
+            <q-icon name="fa-brands fa-black-tie" color="green" size="1rem" /><b
+              >{{ $t("services.content_writing.posts") }}</b
             >
             <br />
             <q-icon name="fa-brands fa-black-tie" color="green" size="1rem" /><b
@@ -72,10 +71,6 @@
         <div class="col-6 justify-center text-center">
           <h2>{{ $t("services.video.title") }}</h2>
           <p>
-            <q-icon name="fa-solid fa-marker" color="green" size="1rem" /><b>{{
-              $t("services.video.title")
-            }}</b>
-            <br />
             <q-icon name="fa-solid fa-marker" color="green" size="1rem" /><b>{{
               $t("services.video.product")
             }}</b>
@@ -105,23 +100,10 @@
         <!------------------sevice four ------------------->
 
         <div class="col-6 justify-center text-center m-b">
-          <h2>{{ $t("services.services") }}</h2>
-          <span>{{ $t("services.slogen") }}</span>
+          <h2>{{ $t("services.design.title") }}</h2>
           <p>
             <q-icon name="fa-solid fa-fill" color="green" size="1rem" /><b>{{
-              $t("panning.title")
-            }}</b>
-            <br />
-            <q-icon name="fa-solid fa-fill" color="green" size="1rem" /><b>{{
-              $t("panning.marketing")
-            }}</b>
-            <br />
-            <q-icon name="fa-solid fa-fill" color="green" size="1rem" /><b>{{
-              $t("panning.communication")
-            }}</b>
-            <br />
-            <q-icon name="fa-solid fa-fill" color="green" size="1rem" /><b>{{
-              $t("panning.trade_mark")
+              $t("services.design.slogen")
             }}</b>
           </p>
         </div>
@@ -138,6 +120,16 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
+.linee {
+  background-color: $secondary;
+  opacity: 0.8;
+  width: 100%;
+  height: 5px;
+  position: sticky !important;
+  top: 0% !important;
+  z-index: 100;
+}
+
 .services-header {
   text-align: center;
   font-weight: 800;
@@ -154,6 +146,30 @@ export default defineComponent({
     left: 50%;
     transform: translate(-50%, -50%);
     width: 40%;
+    height: 4px;
+    background-color: $accent;
+    border-radius: 80px;
+  }
+}
+.services-span {
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-weight: 800;
+  font-family: "Cairo", sans-serif;
+  font-size: 2rem;
+  line-height: 0;
+  color: $primary;
+  position: relative;
+  height: 50px;
+  margin: 2rem;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
     height: 4px;
     background-color: $accent;
     border-radius: 80px;

@@ -10,16 +10,17 @@
           <div class="col-12 .d-xg-none .d-lg-none .d-md-none"></div> -->
         <!-- this is just in smal screen -->
         <!-- </div> -->
-        <div class="del-marg col-xl-8 col-lg-8 col-md-12 col-sm-12 col-xs-12">
+        <div class="del-marg col-xl-8 col-lg-8 col-md-8 col-sm-12 col-xs-12">
           <div class="row">
             <div
+              @click="scrollToElement('services')"
               class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--1"
             >
               <div class="overflow-hidden">
                 <img class="hover-iamge" src="1-3-min.png" />
               </div>
               <div
-                class="q-x-auto z-max"
+                class="q-x-auto z-max captions"
                 style="
                   position: absolute;
                   top: 40%;
@@ -35,13 +36,14 @@
               </div>
             </div>
             <div
+              @click="scrollToElement('services')"
               class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--2"
             >
               <div class="overflow-hidden">
                 <img class="hover-iamge" src="1-3-min.png" />
               </div>
               <div
-                class="q-x-auto z-max"
+                class="q-x-auto z-max captions"
                 style="
                   position: absolute;
                   top: 50%;
@@ -57,13 +59,14 @@
               </div>
             </div>
             <div
+              @click="scrollToElement('services')"
               class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--3"
             >
               <div class="overflow-hidden">
                 <img class="hover-iamge" src="1-3-min.png" />
               </div>
               <div
-                class="q-x-auto z-max"
+                class="q-x-auto z-max captions"
                 style="
                   position: absolute;
                   top: 60%;
@@ -79,13 +82,14 @@
               </div>
             </div>
             <div
+              @click="scrollToElement('services')"
               class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-6 col__main-eader col__main-eader--4"
             >
               <div class="overflow-hidden">
                 <img class="hover-iamge" src="1-3-min.png" />
               </div>
               <div
-                class="q-x-auto z-max"
+                class="q-x-auto z-max captions"
                 style="
                   position: absolute;
                   top: 70%;
@@ -117,7 +121,9 @@
             <!--            </div>-->
           </div>
         </div>
-        <div class="col-4 diplayh left-header overflow-hidden">
+        <div
+          class="col-xl-4 col-lg-4 col-md-4 col-sm-0 col-xs-0 diplayh left-header overflow-hidden"
+        >
           <div style="transform: translate(-30%, 100%)">
             <img src="logo.png" />
           </div>
@@ -134,9 +140,24 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "ErrorNotFound",
   components: {},
+  methods: {
+    scrollToElement(el) {
+      document.getElementById(el).scrollIntoView({ behavior: "smooth" });
+    },
+  },
 });
 </script>
 <style lang="scss" scoped>
+.captions {
+  font-size: 3rem !important;
+}
+@media screen and (max-width: 1200px) and (min-width: 1000px) {
+  .captions {
+    font-size: 2rem !important;
+  }
+}
+#homePage {
+}
 .hover-iamge {
   animation: righttBackground 15s ease-in-out infinite;
 }
@@ -174,19 +195,24 @@ export default defineComponent({
   background-position-y: bottom;
   background-size: 100%;
   background-repeat: no-repeat;
+  max-width: 100%;
+
   .name-logo {
-    right: 30%;
+    right: 10%;
     transform: translate(-50%, 50%);
     color: #fff;
-    font-weight: 700;
+    font-weight: 500;
     position: absolute;
     top: 74%;
-    font-size: 4rem;
+    font-size: 3rem;
   }
 }
 .col__main-eader {
   position: relative;
-  height: calc(100vh - 60px) !important;
+  height: calc(100vh - 50px) !important;
+  width: 15vw;
+  margin: 0 auto;
+  cursor: pointer;
 
   &--1 {
     padding: 0 2.6%;
@@ -232,7 +258,7 @@ export default defineComponent({
   }
   &--4 {
     padding: 0 2.6%;
-    height: 97vh !important;
+    height: 94vh !important;
     background-color: #0065b3;
   }
   &--image {
@@ -321,8 +347,7 @@ export default defineComponent({
   width: 70% !important;
   height: 100%;
 }
-.image-head {
-}
+
 .pading-cont {
   width: 50%;
 }
@@ -392,9 +417,22 @@ export default defineComponent({
   }
   #homePage {
     height: 100vh;
+    padding: 0 !important;
   }
   .col__main-eader {
     padding: 0rem 0;
+    margin: 1vh auto !important;
+    height: 48vh !important;
+    width: 47%;
+  }
+  .captions {
+    font-size: 2rem !important;
+    font-weight: bolder;
+    letter-spacing: 2 px;
+    position: absolute !important;
+    left: 30% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
   }
 }
 </style>

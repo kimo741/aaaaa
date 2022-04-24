@@ -29,7 +29,7 @@
       </h2>
       <div class="row">
         <div class="col flex justify-center">
-          <div class="q-pa-md" style="max-width: 100%">
+          <div class="q-pa-md form-containe" style="max-width: 100%">
             <q-form
               @submit="onSubmit"
               @reset="onReset"
@@ -168,7 +168,7 @@ export default defineComponent({
       bottom: -19%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 25rem;
+      width: 35%;
       height: 5px;
       background-color: #3ff2c6;
     }
@@ -226,10 +226,10 @@ export default defineComponent({
 :-ms-input-placeholder {
   text-align: center;
 }
-@media screen and (max-width: 800px) and (min-width: 300px) {
+@media screen and (max-width: 900px) and (min-width: 300px) {
   .section-form {
     h2 {
-      font-size: 3rem;
+      font-size: 2.5rem;
     }
     .social-div {
     }
@@ -239,10 +239,21 @@ export default defineComponent({
   width: 100% !important;
   margin: 16px auto !important;
   background-color: #0399e3;
+  font-size: 1.2rem !important;
+  height: 4rem;
+}
+.q-textarea {
+  height: auto !important;
 }
 .q-pa-md {
-  width: 80%;
+  width: 100%;
   margin: auto !important;
   padding: 0;
+}
+.form-containe {
+  width: 100%;
+}
+.q-pa-md {
+  width: 95% !important;
 }
 </style>
