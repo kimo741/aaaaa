@@ -22,6 +22,7 @@ class CreateClientsTable extends Migration
             $table->string('phone')->nullable();
             $table->string('password');
             $table->enum('status',[0,1])->default(1);
+            $table->string('code')->nullable();
             $table->string('image',255);
             $table->string('email_verified_at')->nullable();
             $table->timestamps();

@@ -8,6 +8,10 @@ use App\Http\Controllers\Admin\ItemController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Models\Admin\Client;
 
+
+use Illuminate\Support\Facades\Mail;
+use App\Mail\VerificationAuth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +24,9 @@ use App\Models\Admin\Client;
 */
 /*** Client ***/
 
-//    Route::post('/login','App\Http\Controllers\Client\AuthController@dologin')->name('do.login');
+    Route::get('/em', function () {
+        return view('vendor.auth.verification');
+    });
 Route::prefix('client')->group(function () {
     Route::any('/logout', 'App\Http\Controllers\Client\AuthController@destroy');
 
@@ -37,22 +43,27 @@ Route::prefix('client')->group(function () {
 
     Route::get('/email/verification-notification/{id}', function ($email) {
         $email = Client::where('email', $email)->first();
+        $email->code = rand(1111, 9999);
+        $email->save();
         if (!$email)
             abort(401);
-        event(new Registered($email));
-        return redirect()->back()->with('success', 'Verification link sent!');
-
+        Mail::to($email)->send(new VerificationAuth($email));
+        return view('client.notice')->with(['success','Password Changed Successfully', 'client' => $email]);
     })->name('verification.send');
-//    })->name('verification.send');
 
-//    Route::get('/email/verification-notification', function (Request $request) {
-//        return Client::find(6);
-//        return redirect()->back()->with('success', 'Verification link sent!');
-//    })->name('verification.send');
+    Route::get('/email/verify/{id}/{code}', function ($id, $code) {
+        $email = Client::where(['id' => $id, 'code' => $code ])->first();
+        if (!$email)
+            abort(401);
 
-    Route::get('/email/verify/{id}/{hash}','App\Http\Controllers\Client\AuthController@getverify')  // Send email
-            ->middleware(['auth:client', 'signed'])
-            ->name('verification.verify');
+        
+        if (Illuminate\Support\Facades\Auth::guard('client')->loginUsingId($email->id)) {
+
+            return redirect()->intended(\route('client.home'));
+        }
+        return 'error';
+        // Login
+    })->name('email.verify.check');
 
 
     /* Client Routes For Authenticated */
