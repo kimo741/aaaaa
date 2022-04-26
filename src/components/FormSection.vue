@@ -49,7 +49,7 @@
               />
               <q-input
                 v-model="email"
-                placeholder="الموضوع*"
+                placeholder="البريد الألكروني*"
                 filled
                 class="inputs"
                 type="email"
@@ -62,9 +62,9 @@
               />
               <q-input
                 filled
-                type="Phone number"
+                type="number"
                 v-model="number"
-                placeholder="البريد الكتروني *"
+                placeholder="رقم الهاتف *"
                 color="white"
                 class="inputs"
                 lazy-rules
@@ -89,11 +89,22 @@
 
               <div>
                 <q-btn
+                  v-if="!this.loading"
                   label="أرسال"
                   type="submit"
                   rounded
                   color="white"
                   text-color="primary"
+                  fab-mini
+                  class="full-width text-capitalize form__but-sub shadow-0 q-my-lg"
+                />
+                <q-btn
+                  v-else
+                  rounded
+                  color="white"
+                  text-color="primary"
+                  loading
+                  fab-mini
                   class="full-width text-capitalize form__but-sub shadow-0 q-my-lg"
                 />
                 <!--                <q-btn-->
@@ -120,33 +131,35 @@ import { defineComponent, ref } from "vue";
 export default defineComponent({
   setup() {
     const $q = useQuasar();
-
+    const loading = ref(false);
     const name = ref(null);
-    const age = ref(null);
+    const email = ref(null);
     const number = ref(null);
     const text = ref(null);
-    const accept = ref(true);
 
     return {
+      loading,
       name,
-      age,
+      email,
       text,
       number,
 
       onSubmit() {
-        $q.notify({
-          color: "green-4",
-          textColor: "white",
-          icon: "cloud_done",
-          message: "Submitted",
-        });
+        setTimeout(() => {
+          // $q.notify({
+          //   color: "green-4",
+          //   textColor: "white",
+          //   icon: "cloud_done",
+          //   message: "  تم ارسال الرساله📩 شكراّ لتواصلك مع لادني ",
+          // });
+          this.$refs.loading = true;
+        }, 2);
+        console.log(this.$refs.loading);
       },
 
       onReset() {
         name.value = null;
-        age.value = null;
         text.value = null;
-        accept.value = false;
       },
     };
   },

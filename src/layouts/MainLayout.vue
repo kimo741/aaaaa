@@ -13,18 +13,20 @@
           height: calc(100% - 150px);
           margin-top: 150px;
           border-right: 1px solid #ddd;
+          z-index: 1000;
         "
       >
         <q-list padding>
-          <q-item v-if="!true">
+          <q-item v-if="this.checkLogin">
             <q-item-section top avatar>
               <q-avatar>
+                <!-- <img v-if="data.image !== null" :src="this.data.image" /> -->
                 <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
               </q-avatar>
             </q-item-section>
             <q-item-section>
-              <q-item-label overline>Ahmed</q-item-label>
-              <q-item-label caption>abdelslama222@gma.com</q-item-label>
+              <q-item-label overline>data.username</q-item-label>
+              <q-item-label caption>data.email</q-item-label>
             </q-item-section>
             <q-item-section side top>
               <q-item-label caption>
@@ -48,7 +50,7 @@
           <q-item v-else>
             <q-item-section>
               <q-item-label class="text-blue">Login</q-item-label>
-              <q-item-label caption>test mass</q-item-label>
+              <q-item-label caption> Hello In Our Worled </q-item-label>
             </q-item-section>
             <q-item-section side top>
               <q-item-label caption>
@@ -58,7 +60,7 @@
                   icon="eva-arrow-forward-outline"
                   flat
                   class="z-max"
-                  size="md"
+                  size="lg"
                   @click="
                     $store.dispatch(
                       'updateDrawer',
@@ -69,14 +71,14 @@
               </q-item-label>
             </q-item-section>
           </q-item>
-          <q-item clickable v-ripple class="line">
+          <q-item clickable active v-ripple class="line">
             <q-item-section @click="scrollToElement('homePage')">
               {{ $t("links.home") }}
             </q-item-section>
           </q-item>
           <q-separator dir="ltr" inset="item" />
 
-          <q-item active v-ripple class="line">
+          <q-item v-ripple class="line">
             <q-item-section @click="scrollToElement('aboutSection')">
               {{ $t("about.aboutus") }}
             </q-item-section>
@@ -84,7 +86,10 @@
           <q-separator spaced inset="item" />
 
           <q-item class="line" v-ripple>
-            <q-item-section @click="scrollToElement('services')">
+            <q-item-section
+              @click="scrollToElement('services')"
+              :class="{ active: (this.scrole = 'services') }"
+            >
               {{ $t("services.services") }}
             </q-item-section>
           </q-item>
@@ -93,6 +98,23 @@
           <q-item v-ripple class="line" border>
             <q-item-section @click="scrollToElement('services')">
               {{ $t("links.packages") }}
+            </q-item-section>
+          </q-item>
+          <q-item v-if="!this.checkLogin">
+            <q-item-section>
+              <div>
+                <!-- <LoginButton /> -->
+
+                <!-- <q-btn color="primary" label="LOGIN" v-else /> -->
+                <q-btn
+                  icon-right="fa-solid fa-arrow-right-to-bracket"
+                  label="تسجيل الدخول"
+                  size="md"
+                  flat
+                  color="blue"
+                  class="full-width"
+                />
+              </div>
             </q-item-section>
           </q-item>
         </q-list>
@@ -125,6 +147,7 @@
 
 <script>
 import { defineComponent, ref } from "vue";
+import LoginButton from "src/components/Layout/LoginButton.vue";
 
 export default defineComponent({
   name: "MainLayout",
@@ -141,15 +164,28 @@ export default defineComponent({
         return this.$store.state.setting.drawer;
       },
     },
+    checkLogin() {
+      return this.$store.state.setting.logedin;
+    },
   },
   methods: {
     scrollToElement(el) {
       document.getElementById(el).scrollIntoView({ behavior: "smooth" });
     },
   },
+  components: {
+    // LoginButton
+  },
 });
 </script>
 <style lang="scss" scoped>
+.line {
+  font-size: 1.3rem;
+  cursor: pointer !important;
+  &:hover {
+    background-color: #ddd;
+  }
+}
 .z-max {
   z-index: 5000;
 }

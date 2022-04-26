@@ -2,7 +2,7 @@
   <div class="linee"></div>
   <section id="package" class="sc">
     <div class="container">
-      <h2 class="package-header">الباقات</h2>
+      <h2 class="package-header">{{ $t("packages.title") }}</h2>
       <div class="row text-center justify-around">
         <!------------------package-1-------------------->
         <div class="col-xl-4 -xol-lg-6 lt-lg-col-12 card-1 row items-center">
@@ -60,9 +60,14 @@
             push
             color="white"
             text-color="primary"
-            label="تسجيل الأن"
+            :label="
+              this.checkLogin
+                ? $t('packages.package_1.button[0]')
+                : $t('packages.package_1.button[1]')
+            "
             class="q-mx-* but-1"
             size="1rem"
+            @click="getPackage('1')"
           />
         </div>
         <!------------------package-2-------------------->
@@ -134,9 +139,14 @@
             push
             color="white"
             text-color="primary"
-            label="تسجيل الأن"
+            :label="
+              this.checkLogin
+                ? $t('packages.package_2.button[0]')
+                : $t('packages.package_2.button[1]')
+            "
             size="1rem"
             class="q-mt-lg but-2"
+            @click="getPackage('2')"
           />
         </div>
         <!-- /////////////////////////////////////////---------------->
@@ -147,10 +157,22 @@
   </section>
 </template>
 <script>
+import { Cookies, useQuasar } from "quasar";
 import { defineComponent } from "vue";
 export default defineComponent({
   name: "PackaCerd",
   components: {},
+  methods: {
+    getPackage(packageNum) {
+      // window.open("website domain")
+      Cookies.set("packageNumber", packageNum, { expires: "1d" });
+    },
+  },
+  computed: {
+    checkLogin() {
+      return this.$store.state.setting.logedin;
+    },
+  },
 });
 </script>
 
@@ -161,8 +183,8 @@ export default defineComponent({
   width: 100%;
   height: 5px;
   position: sticky !important;
-  top: 0% !important;
-  z-index: 100;
+  top: 0 !important;
+  z-index: 1111111;
 }
 .package-header {
   text-align: center;

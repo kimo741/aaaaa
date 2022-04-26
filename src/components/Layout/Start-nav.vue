@@ -58,7 +58,7 @@
             color="white"
           />
         </div>
-        <div>
+        <!-- <div>
           <q-toolbar>
             <q-btn
               flat
@@ -68,7 +68,7 @@
               @click="drawerLeft = !drawerLeft"
             />
           </q-toolbar>
-        </div>
+        </div> -->
       </div>
     </transition>
     <div class="full-width bg-white q-pb-xs q-pt-xs" style="">

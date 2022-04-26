@@ -153,7 +153,8 @@ export default defineComponent({
 }
 @media screen and (max-width: 1200px) and (min-width: 1000px) {
   .captions {
-    font-size: 2rem !important;
+    font-size: 4rem !important;
+    left: 23%;
   }
 }
 #homePage {
@@ -426,11 +427,12 @@ export default defineComponent({
     width: 47%;
   }
   .captions {
-    font-size: 2rem !important;
+    font-size: 4rem !important;
     font-weight: bolder;
+    text-shadow: 1px 1px 3px #000;
     letter-spacing: 2 px;
     position: absolute !important;
-    left: 30% !important;
+    left: 23% !important;
     top: 50% !important;
     transform: translate(-50%, -50%) !important;
   }

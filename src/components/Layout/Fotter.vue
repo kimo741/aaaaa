@@ -137,6 +137,9 @@ ul {
   }
 }
 @media screen and (max-width: 920px) and (min-width: 300px) {
+  .text-subtitle1 {
+    width: 60%;
+  }
   .row {
     flex-direction: column !important;
     width: 100% !important;
@@ -156,6 +159,8 @@ ul {
         padding: 0;
       }
     }
+  }
+  .buttonn {
   }
 }
 </style>
