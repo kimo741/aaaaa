@@ -3,14 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Order\UpdateOrderRequest;
 use Illuminate\Http\Request;
 use App\Models\Admin\Order;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Validator;
 
 class OrderController extends Controller
 {
+
     /*
      *  Create Order From Client Interface
      *  And then send thanks email to client
@@ -55,30 +57,30 @@ class OrderController extends Controller
     /*
       *  Update Order From Client Interface
       */
-    public function update( Request $req ) {
+    public function update( UpdateOrderRequest $req ) {
 
-        // validate client Request
-        $validator = Validator::make($req->all(),[
-            'client_name'  => 'required',
-            'city'         => 'required',
-            'company_name' => 'required',
-            'age'          => 'required',
-            'service'      => 'required',
-            'type'         => 'required',
-            'id'           => 'required'
-        ]);
-        // return error massege if validator falis
-        if ($validator->fails()){
-            return response()->json($validator->errors());
-//            return  redirect()->back()->with('error', $validator->errors());
-        }
-
-        $orderToUpdate = Arr::except(collect($req->all())->toArray(), ['email', 'phone']);
+        $orderToUpdate = $req->validated();
 
         $order = Order::where('id', $req->id)->update( $orderToUpdate );
 
         return response()->json([
-            "status" => $order->id
+            "status" => $order
+        ]);
+    }
+
+    /*
+      *  Update Order From Client Interface
+      */
+    public function delete( $id ) {
+
+        // Get Order
+        $order = Order::findOrfail($id);
+
+        $order->delete();
+
+        // TODO ADD VIEW
+        return response()->json([
+            "status" => $order
         ]);
     }
 }

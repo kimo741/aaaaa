@@ -21,7 +21,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 // Create New Order From SPA
+
 Route::post('/spa/order', [OrderController::class, 'create']);
+Route::prefix('dashboard/order')->group(function (){
+    Route::get('/{id}',[OrderController::class, 'edit']);
+    Route::post('/',[OrderController::class, 'update']);
+    Route::delete('/{id}',[OrderController::class, 'delete']);
+});
 
 Route::prefix('package')->group(function (){
     Route::get('/','App\Http\Controllers\Api\DashApiController@indexPackage');

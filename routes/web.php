@@ -79,7 +79,7 @@ Route::prefix('dashboard')->group(function (){
     /**  Package  **/
     Route::prefix('order')->group(function (){
         Route::get('/$id',[OrderController::class, 'edit'])->name('order.edit');
-        Route::post('/',[OrderController::class, 'update'])->name('order.update');;
+//        Route::post('/',[OrderController::class, 'update'])->name('order.update');
     });
 
     /**  Package  **/

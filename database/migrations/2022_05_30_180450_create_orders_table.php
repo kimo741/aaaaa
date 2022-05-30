@@ -23,7 +23,7 @@ class CreateOrdersTable extends Migration
             $table->integer('age');
             $table->longText('service');
             $table->string('type');
-            $table->enum('status',[0,1])->default(0);
+            $table->enum('status',[0,1,2])->default(0);
             $table->timestamps();
         });
     }
