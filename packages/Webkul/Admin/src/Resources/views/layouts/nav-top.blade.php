@@ -1,6 +1,12 @@
 <div class="navbar-top">
     <div class="navbar-top-left">
         <div class="brand-logo">
+            @if(auth()->guard('client')->check())
+                <a href="{{ route('client.home') }}">
+                    <img src="{{asset('ui/logo-2.jpeg')}}" alt="{{ config('app.name') }}" style="max-height: 10%; max-width: 10%"/>
+                </a>
+            @endif
+
             <a href="{{ route('admin.dashboard.index') }}">
 {{--                <img src="{{asset('vendor/webkul/admin/assets/images/logo.svg')}}" alt="{{ config('app.name') }}"/>--}}
             </a>
@@ -123,19 +129,24 @@
 
         <div class="profile-info">
             <div class="dropdown-toggle">
-                @if (auth()->guard('user')->user()->image)
+                @if(auth()->guard('client')->check())
+                    <div class="avatar">
+                        <img src="{{ asset('storage/public/'.auth()->guard('client')->user()->image) }}"/>
+                    </div>
+                @elseif (isset(auth()->guard('user')->user()->image))
                     <div class="avatar">
                         <img src="{{ auth()->guard('user')->user()->image_url }}"/>
-                    </div>
-                @else
-                    <div class="avatar">
-                        <span class="icon avatar-icon"></span>
                     </div>
                 @endif
 
                 <div class="info">
+                    @if(auth()->guard('user')->check())
                     <span class="howdy">{{ __('admin::app.layouts.howdy') }}</span>
                     <span class="user">{{ strtok(auth()->guard('user')->user()->name, ' ') }}</span>
+                    @elseif(auth()->guard('client')->check())
+                    <span class="howdy">{{ __('admin::app.layouts.howdy') }}</span>
+                    <span class="user">{{ strtok(auth()->guard('client')->user()->first_name, ' ') }}</span>
+                    @endif
                 </div>
 
                 <i class="icon ellipsis-icon"></i>
@@ -147,10 +158,18 @@
                 <div class="dropdown-container">
                     <ul>
                         <li>
+                            @if(auth()->guard('client')->check())
+                            <a href="{{ route('client.dashboard.profile') }}">{{ __('admin::app.layouts.my-account') }}</a>
+                            @else
                             <a href="{{ route('admin.user.account.edit') }}">{{ __('admin::app.layouts.my-account') }}</a>
+                            @endif
                         </li>
                         <li>
+                            @if(auth()->guard('client')->check())
+                            <a href="{{ route('client.session.destroy') }}">{{ __('admin::app.layouts.sign-out') }}</a>
+                            @else
                             <a href="{{ route('admin.session.destroy') }}">{{ __('admin::app.layouts.sign-out') }}</a>
+                            @endif
                         </li>
                     </ul>
                 </div>

@@ -54,7 +54,8 @@
                     <div class="col-md-3 mb-5">
                         <div class="card shadow-card border-0 shadow-sm {{$client->status == 0 ? 'bg-transparent':'bg-white'}}" style="max-width: 250px">
                             <div id="image" class="position-relative">
-                                <img src="{{asset('ui\avatar\150-1.jpg')}}" style="max-height: 250px;" class="card-img-top" alt="client image">
+{{--                                <img src="{{asset('ui\avatar\150-1.jpg')}}" style="max-height: 250px;" class="card-img-top" alt="client image">--}}
+                                <img src="{{asset('storage/public/' . $client->image)}}" style="min-height: 250px;" class="card-img-top" alt="client image">
                             <div id="overlay" class="cursor-pointer">
                                 @if(isset($client->package))
                                 <div class="text-white mt-3">

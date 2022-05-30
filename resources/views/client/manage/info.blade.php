@@ -1,7 +1,7 @@
 @extends('client.manage.add')
 @section('client-forms')
             <div class="panel-body">
-                <form method="POST" class="overflow-hidden px-2" action="{{ route('client.add') }}" @submit.prevent="$root.onSubmit">
+                <form method="POST" class="overflow-hidden px-2" action="{{ route('client.add') }}" enctype="multipart/form-data" @submit.prevent="$root.onSubmit">
                     {!! view_render_event('admin.sessions.login.form_controls.before') !!}
 
                     @csrf

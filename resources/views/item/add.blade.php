@@ -9,7 +9,7 @@
         @if (bouncer()->hasPermission('settings.front-setting.item.create'))
         <div class="mt-5 w-md bg-white px-5 py-5 shadow-sm">
 
-            <form method="POST" action="{{ route('item.update') }}" @submit.prevent="onSubmit">
+            <form method="POST" action="{{ route('item.add') }}" @submit.prevent="onSubmit">
                 @csrf
                 <div class="row">
                     <div class="col-md-4 mb-3">
@@ -30,7 +30,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row gap-2">
                     <div class="col-md-6 mb-3" :class="[errors.has('label') ? 'has-error' : '']">
                         <label for="label" class="form-label">Label</label>
                         <input type="text" id="label" name="label" class="form-control"
@@ -45,9 +45,18 @@
                         <label for="count" class="form-label">Count</label>
                         <input type="number" name="count" class="form-control">
                     </div>
-                    <div class="col-md-3 mb-3" id="time" style="display: none">
-                        <label for="duration" class="form-label">Time</label>
-                        <input type="text" name="duration" class="form-control">
+                    <div class="col-md-3 my-3" id="time" style="display: none">
+                        <select class="form-select" name="duration_label" aria-label="select item type">
+                            <option selected>Select Item Time</option>
+                            <option value="day">Day</option>
+                            <option value="week">Week</option>
+                            <option value="month">Month</option>
+                            <option value="year">Year</option>
+                        </select>
+                        <div >
+                            <input type="number" name="duration_value" class="mt-3 form-control"
+                                   id="duration_value">
+                        </div>
                     </div>
                 </div>
                 <div class="d-flex justify-content-end mt-3">

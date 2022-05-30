@@ -10,7 +10,7 @@ class Item extends Model
     use HasFactory;
     protected $table = 'items';
 
-    protected $fillable = ['label','value','count','duration'];
+    protected $fillable = ['label','value','count','duration_label','duration_value'];
 
     public function package(){
         return $this->belongsTo('App\Models\Admin\Package');

@@ -75,7 +75,7 @@
             width: 20%;
             height: 65px;
             border-radius: 50%;
-            background-image: url("https://www.royalunibrew.com/wp-content/uploads/2021/07/blank-profile-picture-973460_640.png");
+            /*background-image: url("https://www.royalunibrew.com/wp-content/uploads/2021/07/blank-profile-picture-973460_640.png");*/
             background-position: center center;
             background-color:#fff;
             background-size: cover;

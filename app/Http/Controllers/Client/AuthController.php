@@ -13,13 +13,18 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\VerificationAuth;
+use phpDocumentor\Reflection\DocBlock\Tags\Return_;
 use function PHPUnit\Framework\isEmpty;
+
 
 class AuthController extends Controller
 {
     public function __construct()
     {
-//        $this->middleware('auth:client');
+        $this->middleware('guest')->except('logout');
+        $this->middleware('guest:client')->except('logout');
     }
 
     public function login(){
@@ -34,23 +39,17 @@ class AuthController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-        $client = Arr::first(Client::where('email',$request->email)->select('status')->get());
+        $client = Client::where('email' , $credentials['email'])->select(['id', 'status', 'password'])->first();
 
         if(empty($client)){
-            return redirect()->back()->with('error',"This Account Incorrect");
+            return redirect()->back()->with('error',"This Email Incorrect");
         }else {
             if($client->status == 0)
                 return redirect()->back()->with('warning','Your Account Is Disabled By Admin');
         }
-        if (Auth::guard('client')->attempt($credentials)) {
+        if (auth()->guard('client')->attempt($credentials)){
             $request->session()->regenerate();
-
             return redirect()->route('client.home');
-
-        } else {
-            return back()->withErrors([
-                'email' => 'The provided credentials do not match our records.',
-            ]);
         }
     }
 
@@ -84,11 +83,13 @@ class AuthController extends Controller
         $client->last_name  = $request->last_name;
         $client->email      = $request->email;
         $client->phone      = $request->phone;
-//        $client->code       = rand(1111, 9999);
+        $client->code       = rand(1111, 9999);
         $client->password   = Hash::make($request->password);
         $client->save();
 
-        event(new Registered($client));
+//        event(new Registered($client));
+        $this->sendVerification($client->email);
+
 
         return view('client.notice')->with(['success','Password Changed Successfully', 'client' => $client]);
 
@@ -122,13 +123,14 @@ class AuthController extends Controller
 
         $client->save();
 
-        event(new Registered($client));
+//        event(new Registered($client));
 
         return view('client.notice')->with(['success','Password Changed Successfully', 'client' => $client]);
     }
     public function destroy()
     {
         auth()->guard('client')->logout();
+        dd('destroy');
         return redirect()->route('get.login');
     }
     // Return Notice View
@@ -150,5 +152,14 @@ class AuthController extends Controller
          *  via the Illuminate\Foundation\Auth\User base class.
          * */
         return redirect()->route('client.home');
+    }
+    public function sendVerification($email){
+        $email = Client::where('email', $email)->first();
+        $email->code = rand(1111, 9999);
+        $email->save();
+        if (!$email)
+            abort(401);
+        Mail::to($email)->send(new VerificationAuth($email));
+        return view('client.notice')->with(['success','Password Changed Successfully', 'client' => $email]);
     }
 }

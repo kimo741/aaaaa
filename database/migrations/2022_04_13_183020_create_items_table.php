@@ -23,7 +23,8 @@ class CreateItemsTable extends Migration
             $table->string('label');
             $table->enum('value',['duration','count']);
             $table->integer('count')->nullable();
-            $table->string('duration')->nullable();
+            $table->enum('duration_label', ['day','week','month','year'])->nullable();
+            $table->string('duration_value')->nullable();
             $table->timestamps();
         });
     }

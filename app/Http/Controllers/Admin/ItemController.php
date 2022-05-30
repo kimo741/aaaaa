@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin\Item;
 use App\Models\Admin\Package;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\Validator;
 
 class ItemController extends Controller
@@ -42,9 +43,11 @@ class ItemController extends Controller
         $item->value      = $request->value;
         if($request->value === 'duration'){
             $item->count    = null;
-            $item->duration = $request->duration;
+            $item->duration_label = $request->duration_label;
+            $item->duration_value = $request->duration_value;
         } elseif ($request->value === 'count'){
-            $item->duration = null;
+            $item->duration_label = null;
+            $item->duration_value = null;
             $item->count    = $request->count;
         }
         $item->save();

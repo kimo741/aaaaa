@@ -16,7 +16,7 @@ class CreateTasksTable extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('client_id');
-            $table->bigInteger('item_id');
+            $table->json('items');
             $table->enum('status',[0,1])->default(0);
             $table->timestamps();
         });

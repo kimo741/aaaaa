@@ -33,8 +33,8 @@
                         <h5 class="col-md-3"><span class="badge bnfsg-color rounded-pill space-latter text-capitalize">{{$item->package->name}}</span></h5>
                         <h3 class="col-md-2"><span class="badge rounded-pill space-latter {{$item->value === 'duration'? 'badge-warning':'badge-primary'}}">{{$item->value === 'duration'? 'Time':'Count'}}</span></h3>
                     </div>
-                    @if(isset($item->duration))
-                    <p class="card-text fs-3 text-capitalize">{{$item->duration}}</p>
+                    @if(isset($item->duration_label))
+                    <p class="card-text fs-3 text-capitalize">{{$item->duration_value}} {{$item->duration_label}}</p>
                     @endif
                     @if(isset($item->count))
                     <p class="card-text fs-3 text-capitalize">{{$item->count}}</p>

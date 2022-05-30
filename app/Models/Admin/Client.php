@@ -9,10 +9,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 
-class Client extends Authenticatable implements MustVerifyEmail
+class Client extends Authenticatable
 {
     use  HasFactory, Notifiable;
 
+    protected $guarded = 'client';
     protected $table = 'clients';
     protected $fillable = ['first_name','last_name','email','email_verified_at','status','image','phone','password'];
 

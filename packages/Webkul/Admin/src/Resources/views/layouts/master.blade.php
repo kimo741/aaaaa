@@ -24,6 +24,8 @@
 
         <link rel="stylesheet" href="{{ asset('vendor/webkul/ui/assets/css/ui.css') }}">
         <link rel="stylesheet" href="{{ asset('vendor/webkul/admin/assets/css/admin.css') }}">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
 
         @yield('head')
 
@@ -49,13 +51,13 @@
 
             {!! view_render_event('admin.layout.nav-top.after') !!}
 
-
+            @if(\Illuminate\Support\Facades\Auth::guard('user')->check())
             {!! view_render_event('admin.layout.nav-left.before') !!}
 
             @include ('admin::layouts.nav-left')
 
             {!! view_render_event('admin.layout.nav-left.after') !!}
-
+            @endif
 
             <div class="content-container" :style="{ paddingLeft: isMenuOpen ? '160px' : ''}">
 
