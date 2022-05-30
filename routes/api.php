@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\DashApiController;
+use App\Http\Controllers\Admin\OrderController;
 
 
 /*
@@ -19,15 +19,17 @@ use App\Http\Controllers\Api\DashApiController;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-//Route::middleware('auth')->group(function (){
 
-    Route::prefix('package')->group(function (){
-        Route::get('/','App\Http\Controllers\Api\DashApiController@indexPackage');
-        Route::get('/{id}','App\Http\Controllers\Api\DashApiController@showPackage');
-    });
-    Route::prefix('service')->group(function (){
-        Route::get('/','App\Http\Controllers\Api\DashApiController@indexService');
-        Route::get('/{id}','App\Http\Controllers\Api\DashApiController@showService');
-    });
+// Create New Order From SPA
+Route::post('/spa/order', [OrderController::class, 'create']);
 
-//});
+Route::prefix('package')->group(function (){
+    Route::get('/','App\Http\Controllers\Api\DashApiController@indexPackage');
+    Route::get('/{id}','App\Http\Controllers\Api\DashApiController@showPackage');
+});
+
+Route::prefix('service')->group(function (){
+    Route::get('/','App\Http\Controllers\Api\DashApiController@indexService');
+    Route::get('/{id}','App\Http\Controllers\Api\DashApiController@showService');
+});
+

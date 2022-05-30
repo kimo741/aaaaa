@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\ItemController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Models\Admin\Client;
+use App\Http\Controllers\Admin\OrderController;
 
 
 
@@ -22,9 +23,10 @@ use App\Models\Admin\Client;
 */
 /*** Client ***/
 
-    Route::get('/em', function () {
-        return view('vendor.auth.verification');
-    });
+Route::get('/em', function () {
+    return view('vendor.auth.verification');
+});
+
 Route::prefix('client')->group(function () {
     Route::any('/logout', 'App\Http\Controllers\Client\AuthController@destroy')->name('client.session.destroy');
 
@@ -73,6 +75,12 @@ Route::prefix('client')->group(function () {
 
 
 Route::prefix('dashboard')->group(function (){
+
+    /**  Package  **/
+    Route::prefix('order')->group(function (){
+        Route::get('/$id',[OrderController::class, 'edit'])->name('order.edit');
+        Route::post('/',[OrderController::class, 'update'])->name('order.update');;
+    });
 
     /**  Package  **/
     Route::prefix('package')->group(function (){
